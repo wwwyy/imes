@@ -1,6 +1,6 @@
 <template>
     <div id="baseData">
-            <h1>222</h1>
+        <router-view></router-view>
     </div>
 </template>
 <script>

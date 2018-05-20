@@ -7,6 +7,13 @@ import home from '@/views/home/home'
 //仪表台
 import dashboard from '@/views/home/dashboard'
 
+// 基础数据
+import baseData from '@/views/baseData/baseData'
+import exRate from '@/views/baseData/exRate'
+import measureData from '@/views/baseData/measureData'
+import unitTrans from '@/views/baseData/unitTrans'
+import holidayManage from '@/views/baseData/holidayManage'
+
 Vue.use(Router)
 
 export default new Router({
@@ -23,12 +30,39 @@ export default new Router({
       path: '/home',
       name: 'home',
       component: home,
-      redirect: '/home/dashboard',
+      redirect: '/dashboard',
       children: [
         {
-          path: '/home/dashboard',
+          path: '/dashboard',
           name: 'dashboard',
           component: dashboard
+        },
+        {
+          path: '/baseData',
+          name: 'baseData',
+          component: baseData,
+          children: [
+            {
+              path: '/exRate',
+              name: 'exRate',
+              component: exRate
+            },
+            {
+              path: '/measureData',
+              name: 'measureData',
+              component: measureData
+            },
+            {
+              path: '/unitTrans',
+              name: 'unitTrans',
+              component: unitTrans
+            },
+            {
+              path: '/holidayManage',
+              name: 'holidayManage',
+              component: holidayManage
+            }
+          ]
         }
       ]
     }
