@@ -4,6 +4,9 @@ import Router from 'vue-router'
 //首页
 import home from '@/views/home/home'
 
+//仪表台
+import dashboard from '@/views/home/dashboard'
+
 Vue.use(Router)
 
 export default new Router({
@@ -19,7 +22,15 @@ export default new Router({
     {
       path: '/home',
       name: 'home',
-      component: home
+      component: home,
+      redirect: '/home/dashboard',
+      children: [
+        {
+          path: '/home/dashboard',
+          name: 'dashboard',
+          component: dashboard
+        }
+      ]
     }
   ]
 })
