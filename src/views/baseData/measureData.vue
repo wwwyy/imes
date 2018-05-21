@@ -13,7 +13,7 @@
             <el-button size="small" type="primary" style="width:100px"> 查 询 </el-button>
             <el-button size="small" type="primary" style="width:100px"> 清 空 </el-button>
         </div>
-        <div style="text-align:left;margin:20px 0;">
+        <div style="text-align:center;margin:20px 0;">
              <span style="line-height:32px;font-size:14px;">单位代码：</span>
             <el-input v-model="copyCode" placeholder="请输入内容" style="width:194px" size="small"></el-input>
             <span style="margin-left:40px;line-height:32px;font-size:14px;">单位名称：</span>

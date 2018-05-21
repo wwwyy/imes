@@ -13,6 +13,12 @@ import exRate from '@/views/baseData/exRate'
 import measureData from '@/views/baseData/measureData'
 import unitTrans from '@/views/baseData/unitTrans'
 import holidayManage from '@/views/baseData/holidayManage'
+import codeType from '@/views/baseData/codeType'
+import codeDef from '@/views/baseData/codeDef'
+import supplyInfo from '@/views/baseData/supplyInfo'
+import codeRule from '@/views/baseData/codeRule'
+import businessParameter from '@/views/baseData/businessParameter'
+import businessRule from '@/views/baseData/businessRule'
 
 Vue.use(Router)
 
@@ -61,6 +67,36 @@ export default new Router({
               path: '/holidayManage',
               name: 'holidayManage',
               component: holidayManage
+            },
+            {
+              path: '/codeType',
+              name: 'codeType',
+              component: codeType
+            },
+            {
+              path: '/codeDef',
+              name: 'codeDef',
+              component: codeDef
+            },
+            {
+              path: '/supplyInfo',
+              name: 'supplyInfo',
+              component: supplyInfo
+            },
+            {
+              path: '/codeRule',
+              name: 'codeRule',
+              component: codeRule
+            },
+            {
+              path: '/businessParameter',
+              name: 'businessParameter',
+              component: businessParameter
+            },
+            {
+              path: '/businessRule',
+              name: 'businessRule',
+              component: businessRule
             }
           ]
         }

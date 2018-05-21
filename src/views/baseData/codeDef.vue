@@ -1,45 +1,24 @@
 <template>
-    <div id="holidayManage">
+    <div id="codeDef">
         <el-breadcrumb separator-class="el-icon-arrow-right">
             <el-breadcrumb-item>基础数据管理</el-breadcrumb-item>
             <el-breadcrumb-item>公共数据管理</el-breadcrumb-item>
-            <el-breadcrumb-item>计量维护</el-breadcrumb-item>
+            <el-breadcrumb-item>代码定义</el-breadcrumb-item>
         </el-breadcrumb>
         <hr>
         <div style="text-align:left">
             <el-button size="small" icon="el-icon-plus" style="width:100px"> 新 增 </el-button>
-            <el-button size="small" icon="el-icon-delete" style="width:100px"> 删 除 </el-button>
-              <el-button size="small" icon="el-icon-success" style="width:100px"> 保 存 </el-button>
-            <el-button size="small" icon="el-icon-error" style="width:100px"> 撤 销 </el-button>
             <el-button size="small" icon="el-icon-download" style="width:100px"> 导 出 </el-button>
             <el-button size="small" type="primary" style="width:100px"> 查 询 </el-button>
             <el-button size="small" type="primary" style="width:100px"> 清 空 </el-button>
         </div>
         <div style="text-align:center;margin:20px 0;">
-             <span style="line-height:32px;font-size:14px;">假日名称：</span>
+             <span style="line-height:32px;font-size:14px;">代码名称：</span>
             <el-input v-model="copyCode" placeholder="请输入内容" style="width:194px" size="small"></el-input>
-            <span style="margin-left:40px;line-height:32px;font-size:14px;">单位类别：</span>
-                <el-select v-model="copyType" placeholder="请选择" size="small" style="width:194px">
-                <el-option
-                v-for="item in copyOptions"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-                </el-option>
-            </el-select>
-             <span style="margin-left:40px;line-height:32px;font-size:14px;">开始日期：</span>
-             <el-date-picker
-                v-model="startDate"
-                type="date"
-                placeholder="选择日期"
-                style="width:194px"
-                size="small">
-            </el-date-picker>
-            
-            <br>
-            <br>
-            <span style="line-height:32px;font-size:14px;">可用标识：</span>
-            <el-select v-model="markType" placeholder="请选择" size="small" style="width:194px">
+            <span style="margin-left:40px;line-height:32px;font-size:14px;">类别名称：</span>
+             <el-input v-model="copyName" placeholder="请输入内容" style="width:194px" size="small"></el-input>
+            <span style="margin-left:40px;line-height:32px;font-size:14px;">可用标识：</span>
+            <el-select v-model="markType" placeholder="请选择" size="small">
                 <el-option
                 v-for="item in markOptions"
                 :key="item.value"
@@ -47,23 +26,6 @@
                 :value="item.value">
                 </el-option>
             </el-select>
-           <span style="margin-left:40px;line-height:32px;font-size:14px;">单位类别：</span>
-                <el-select v-model="copyType" placeholder="请选择" size="small" style="width:194px">
-                <el-option
-                v-for="item in copyOptions"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-                </el-option>
-            </el-select>
-            <span style="margin-left:40px;line-height:32px;font-size:14px;">结束日期：</span>
-             <el-date-picker
-                v-model="endDate"
-                type="date"
-                placeholder="选择日期"
-                style="width:194px"
-                size="small">
-            </el-date-picker>
         </div>
         <el-table
     :data="tableData"
@@ -130,7 +92,7 @@
 </template>
 <script>
 export default {
-    name: 'holidayManage',
+    name: 'codeDef',
     data () {
         return {
             copyOptions: [
@@ -173,8 +135,6 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            startDate: '',
-            endDate: '',
             tableData: [{
           date: '2016-05-03',
           name: '王小虎',

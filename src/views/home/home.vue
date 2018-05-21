@@ -121,27 +121,27 @@
                 name: '工作日历生成'
               },
               {
-                index: '1-3',
+                index: 'codeType',
                 name: '代码类别'
               },
               {
-                index: '1-1',
+                index: 'codeDef',
                 name: '代码定义'
               },
               {
-                index: '1-2',
+                index: 'supplyInfo',
                 name: '供应商信息维护'
               },
               {
-                index: '1-3',
+                index: 'codeRule',
                 name: '编码规则维护'
               },
               {
-                index: '1-1',
+                index: 'businessParameter',
                 name: '业务参数维护'
               },
               {
-                index: '1-2',
+                index: 'businessRule',
                 name: '业务规则维护'
               }
             ]
@@ -275,7 +275,7 @@
 </script>
 <style>
   #home {
-    min-width: 1500px;
+    min-width: 1600px;
     margin: 0 auto;
   }
   #home .el-card__header {

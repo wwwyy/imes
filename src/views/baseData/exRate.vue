@@ -12,7 +12,7 @@
             <el-button size="small" type="primary" style="width:100px"> 查 询 </el-button>
             <el-button size="small" type="primary" style="width:100px"> 清 空 </el-button>
         </div>
-        <div style="text-align:left;margin:20px 0;">
+        <div style="text-align:center;margin:20px 0;">
             <span style="line-height:32px;font-size:14px;">原币名称：</span>
                 <el-select v-model="nameType" placeholder="请选择" size="small">
                 <el-option
