@@ -20,6 +20,10 @@ import codeRule from '@/views/baseData/codeRule'
 import businessParameter from '@/views/baseData/businessParameter'
 import businessRule from '@/views/baseData/businessRule'
 
+import organizationalTree from '@/views/baseData/organizationalTree'
+import personnelMaintenanceTree from '@/views/baseData/personnelMaintenanceTree'
+import workCenter from '@/views/baseData/workCenter'
+
 Vue.use(Router)
 
 export default new Router({
@@ -97,6 +101,21 @@ export default new Router({
               path: '/businessRule',
               name: 'businessRule',
               component: businessRule
+            },
+            {
+              path: '/organizationalTree',
+              name: 'organizationalTree',
+              component: organizationalTree
+            },
+            {
+              path: '/personnelMaintenanceTree',
+              name: 'personnelMaintenanceTree',
+              component: personnelMaintenanceTree
+            },
+            {
+              path: '/workCenter',
+              name: 'workCenter',
+              component: workCenter
             }
           ]
         }

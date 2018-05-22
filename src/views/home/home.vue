@@ -151,15 +151,15 @@
             index: '2',
             children: [
               {
-                index: '2-1',
+                index: 'organizationalTree',
                 name: '组织结构维护'
               },
               {
-                index: '2-2',
+                index: 'personnelMaintenanceTree',
                 name: '人员维护'
               },
               {
-                index: '2-3',
+                index: 'workCenter',
                 name: '工作中心维护'
               },
               {
