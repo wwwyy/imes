@@ -13,30 +13,17 @@
             </template>
           <el-menu-item-group>
           <el-menu-item :index=i.index v-for="i in item.children" :name="111" :route="{name:'aaa'}">{{i.name}}</el-menu-item>
-          <!-- <el-menu-item index="1-2">选项2</el-menu-item>
-          <el-menu-item index="1-3">选项3</el-menu-item>
-          <el-menu-item index="1-4-1">选项1</el-menu-item> -->
+       
         </el-menu-item-group>
       </el-submenu>
-      <!-- <el-menu-item index="2">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航二</span>
-      </el-menu-item>
-      <el-menu-item index="3">
-        <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
-      </el-menu-item> -->
+    
     </el-menu>
             </el-aside>
             <el-container>
                 <el-header style="padding:0;background-color:#409EFF">
-                    <el-menu :default-active="activeIndex" class="el-menu-demo" style="float:left;" mode="horizontal" background-color="#409EFF" text-color="#fff" active-text-color="#303133" @select="handleSelect">
-                    <el-menu-item index="1">基础数据</el-menu-item>
-                    <el-menu-item index="2">生产计划</el-menu-item>
+                    <el-menu :default-active="activeIndex" class="el-menu-demo" style="float:left;" mode="horizontal" background-color="#409EFF" text-color="#fff" active-text-color="#303133" @select="handleSelect" :route="{name:'aaa'}">
+                    <el-menu-item index="home" @click="asidNavChange(1)">基础数据</el-menu-item>
+                    <el-menu-item index="productPlan" @click="asidNavChange(2)">生产计划</el-menu-item>
                     <el-menu-item index="3">生产调度</el-menu-item>
                     <el-menu-item index="4">质量管理</el-menu-item>
                     <el-menu-item index="5">制造资源</el-menu-item>
@@ -81,7 +68,6 @@
     name: "home",
     data() {
       return {
-        
         navHeight: '',
         navMinHeight:'',
         activeIndex: "1",
@@ -163,15 +149,15 @@
                 name: '工作中心维护'
               },
               {
-                index: '2-1',
+                index: 'equipMent',
                 name: '设备维护'
               },
               {
-                index: '2-2',
+                index: 'wareHouse',
                 name: '仓库维护'
               },
               {
-                index: '2-3',
+                index: 'location',
                 name: '库位维护'
               }
             ]
@@ -181,25 +167,35 @@
             index: '3',
             children: [
               {
-                index: '3-1',
+                index: 'materialInfo',
+                name: '物料数据维护'
+              }
+            ]
+          },
+          {
+            title:'产品数据管理',
+            index: '4',
+            children: [
+              {
+                index: 'productModel',
                 name: '产品型号维护'
               },
               {
-                index: '3-2',
+                index: 'productStructure',
                 name: '产品结构数据维护'
               }
             ]
           },
           {
             title:'工艺数据管理',
-            index: '4',
+            index: '5',
             children: [
               {
-                index: '4-1',
+                index: 'processData',
                 name: '工序数据维护'
               },
               {
-                index: '4-2',
+                index: 'processRoute',
                 name: '工艺路线维护'
               }
             ]
@@ -208,6 +204,16 @@
       };
     },
     methods: {
+      asidNavChange(key) {
+        switch (key) {
+          case 1:
+            this.navData = [{title:'公共数据管理',index:'1',children:[{index:'exRate',name:'汇率维护'},{index:'measureData',name:'计量维护'},{index:'unitTrans',name:'单位转换'},{index:'holidayManage',name:'节假日维护'},{index:'1-2',name:'工作日历生成'},{index:'codeType',name:'代码类别'},{index:'codeDef',name:'代码定义'},{index:'supplyInfo',name:'供应商信息维护'},{index:'codeRule',name:'编码规则维护'},{index:'businessParameter',name:'业务参数维护'},{index:'businessRule',name:'业务规则维护'}]},{title:'制造资源管理',index:'2',children:[{index:'organizationalTree',name:'组织结构维护'},{index:'personnelMaintenanceTree',name:'人员维护'},{index:'workCenter',name:'工作中心维护'},{index:'equipMent',name:'设备维护'},{index:'wareHouse',name:'仓库维护'},{index:'location',name:'库位维护'}]},{title:'物料数据管理',index:'3',children:[{index:'materialInfo',name:'物料数据维护'}]},{title:'产品数据管理',index:'4',children:[{index:'productModel',name:'产品型号维护'},{index:'productStructure',name:'产品结构数据维护'}]},{title:'工艺数据管理',index:'5',children:[{index:'processData',name:'工序数据维护'},{index:'processRoute',name:'工艺路线维护'}]}]
+            break;
+          case 2:
+            this.navData = [{title:'工序数据维护',index:'1'}]
+            break;
+        }
+      },
       togo(callback){
         console.log(callback)
         this.$router.push(callback.name)
@@ -225,6 +231,7 @@
       },
       handleSelect(key, keyPath) {
         console.log(key, keyPath);
+        this.$router.push(key)
       },
       addTab(targetName,text) {
         for (let index = 0; index < this.editableTabs2.length; index++) {

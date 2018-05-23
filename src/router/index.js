@@ -23,6 +23,18 @@ import businessRule from '@/views/baseData/businessRule'
 import organizationalTree from '@/views/baseData/organizationalTree'
 import personnelMaintenanceTree from '@/views/baseData/personnelMaintenanceTree'
 import workCenter from '@/views/baseData/workCenter'
+import equipMent from '@/views/baseData/equipMent'
+import wareHouse from '@/views/baseData/wareHouse'
+import location from '@/views/baseData/location'
+
+import materialInfo from '@/views/baseData/materialInfo'
+import productModel from '@/views/baseData/productModel'
+import productStructure from '@/views/baseData/productStructure'
+import processData from '@/views/baseData/processData'
+import processRoute from '@/views/baseData/processRoute'
+
+//productPlan
+import productPlan from '@/views/productPlan/productPlan'
 
 Vue.use(Router)
 
@@ -116,9 +128,61 @@ export default new Router({
               path: '/workCenter',
               name: 'workCenter',
               component: workCenter
+            },
+            {
+              path: '/equipMent',
+              name: 'equipMent',
+              component: equipMent
+            },
+            {
+              path: '/wareHouse',
+              name: 'wareHouse',
+              component: wareHouse
+            },
+            {
+              path: '/location',
+              name: 'location',
+              component: location
+            },
+            {
+              path: '/materialInfo',
+              name: 'materialInfo',
+              component: materialInfo
+            },
+            {
+              path: '/productModel',
+              name: 'productModel',
+              component: productModel
+            },
+            {
+              path: '/productStructure',
+              name: 'productStructure',
+              component: productStructure
+            },
+            {
+              path: '/processData',
+              name: 'processData',
+              component: processData
+            },
+            {
+              path: '/processRoute',
+              name: 'processRoute',
+              component: processRoute
             }
           ]
-        }
+        },
+        {
+          path: '/productPlan',
+          name: 'productPlan',
+          component: productPlan,
+          children: [
+            {
+              path: '/processRoute',
+              name: 'processRoute',
+              component: processRoute
+            }
+          ]
+        },
       ]
     }
   ]
