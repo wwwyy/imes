@@ -24,8 +24,8 @@
                     <el-menu :default-active="activeIndex" class="el-menu-demo" style="float:left;" mode="horizontal" background-color="#409EFF" text-color="#fff" active-text-color="#303133" @select="handleSelect" :route="{name:'aaa'}">
                     <el-menu-item index="home" @click="asidNavChange(1)">基础数据</el-menu-item>
                     <el-menu-item index="productPlan" @click="asidNavChange(2)">生产计划</el-menu-item>
-                    <el-menu-item index="3">生产调度</el-menu-item>
-                    <el-menu-item index="4">质量管理</el-menu-item>
+                    <el-menu-item index="productSchedule" @click="asidNavChange(3)">生产调度</el-menu-item>
+                    <el-menu-item index="qualityManage" @click="asidNavChange(4)">质量管理</el-menu-item>
                     <el-menu-item index="5">制造资源</el-menu-item>
                     <el-menu-item index="6">人管管理</el-menu-item>
                     <el-menu-item index="7">文档管理</el-menu-item>
@@ -210,7 +210,13 @@
             this.navData = [{title:'公共数据管理',index:'1',children:[{index:'exRate',name:'汇率维护'},{index:'measureData',name:'计量维护'},{index:'unitTrans',name:'单位转换'},{index:'holidayManage',name:'节假日维护'},{index:'1-2',name:'工作日历生成'},{index:'codeType',name:'代码类别'},{index:'codeDef',name:'代码定义'},{index:'supplyInfo',name:'供应商信息维护'},{index:'codeRule',name:'编码规则维护'},{index:'businessParameter',name:'业务参数维护'},{index:'businessRule',name:'业务规则维护'}]},{title:'制造资源管理',index:'2',children:[{index:'organizationalTree',name:'组织结构维护'},{index:'personnelMaintenanceTree',name:'人员维护'},{index:'workCenter',name:'工作中心维护'},{index:'equipMent',name:'设备维护'},{index:'wareHouse',name:'仓库维护'},{index:'location',name:'库位维护'}]},{title:'物料数据管理',index:'3',children:[{index:'materialInfo',name:'物料数据维护'}]},{title:'产品数据管理',index:'4',children:[{index:'productModel',name:'产品型号维护'},{index:'productStructure',name:'产品结构数据维护'}]},{title:'工艺数据管理',index:'5',children:[{index:'processData',name:'工序数据维护'},{index:'processRoute',name:'工艺路线维护'}]}]
             break;
           case 2:
-            this.navData = [{title:'工序数据维护',index:'1'}]
+            this.navData = [{title:'生产订单设计',index:'1',children:[{index:'productOrder',name:'成品订单维护'},{index:'unproductOrder',name:'半成品订单维护'},{index:'plannedOrderDesign',name:'计划订单设计'}]},{title:'生产订单编制',index:'2',children:[{index:'orderCodeQuery',name:'产品编码查询'},{index:'orderWorkcenter',name:'订单工作中心维护'}]},{title:'生产订单跟踪',index:'3',children:[{index:'orderList',name:'订单清单查询'}]}]
+            break;
+          case 3:
+            this.navData = [{title:'作业计划',index:'1',children:[{index:'operatelPlanManage',name:'作业计划管理'},{index:'operatePlanTrack',name:'作业计划跟踪'}]}]
+            break;
+          case 4:
+            this.navData = [{title:'基础数据管理',index:'1',children:[{index:'selfCheckTemplate',name:'开工自检模板设定'},{index:'takeSample',name:'取样方案维护'},{index:'productCheckProject',name:'产品检验项目维护'},{index:'bugCode',name:'缺陷代码维护'},{index:'failureRepository',name:'故障知识库维护'}]},{title:'质检管理',index:'2',children:[{index:'qualityInspectionPlan',name:'（离线）质检计划维护'},{index:'qualityInspectionGrade',name:'（离线）质检实绩维护'}]},{title:'质量判定与处置',index:'3',children:[{index:'productQualityEvaluationAndDisposal',name:'质量判定与处置'}]},{title:'数据管理',index:'4',children:[{index:'materialAssemblySheet',name:'物料装配单'},{index:'materialScrapSheet',name:'物料报废单'},{index:'materialTrack',name:'物料追溯与跟踪'},{index:'selfCheckQuery',name:'自检查询'}]}]
             break;
         }
       },

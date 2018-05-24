@@ -35,6 +35,32 @@ import processRoute from '@/views/baseData/processRoute'
 
 //productPlan
 import productPlan from '@/views/productPlan/productPlan'
+import orderCodeQuery from '@/views/productPlan/orderCodeQuery'
+import orderList from '@/views/productPlan/orderList'
+import orderWorkcenter from '@/views/productPlan/orderWorkcenter'
+import plannedOrderDesign from '@/views/productPlan/plannedOrderDesign'
+import productOrder from '@/views/productPlan/productOrder'
+import unproductOrder from '@/views/productPlan/unproductOrder'
+
+//productPlan
+import productSchedule from '@/views/productSchedule/productSchedule'
+import operatelPlanManage from '@/views/productSchedule/operatelPlanManage'
+import operatePlanTrack from '@/views/productSchedule/operatePlanTrack'
+
+//qualityManage
+import qualityManage from '@/views/qualityManage/qualityManage'
+import selfCheckTemplate from '@/views/qualityManage/selfCheckTemplate'
+import takeSample from '@/views/qualityManage/takeSample'
+import productCheckProject from '@/views/qualityManage/productCheckProject'
+import bugCode from '@/views/qualityManage/bugCode'
+import failureRepository from '@/views/qualityManage/failureRepository'
+import qualityInspectionPlan from '@/views/qualityManage/qualityInspectionPlan'
+import qualityInspectionGrade from '@/views/qualityManage/qualityInspectionGrade'
+import productQualityEvaluationAndDisposal from '@/views/qualityManage/productQualityEvaluationAndDisposal'
+import materialAssemblySheet from '@/views/qualityManage/materialAssemblySheet'
+import materialScrapSheet from '@/views/qualityManage/materialScrapSheet'
+import materialTrack from '@/views/qualityManage/materialTrack'
+import selfCheckQuery from '@/views/qualityManage/selfCheckQuery'
 
 Vue.use(Router)
 
@@ -175,11 +201,123 @@ export default new Router({
           path: '/productPlan',
           name: 'productPlan',
           component: productPlan,
+          redirect: '/productOrder',
           children: [
             {
-              path: '/processRoute',
-              name: 'processRoute',
-              component: processRoute
+              path: '/orderCodeQuery',
+              name: 'orderCodeQuery',
+              component: orderCodeQuery
+            },
+            {
+              path: '/orderList',
+              name: 'orderList',
+              component: orderList
+            },
+            {
+              path: '/orderWorkcenter',
+              name: 'orderWorkcenter',
+              component: orderWorkcenter
+            },
+            {
+              path: '/plannedOrderDesign',
+              name: 'plannedOrderDesign',
+              component: plannedOrderDesign
+            },
+            {
+              path: '/productOrder',
+              name: 'productOrder',
+              component: productOrder
+            },
+            {
+              path: '/unproductOrder',
+              name: 'unproductOrder',
+              component: unproductOrder
+            }
+          ]
+        },
+        {
+          path: '/productSchedule',
+          name: 'productSchedule',
+          component: productSchedule,
+          redirect: '/operatelPlanManage',
+          children: [
+            {
+              path: '/operatelPlanManage',
+              name: 'operatelPlanManage',
+              component: operatelPlanManage
+            },
+            {
+              path: '/operatePlanTrack',
+              name: 'operatePlanTrack',
+              component: operatePlanTrack
+            }
+          ]
+        },
+        {
+          path: '/qualityManage',
+          name: 'qualityManage',
+          component: qualityManage,
+          redirect: '/selfCheckTemplate',
+          children: [
+            {
+              path: '/selfCheckTemplate',
+              name: 'selfCheckTemplate',
+              component: selfCheckTemplate
+            },
+            {
+              path: '/takeSample',
+              name: 'takeSample',
+              component: takeSample
+            },
+            {
+              path: '/productCheckProject',
+              name: 'productCheckProject',
+              component: productCheckProject
+            },
+            {
+              path: '/bugCode',
+              name: 'bugCode',
+              component: bugCode
+            },
+            {
+              path: '/failureRepository',
+              name: 'failureRepository',
+              component: failureRepository
+            },
+            {
+              path: '/qualityInspectionPlan',
+              name: 'qualityInspectionPlan',
+              component: qualityInspectionPlan
+            },
+            {
+              path: '/qualityInspectionGrade',
+              name: 'qualityInspectionGrade',
+              component: qualityInspectionGrade
+            },
+            {
+              path: '/productQualityEvaluationAndDisposal',
+              name: 'productQualityEvaluationAndDisposal',
+              component: productQualityEvaluationAndDisposal
+            },
+            {
+              path: '/materialAssemblySheet',
+              name: 'materialAssemblySheet',
+              component: materialAssemblySheet
+            },
+            {
+              path: '/materialScrapSheet',
+              name: 'materialScrapSheet',
+              component: materialScrapSheet
+            },
+            {
+              path: '/materialTrack',
+              name: 'materialTrack',
+              component: materialTrack
+            },
+            {
+              path: '/selfCheckQuery',
+              name: 'selfCheckQuery',
+              component: selfCheckQuery
             }
           ]
         },
