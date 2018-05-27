@@ -62,6 +62,66 @@ import materialScrapSheet from '@/views/qualityManage/materialScrapSheet'
 import materialTrack from '@/views/qualityManage/materialTrack'
 import selfCheckQuery from '@/views/qualityManage/selfCheckQuery'
 
+//deviceManage
+import deviceManage from '@/views/deviceManage/deviceManage'
+import maintenanceProject from '@/views/deviceManage/maintenanceProject'
+import maintenancePlan from '@/views/deviceManage/maintenancePlan'
+import planGrade from '@/views/deviceManage/planGrade'
+import replacepartRecord from '@/views/deviceManage/replacepartRecord'
+import replacePartOutInWare from '@/views/deviceManage/replacePartOutInWare'
+import replacePartRepertory from '@/views/deviceManage/replacePartRepertory'
+import replacePartCount from '@/views/deviceManage/replacePartCount'
+import deviceRunRecord from '@/views/deviceManage/deviceRunRecord'
+import faultCode from '@/views/deviceManage/faultCode'
+import faultRepository from '@/views/deviceManage/faultRepository'
+import deviceFaultRepair from '@/views/deviceManage/deviceFaultRepair'
+
+//personalManage
+import personalManage from '@/views/personalManage/personalManage'
+import personalTechnical from '@/views/personalManage/personalTechnical'
+import attendanceManage from '@/views/personalManage/attendanceManage'
+import attendanceInformation from '@/views/personalManage/attendanceInformation'
+
+//personalManage
+import documentManage from '@/views/documentManage/documentManage'
+import document from '@/views/documentManage/document'
+
+//materialLineManage
+import materialLineManage from '@/views/materialLineManage/materialLineManage'
+import materialMove from '@/views/materialLineManage/materialMove'
+import materialInWare from '@/views/materialLineManage/materialInWare'
+import materialOutWare from '@/views/materialLineManage/materialOutWare'
+import materialRepertory from '@/views/materialLineManage/materialRepertory'
+import supplementaryApply from '@/views/materialLineManage/supplementaryApply'
+import materialReturn from '@/views/materialLineManage/materialReturn'
+
+//comprehensiveReport
+import comprehensiveReport from '@/views/comprehensiveReport/comprehensiveReport'
+import deviceBugCount from '@/views/comprehensiveReport/deviceBugCount'
+import deviceRepairHour from '@/views/comprehensiveReport/deviceRepairHour'
+import deviceMaitainHour from '@/views/comprehensiveReport/deviceMaitainHour'
+import deviceHalt from '@/views/comprehensiveReport/deviceHalt'
+import personalAttendance from '@/views/comprehensiveReport/personalAttendance'
+import productBugAnalysis from '@/views/comprehensiveReport/productBugAnalysis'
+import oneTimePassRate from '@/views/comprehensiveReport/oneTimePassRate'
+import productionCapacityTwo from '@/views/comprehensiveReport/productionCapacityTwo'
+
+
+//systemManage
+import systemManage from '@/views/systemManage/systemManage'
+import roleSetting from '@/views/systemManage/roleSetting'
+import userAuthorSetting from '@/views/systemManage/userAuthorSetting'
+import userLoginLog from '@/views/systemManage/userLoginLog'
+import userOperateLog from '@/views/systemManage/userOperateLog'
+import sysetmVersionLog from '@/views/systemManage/sysetmVersionLog'
+
+//qs
+import qs from '@/views/qs/qs'
+
+//qsz
+import qsz from '@/views/qsz/qsz'
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -320,6 +380,234 @@ export default new Router({
               component: selfCheckQuery
             }
           ]
+        },
+        {
+          path: '/deviceManage',
+          name: 'deviceManage',
+          component: deviceManage,
+          redirect: '/maintenanceProject',
+          children: [
+            {
+              path: '/maintenanceProject',
+              name: 'maintenanceProject',
+              component: maintenanceProject
+            },
+            {
+              path: '/maintenancePlan',
+              name: 'maintenancePlan',
+              component: maintenancePlan
+            },
+            {
+              path: '/planGrade',
+              name: 'planGrade',
+              component: planGrade
+            },
+            {
+              path: '/replacepartRecord',
+              name: 'replacepartRecord',
+              component: replacepartRecord
+            },
+            {
+              path: '/replacePartOutInWare',
+              name: 'replacePartOutInWare',
+              component: replacePartOutInWare
+            },
+            {
+              path: '/replacePartRepertory',
+              name: 'replacePartRepertory',
+              component: replacePartRepertory
+            },
+            {
+              path: '/replacePartCount',
+              name: 'replacePartCount',
+              component: replacePartCount
+            },
+            {
+              path: '/deviceRunRecord',
+              name: 'deviceRunRecord',
+              component: deviceRunRecord
+            },
+            {
+              path: '/faultCode',
+              name: 'faultCode',
+              component: faultCode
+            },
+            {
+              path: '/faultRepository',
+              name: 'faultRepository',
+              component: faultRepository
+            },
+            {
+              path: '/deviceFaultRepair',
+              name: 'deviceFaultRepair',
+              component: deviceFaultRepair
+            }
+          ]
+        },
+        {
+          path: '/personalManage',
+          name: 'personalManage',
+          component: personalManage,
+          redirect: '/personalTechnical',
+          children: [
+            {
+              path: '/personalTechnical',
+              name: 'personalTechnical',
+              component: personalTechnical
+            },
+            {
+              path: '/attendanceManage',
+              name: 'attendanceManage',
+              component: attendanceManage
+            },
+            {
+              path: '/attendanceInformation',
+              name: 'attendanceInformation',
+              component: attendanceInformation
+            }
+          ]
+        },
+        {
+          path: '/documentManage',
+          name: 'documentManage',
+          component: documentManage,
+          redirect: '/document',
+          children: [
+            {
+              path: '/document',
+              name: 'document',
+              component: document
+            }
+          ]
+        },
+        {
+          path: '/materialLineManage',
+          name: 'materialLineManage',
+          component: materialLineManage,
+          redirect: '/materialMove',
+          children: [
+            {
+              path: '/materialMove',
+              name: 'materialMove',
+              component: materialMove
+            },
+            {
+              path: '/materialInWare',
+              name: 'materialInWare',
+              component: materialInWare
+            },
+            {
+              path: '/materialOutWare',
+              name: 'materialOutWare',
+              component: materialOutWare
+            },
+            {
+              path: '/materialRepertory',
+              name: 'materialRepertory',
+              component: materialRepertory
+            },
+            {
+              path: '/supplementaryApply',
+              name: 'supplementaryApply',
+              component: supplementaryApply
+            },
+            {
+              path: '/materialReturn',
+              name: 'materialReturn',
+              component: materialReturn
+            }
+          ]
+        },
+        {
+          path: '/comprehensiveReport',
+          name: 'comprehensiveReport',
+          component: comprehensiveReport,
+          redirect: '/deviceBugCount',
+          children: [
+            {
+              path: '/deviceBugCount',
+              name: 'deviceBugCount',
+              component: deviceBugCount
+            },
+            {
+              path: '/deviceRepairHour',
+              name: 'deviceRepairHour',
+              component: deviceRepairHour
+            },
+            {
+              path: '/deviceMaitainHour',
+              name: 'deviceMaitainHour',
+              component: deviceMaitainHour
+            },
+            {
+              path: '/deviceHalt',
+              name: 'deviceHalt',
+              component: deviceHalt
+            },
+            {
+              path: '/personalAttendance',
+              name: 'personalAttendance',
+              component: personalAttendance
+            },
+            {
+              path: '/productBugAnalysis',
+              name: 'productBugAnalysis',
+              component: productBugAnalysis
+            },
+            {
+              path: '/oneTimePassRate',
+              name: 'oneTimePassRate',
+              component: oneTimePassRate
+            },
+            {
+              path: '/productionCapacityTwo',
+              name: 'productionCapacityTwo',
+              component: productionCapacityTwo
+            }
+          ]
+        },
+        {
+          path: '/systemManage',
+          name: 'systemManage',
+          component: systemManage,
+          redirect: '/roleSetting',
+          children: [
+            {
+              path: '/roleSetting',
+              name: 'roleSetting',
+              component: roleSetting
+            },
+            {
+              path: '/userAuthorSetting',
+              name: 'userAuthorSetting',
+              component: userAuthorSetting
+            },
+            {
+              path: '/userLoginLog',
+              name: 'userLoginLog',
+              component: userLoginLog
+            },
+            {
+              path: '/userOperateLog',
+              name: 'userOperateLog',
+              component: userOperateLog
+            },
+            {
+              path: '/sysetmVersionLog',
+              name: 'sysetmVersionLog',
+              component: sysetmVersionLog
+            }
+          ]
+        },
+        {
+          path: '/qs',
+          name: 'qs',
+          component: qs,
+        },
+        {
+          path: '/qsz',
+          name: 'qsz',
+          component: qsz,
         },
       ]
     }

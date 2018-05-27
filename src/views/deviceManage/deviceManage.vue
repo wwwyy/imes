@@ -43,7 +43,7 @@ export default {
                 name: '备件库存管理'
               },
               {
-                index: 'id="replacePartCount"',
+                index: 'replacePartCount',
                 name: '备件盘点'
               } 
             ]
@@ -67,28 +67,6 @@ export default {
               {
                 index: 'deviceFaultRepair',
                 name: '设备故障维修'
-              }
-            ]
-          },
-          {
-            title:'数据管理',
-            index: '4',
-            children: [
-              {
-                index: 'materialAssemblySheet',
-                name: '物料装配单'
-              },
-              {
-                index: 'materialScrapSheet',
-                name: '物料报废单'
-              },
-              {
-                index: 'materialTrack',
-                name: '物料追溯与跟踪'
-              },
-              {
-                index: 'selfCheckQuery',
-                name: '自检查询'
               }
             ]
           }
