@@ -14,7 +14,7 @@
         </div>
         <div style="text-align:center;margin:20px 0;">
             <span style="line-height:32px;font-size:14px;">原币名称：</span>
-                <el-select v-model="nameType" placeholder="请选择" size="small">
+                <el-select v-model="nameType" placeholder="请选择" size="small" clearable>
                 <el-option
                 v-for="item in nameOptions"
                 :key="item.value"
@@ -22,8 +22,8 @@
                 :value="item.value">
                 </el-option>
             </el-select>
-            <span style="margin-left:40px;line-height:32px;font-size:14px;">可用标识：</span>
-            <el-select v-model="markType" placeholder="请选择" size="small">
+            <span style="margin-left:40px;line-height:32px;font-size:14px;" >可用标识：</span>
+            <el-select v-model="markType" placeholder="请选择" size="small" clearable>
                 <el-option
                 v-for="item in markOptions"
                 :key="item.value"
@@ -49,6 +49,7 @@
         <el-table
     :data="tableData"
     border
+    align='left'
     style="width: 100%"
     size="mini">
      <el-table-column
@@ -57,33 +58,58 @@
     </el-table-column>
     <el-table-column
       fixed
-      prop="date"
-      label="日期"
+      prop="standardMoneyName"
+      label="本币名称"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
+      prop="exchangeMoneyName"
+      label="原币名称"
       >
     </el-table-column>
     <el-table-column
-      prop="province"
-      label="省份"
+      prop="exchangeUnit"
+      label="原币换算单位"
       >
     </el-table-column>
     <el-table-column
-      prop="city"
-      label="市区"
+      prop="transform"
+      label="原币折算价"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="publishDate"
+      label="发布时间"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="version"
+      label="版本号"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="markAble"
+      label="可用标识"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createUserName"
+      label="创建人"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createDate"
+      label="创建时间"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateUserName"
+      label="最后更新人"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateDate"
+      label="最后更新时间"
       >
     </el-table-column>
     <el-table-column
@@ -139,34 +165,69 @@ export default {
             startDate: '',
             endDate: '',
             tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+		"createDate": "1487756496000",
+		"createDateStr": "2017-02-22 17:41:36",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"exchangeMoneyCode": "RMB",
+		"exchangeMoneyName": "人民币",
+		"exchangeUnit": "1",
+		"id": "1002",
+		"markAble": "1",
+		"publishDate": "2017-02-22",
+		"publishDateStr": "2017-02-22 17:40:00",
+		"reMark": "",
+		"standardMoneyCode": "EUR",
+		"standardMoneyName": "欧元",
+		"transform": "0.1100",
+		"updateDate": "1487756496000",
+		"updateDateStr": "2017-02-22 17:41:36",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V1.97"
+	}, {
+		"createDate": "1487755818000",
+		"createDateStr": "2017-02-22 17:30:18",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"exchangeMoneyCode": "RMB",
+		"exchangeMoneyName": "人民币",
+		"exchangeUnit": "1",
+		"id": "1001",
+		"markAble": "1",
+		"publishDate": "2017-02-22",
+		"publishDateStr": "2017-02-22 17:30:00",
+		"reMark": "",
+		"standardMoneyCode": "EUR",
+		"standardMoneyName": "欧元",
+		"transform": "3.0000",
+		"updateDate": "1487755818000",
+		"updateDateStr": "2017-02-22 17:30:18",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V1.96"
+	}, {
+		"createDate": "1487755226000",
+		"createDateStr": "2017-02-22 17:20:26",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"exchangeMoneyCode": "EUR",
+		"exchangeMoneyName": "欧元",
+		"exchangeUnit": "1",
+		"id": "1000",
+		"markAble": "1",
+		"publishDate": "2017-02-22",
+		"publishDateStr": "2017-02-22 17:20:00",
+		"reMark": "",
+		"standardMoneyCode": "EUR",
+		"standardMoneyName": "欧元",
+		"transform": "11.0000",
+		"updateDate": "1487755226000",
+		"updateDateStr": "2017-02-22 17:20:26",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V1.94"
+	}],
         currentPage: 1
         }
     },
@@ -181,5 +242,18 @@ export default {
         console.log(`当前页: ${val}`);
       }
     },
+    computed:{ 
+        tables:function(){
+        var search=this.search;
+        if(search){
+          return  this.tableData.filter(function(dataNews){
+            return Object.keys(dataNews).some(function(key){
+              return String(dataNews[key]).toLowerCase().indexOf(search) > -1
+            })
+          })
+        }
+        return this.tableData
+      }
+    }
 }
 </script>
