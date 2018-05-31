@@ -66,43 +66,66 @@
             </el-date-picker>
         </div>
         <el-table
-    :data="tableData"
+    :data="holidayManageList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
+      >
     </el-table-column>
     <el-table-column
-      fixed
-      prop="date"
-      label="日期"
+      prop="year"
+      label="年份"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
+      prop="holidayName"
+      label="假日名称"
       >
     </el-table-column>
     <el-table-column
-      prop="province"
-      label="省份"
+      prop="orgName"
+      label="所属组织"
+      width="200"
       >
     </el-table-column>
     <el-table-column
-      prop="city"
-      label="市区"
+      prop="beginDateStr"
+      label="开始日期"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="endDateStr"
+      label="结束日期"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="markAble"
+      label="可用标识"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createUserName"
+      label="创建人"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createDateStr"
+      label="创建时间"
+      width="160"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateUserName"
+      label="最后更新人"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateDateStr"
+      label="最后更新时间"
+      width="160"
       >
     </el-table-column>
     <el-table-column
@@ -175,35 +198,87 @@ export default {
             copyName: '',
             startDate: '',
             endDate: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            holidayManageList: [{
+		"beginDate": "1496764800000",
+		"beginDateStr": "2017-06-07",
+		"createDate": "1496802187000",
+		"createDateStr": "2017-06-07 10:23:07",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"endDate": "1496764800000",
+		"endDateStr": "2017-06-07",
+		"holidayName": "周末",
+		"id": 1003,
+		"isDel": "false",
+		"markAble": "1",
+		"orgCode": "9050",
+		"orgName": "浙江长华汽车零配件有限公司",
+		"updateDate": "1496802187000",
+		"updateDateStr": "2017-06-07 10:23:07",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"year": "2017"
+	}, {
+		"beginDate": "1506787200000",
+		"beginDateStr": "2017-10-01",
+		"createDate": "1487826678000",
+		"createDateStr": "2017-02-23 13:11:18",
+		"createUser": "PENG014",
+		"createUserName": "测试组2.0",
+		"endDate": "1507305600000",
+		"endDateStr": "2017-10-07",
+		"holidayName": "国庆节",
+		"id": 1002,
+		"isDel": "false",
+		"markAble": "0",
+		"orgCode": "BB",
+		"orgName": "A线小微",
+		"updateDate": "1487826929000",
+		"updateDateStr": "2017-02-23 13:15:29",
+		"updateUser": "PENG014",
+		"updateUserName": "测试组2.0",
+		"year": "2017"
+	}, {
+		"beginDate": "1483200000000",
+		"beginDateStr": "2017-01-01",
+		"createDate": "1487755650000",
+		"createDateStr": "2017-02-22 17:27:30",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"endDate": "1483372800000",
+		"endDateStr": "2017-01-03",
+		"holidayName": "元旦",
+		"id": 1001,
+		"isDel": "false",
+		"markAble": "1",
+		"orgCode": "BB",
+		"orgName": "A线小微",
+		"updateDate": "1487755689000",
+		"updateDateStr": "2017-02-22 17:28:09",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"year": "2017"
+	}, {
+		"beginDate": "1485446400000",
+		"beginDateStr": "2017-01-27",
+		"createDate": "1487755650000",
+		"createDateStr": "2017-02-22 17:27:30",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"endDate": "1486051200000",
+		"endDateStr": "2017-02-03",
+		"holidayName": "春节",
+		"id": 1000,
+		"isDel": "false",
+		"markAble": "1",
+		"orgCode": "9050",
+		"orgName": "浙江长华汽车零配件有限公司",
+		"updateDate": "1487755650000",
+		"updateDateStr": "2017-02-22 17:27:30",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"year": "2017"
+	}],
         currentPage: 1
         }
     },
