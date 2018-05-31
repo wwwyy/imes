@@ -7,10 +7,10 @@
         </el-breadcrumb>
         <hr>
         <div style="text-align:left">
-            <el-button size="small" icon="el-icon-plus" style="width:100px">新增</el-button>
+            <el-button size="small" icon="el-icon-plus" style="width:100px" @click="toAdd">新增</el-button>
             <el-button size="small" icon="el-icon-download" style="width:100px">导出</el-button>
             <el-button size="small" type="primary" style="width:100px"> 查 询 </el-button>
-            <el-button size="small" type="primary" style="width:100px"> 清 空 </el-button>
+            <el-button size="small" type="primary" style="width:100px" @click="reset"> 清 空 </el-button>
         </div>
         <div style="text-align:center;margin:20px 0;">
             <span style="line-height:32px;font-size:14px;">原币名称：</span>
@@ -47,7 +47,7 @@
             </el-date-picker>
         </div>
         <el-table
-    :data="tableData"
+    :data="tables"
     border
     align='left'
     style="width: 100%"
@@ -152,11 +152,11 @@ export default {
             ],
             markOptions: [
                 {
-                    value: '启用',
+                    value: '1',
                     label: '启用'
                 }, 
                 {
-                    value: '停用',
+                    value: '0',
                     label: '停用'
                 }
             ],
@@ -194,7 +194,7 @@ export default {
 		"exchangeMoneyName": "人民币",
 		"exchangeUnit": "1",
 		"id": "1001",
-		"markAble": "1",
+		"markAble": "0",
 		"publishDate": "2017-02-22",
 		"publishDateStr": "2017-02-22 17:30:00",
 		"reMark": "",
@@ -240,15 +240,38 @@ export default {
       },
       handleCurrentChange(val) {
         console.log(`当前页: ${val}`);
+      },
+      toAdd(){
+        this.$router.push('exRateAdd')
+      },
+      reset(){
+        this.nameType = '';
+        this.markType = '';
+        this.startDate ='';
+        this.endDate = '';
       }
     },
     computed:{ 
         tables:function(){
-        var search=this.search;
+        var search=this.nameType;
+        var mark = this.markType;
         if(search){
           return  this.tableData.filter(function(dataNews){
             return Object.keys(dataNews).some(function(key){
-              return String(dataNews[key]).toLowerCase().indexOf(search) > -1
+              if( key==='exchangeMoneyName') {
+                console.log(String(dataNews[key]).toLowerCase().indexOf(search))
+                return String(dataNews[key]).toLowerCase().indexOf(search) > -1
+              }
+            })
+          })
+        }
+        if(mark){
+          return  this.tableData.filter(function(dataNews){
+            return Object.keys(dataNews).some(function(key){
+              if( key==='markAble') {
+                console.log(String(dataNews[key]).toLowerCase().indexOf(mark))
+                return String(dataNews[key]).toLowerCase().indexOf(mark) > -1
+              }
             })
           })
         }

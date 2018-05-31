@@ -10,16 +10,16 @@
             <el-button size="small" icon="el-icon-plus" style="width:100px"> 新 增 </el-button>
             <el-button size="small" icon="el-icon-delete" style="width:100px"> 删 除 </el-button>
             <el-button size="small" icon="el-icon-download" style="width:100px"> 导 出 </el-button>
-            <el-button size="small" type="primary" style="width:100px"> 查 询 </el-button>
+            <el-button size="small" type="primary" style="width:100px" @click="searchBtn"> 查 询 </el-button>
             <el-button size="small" type="primary" style="width:100px"> 清 空 </el-button>
         </div>
         <div style="text-align:center;margin:20px 0;">
              <span style="line-height:32px;font-size:14px;">单位代码：</span>
-            <el-input v-model="copyCode" placeholder="请输入内容" style="width:194px" size="small"></el-input>
+            <el-input v-model="measureCodeSearch" placeholder="请输入内容" style="width:194px" size="small"></el-input>
             <span style="margin-left:40px;line-height:32px;font-size:14px;">单位名称：</span>
-             <el-input v-model="copyName" placeholder="请输入内容" style="width:194px" size="small"></el-input>
+             <el-input v-model="codeNameSearch" placeholder="请输入内容" style="width:194px" size="small"></el-input>
             <span style="margin-left:40px;line-height:32px;font-size:14px;">单位类别：</span>
-                <el-select v-model="copyType" placeholder="请选择" size="small">
+                <el-select v-model="measureTypeCodeSearch" placeholder="请选择" size="small">
                 <el-option
                 v-for="item in copyOptions"
                 :key="item.value"
@@ -38,8 +38,9 @@
             </el-select>
         </div>
         <el-table
-    :data="tableData"
+    :data="measureList"
     border
+    align='left'
     style="width: 100%"
     size="mini">
      <el-table-column
@@ -48,33 +49,49 @@
     </el-table-column>
     <el-table-column
       fixed
-      prop="date"
-      label="日期"
+      prop="measureCode"
+      label="单位代码"
+      :filter-method="filterMeasureCode"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
+      prop="measureName"
+      label="单位名称"
       >
     </el-table-column>
     <el-table-column
-      prop="province"
-      label="省份"
+      prop="measureTypeName"
+      label="单位类别"
       >
     </el-table-column>
     <el-table-column
-      prop="city"
-      label="市区"
+      prop="exchangeCoefficient"
+      label="转换系数"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="markAble"
+      label="可用标识"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="createUserName"
+      label="创建人"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createDateStr"
+      label="创建时间"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateUserName"
+      label="最后更新人"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateDateStr"
+      label="最后更新时间"
       >
     </el-table-column>
     <el-table-column
@@ -133,47 +150,50 @@ export default {
             ],
             markOptions: [
                 {
-                    value: '启用',
+                    value: '1',
                     label: '启用'
                 }, 
                 {
-                    value: '停用',
+                    value: '0',
                     label: '停用'
                 }
             ],
-            copyType: '',
+            measureTypeCodeSearch: '',
             markType: '',
-            copyCode: '',
-            copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            measureCodeSearch: '',
+            codeNameSearch: '',
+            measureList: [
+                {
+                "createDateStr": "2017-06-07 10:05:49",
+                "createUser": "admin",
+                "createUserName": "系统管理员",
+                "exchangeCoefficient": "100",
+                "id": "1007",
+                "markAble": "1",
+                "measureCode": "LI",
+                "measureName": "里",
+                "measureTypeCode": "JC_DWZH_CD",
+                "measureTypeName": "长度",
+                "reMark": "",
+                "updateDateStr": "2017-06-07 10:05:49",
+                "updateUserName": "系统管理员"
+                },
+                {
+                "createDateStr": "2017-02-22 17:25:37",
+                "createUser": "admin",
+                "createUserName": "administrator",
+                "exchangeCoefficient": "1024",
+                "id": "1000",
+                "markAble": "1",
+                "measureCode": "KB",
+                "measureName": "千字节",
+                "measureTypeCode": "JC_DWZH_CC",
+                "measureTypeName": "存储",
+                "reMark": "",
+                "updateDateStr": "2017-02-23 13:14:44",
+                "updateUserName": "系统管理员"
+                }
+        ],
         currentPage: 1
         }
     },
@@ -186,7 +206,57 @@ export default {
       },
       handleCurrentChange(val) {
         console.log(`当前页: ${val}`);
+      },
+      searchBtn() {
+          
       }
     },
+    // computed:{ 
+    //     tables:function(){
+            
+    //     var measureCodeSearch=this.measureCodeSearch;
+    //     var codeNameSearch = this.codeNameSearch;
+    //     var measureTypeCodeSearch = this.measureTypeCodeSearch;
+    //     var markType = this.markType;
+    //     console.log(measureCodeSearch,codeNameSearch,measureTypeCodeSearch,markType)
+    //     if(measureCodeSearch){
+    //       return  this.measureList.filter(function(dataNews){
+    //         return Object.keys(dataNews).some(function(key){
+    //           if( key==='measureCode') {
+    //             return String(dataNews[key]).toLowerCase().indexOf(measureCodeSearch) > -1
+    //           }
+    //         })
+    //       })
+    //     }
+    //     if(codeNameSearch){
+    //       return  this.measureList.filter(function(dataNews){
+    //         return Object.keys(dataNews).some(function(key){
+    //           if( key==='measureName') {
+    //             return String(dataNews[key]).toLowerCase().indexOf(codeNameSearch) > -1
+    //           }
+    //         })
+    //       })
+    //     }
+    //     if(measureTypeCodeSearch){
+    //       return  this.measureList.filter(function(dataNews){
+    //         return Object.keys(dataNews).some(function(key){
+    //           if( key==='measureTypeName') {
+    //             return String(dataNews[key]).toLowerCase().indexOf(measureTypeCodeSearch) > -1
+    //           }
+    //         })
+    //       })
+    //     }
+    //     if(markType){
+    //       return  this.measureList.filter(function(dataNews){
+    //         return Object.keys(dataNews).some(function(key){
+    //           if( key==='markAble') {
+    //             return String(dataNews[key]).toLowerCase().indexOf(markType) > -1
+    //           }
+    //         })
+    //       })
+    //     }
+    //     return this.measureList
+    //   }
+    // }
 }
 </script>

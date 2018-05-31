@@ -19,6 +19,8 @@ import supplyInfo from '@/views/baseData/supplyInfo'
 import codeRule from '@/views/baseData/codeRule'
 import businessParameter from '@/views/baseData/businessParameter'
 import businessRule from '@/views/baseData/businessRule'
+import exRateAdd from '@/views/baseData/exRateAdd'
+
 
 import organizationalTree from '@/views/baseData/organizationalTree'
 import personnelMaintenanceTree from '@/views/baseData/personnelMaintenanceTree'
@@ -154,6 +156,11 @@ export default new Router({
               path: '/exRate',
               name: 'exRate',
               component: exRate
+            },
+            {
+              path: '/exRateAdd',
+              name: 'exRateAdd',
+              component: exRateAdd
             },
             {
               path: '/measureData',
