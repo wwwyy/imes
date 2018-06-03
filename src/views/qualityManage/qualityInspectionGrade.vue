@@ -61,43 +61,102 @@
             </el-select>
         </div>
         <el-table
-    :data="tableData"
+    :data="qualityInspectionPlanList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
-    </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="checkingCode"
+      label="计划ID"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="orderCode"
+      label="订单代码"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="modelCode"
+      label="型号代码"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="productName"
+      label="产品名称"
+      width="160"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="orderCount"
+      label="订单数量"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="checkingRangeName"
+      label="检验范围"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="checkingCount"
+      label="取样数量"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="checkingPlanName"
+      label="取样方案"
+      width="150"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="checkingItemName"
+      label="检验项目"
+      width="150"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="planCheckingDateStr"
+      label="检验日期"
+      width="150"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="checkingStatusName"
+      label="状态"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="markAbleName"
+      label="可用标识"
+      width="80"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createUserName"
+      label="创建人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createDateStr"
+      label="创建时间"
+      width="160"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateUserName"
+      label="最后更新人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateDateStr"
+      label="最后更新时间"
+      width="160"
       >
     </el-table-column>
     <el-table-column
@@ -170,35 +229,36 @@ export default {
             copyName: '',
             startDate: '',
             endDate: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            qualityInspectionPlanList: [{
+		"checkingCode": "0061",
+		"checkingCount": "100",
+		"checkingItem": "CP0041",
+		"checkingItemName": "油底壳调节板检验",
+		"checkingPlan": "TS0034",
+		"checkingPlanName": "批次检验方案",
+		"checkingRange": "InspectAll",
+		"checkingRangeName": "所有检验",
+		"checkingStatus": "0",
+		"checkingStatusName": "创建",
+		"createDate": "1495767188000",
+		"createDateStr": "2017-05-26 10:53:08",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1017",
+		"markAble": "1",
+		"markAbleName": "启用",
+		"modelCode": "01651377",
+		"orderCode": "C00109",
+		"orderCount": "100",
+		"planCheckingDate": "1496160000000",
+		"planCheckingDateStr": "2017-05-31",
+		"productName": "发动机油底壳调节板",
+		"remark": "",
+		"updateDate": "1495767188000",
+		"updateDateStr": "2017-05-26 10:53:08",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}],
         currentPage: 1
         }
     },

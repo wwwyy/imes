@@ -29,44 +29,53 @@
             </el-select>
         </div>
         <el-table
-    :data="tableData"
+    :data="workCenterList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
+      >
     </el-table-column>
     <el-table-column
-      fixed
-      prop="date"
-      label="日期"
+      prop="workCenterCode"
+      label="工作中心代码"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
+      prop="workCenterName"
+      label="工作中心名称"
       >
     </el-table-column>
     <el-table-column
-      prop="province"
-      label="省份"
-      >
+    prop="markAbleName"
+    label="可用标识	"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="createUserName"
+    label="创建人	"
+    width="150"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="createDateStr"
+    label="创建时间	"
+    width="160"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="updateUserName"
+    label="最后更新人	"
+    width="150"
+    >
     </el-table-column>
     <el-table-column
-      prop="city"
-      label="市区"
-     >
-    </el-table-column>
-    <el-table-column
-      prop="address"
-      label="地址"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="zip"
-      label="邮编"
-      >
+    prop="updateDateStr"
+    label="最后更新时间	"
+    width="160"
+    >
     </el-table-column>
     <el-table-column
       fixed="right"
@@ -136,35 +145,111 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            workCenterList: [{
+		"createDateStr": "2017-06-13 13:35:29",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1007",
+		"isDel": "false",
+		"markAble": "1",
+		"remark": "",
+		"updateDateStr": "2017-06-13 13:35:29",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"workCenterCode": "route00054",
+		"workCenterName": "高清周边"
+	}, {
+		"createDateStr": "2017-05-26 11:27:49",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1006",
+		"isDel": "false",
+		"markAble": "1",
+		"remark": "",
+		"updateDateStr": "2017-05-26 11:27:49",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"workCenterCode": "work0077",
+		"workCenterName": "冲孔工作中心"
+	}, {
+		"createDateStr": "2017-05-26 11:26:36",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1005",
+		"isDel": "false",
+		"markAble": "1",
+		"remark": "",
+		"updateDateStr": "2017-05-26 11:26:36",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"workCenterCode": "work0075",
+		"workCenterName": "落料工作中心"
+	}, {
+		"createDateStr": "2017-05-26 10:35:22",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1004",
+		"isDel": "false",
+		"markAble": "1",
+		"remark": "",
+		"updateDateStr": "2017-05-26 11:27:24",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"workCenterCode": "work0071",
+		"workCenterName": "冲压一车间工作中心"
+	}, {
+		"createDateStr": "2017-05-26 10:31:05",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1003",
+		"isDel": "false",
+		"markAble": "1",
+		"remark": "",
+		"updateDateStr": "2017-05-26 10:31:14",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"workCenterCode": "work0070",
+		"workCenterName": "电泳加工中心"
+	}, {
+		"createDateStr": "2017-05-20 09:56:56",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1002",
+		"isDel": "false",
+		"markAble": "1",
+		"remark": "",
+		"updateDateStr": "2017-05-20 09:56:56",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"workCenterCode": "work0063",
+		"workCenterName": "焊接工作中心"
+	}, {
+		"createDateStr": "2017-02-23 16:33:10",
+		"createUser": "PENG035",
+		"createUserName": "高丽娟",
+		"id": "1001",
+		"isDel": "false",
+		"markAble": "1",
+		"remark": "",
+		"updateDateStr": "2017-02-24 10:34:20",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"workCenterCode": "work0048",
+		"workCenterName": "整管"
+	}, {
+		"createDateStr": "2017-02-21 13:26:00",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1000",
+		"isDel": "false",
+		"markAble": "1",
+		"remark": "",
+		"updateDateStr": "2017-02-23 15:16:55",
+		"updateUser": "PENG035",
+		"updateUserName": "高丽娟",
+		"workCenterCode": "work0046",
+		"workCenterName": "门体预装"
+	}],
         currentPage: 1
         }
     },

@@ -14,45 +14,45 @@
     :data="tableData"
     border
     style="width: 100%"
+    align="left"
     size="mini">
+      <el-table-column
+      type="index">
+    </el-table-column>
     <el-table-column
-      fixed
-      prop="date"
-      label="日期"
+      prop="gong"
+      label="工序"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="code"
+      label="机编号"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="ren"
+      label="人"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="liao"
+      label="料"
       >
     </el-table-column>
     <el-table-column
-      fixed="right"
-      label="操作"
+      prop="startDate"
+      label="开始时间"
       >
-      <template slot-scope="scope">
-        <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
-      </template>
+    </el-table-column>
+    <el-table-column
+      prop="endDate"
+      label="结束时间"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="mo"
+      label="模具"
+      >
     </el-table-column>
   </el-table>
    <div style="margin:15px 0">
@@ -117,33 +117,21 @@ export default {
             startDate: '',
             endDate: '',
             tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
+          gong: '落料',
+          code: 'epuip048',
+          ren: 'admin',
+          liao: 'demo003',
+          startDate: '2017-06-09',
+          endDate: '2017-06-09',
+          mo: 'CHCXM0001001'
         }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
+          gong: '冲孔',
+          code: 'epuip051',
+          ren: 'admin',
+          liao: 'demo003',
+          startDate: '2017-06-09',
+          endDate: '2017-06-09',
+          mo: 'CHCXM0001002'
         }],
         currentPage: 1
         }

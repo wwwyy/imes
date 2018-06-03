@@ -53,44 +53,106 @@
             </el-date-picker>
         </div>
         <el-table
-    :data="tableData"
+    :data="productOrderList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
+      >
     </el-table-column>
     <el-table-column
-      fixed
-      prop="date"
-      label="日期"
+      prop="orderCode"
+      label="订单代码"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
+      prop="modelCode"
+      label="型号代码"
       >
     </el-table-column>
     <el-table-column
-      prop="province"
-      label="省份"
+      prop="productName"
+      label="产品名称"
+      width="150"
       >
     </el-table-column>
     <el-table-column
-      prop="city"
-      label="市区"
+      prop="orderResourceName"
+      label="订单来源"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="planNum"
+      label="计划数量"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="planStartTimeStr"
+      label="计划开始日期"
+      width="150"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="planEndTimeStr"
+      label="计划结束日期"
+      width="150"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="productLineName"
+      label="生产线体"
       >
+    </el-table-column>
+    <el-table-column
+      prop="orderNatureName"
+      label="订单特性"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="deliveryDateStr"
+      label="交货日期"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="salesCode"
+      label="销售订单代码"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="version"
+      label="版本号"
+      >
+    </el-table-column>
+    <el-table-column
+    prop="markAble"
+    label="订单标识	"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="createUserName"
+    label="创建人	"
+    width="150"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="createDateStr"
+    label="创建时间	"
+    width="160"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="updateUserName"
+    label="最后更新人	"
+    width="150"
+    >
+    </el-table-column>
+    <el-table-column
+    prop="updateDateStr"
+    label="最后更新时间	"
+    width="160"
+    >
     </el-table-column>
     <el-table-column
       fixed="right"
@@ -162,35 +224,269 @@ export default {
             copyName: '',
             startDate: '',
             endDate: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            productOrderList: [{
+		"createDateStr": "2017-07-05 12:48:48",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"deliveryDate": "1500220800000",
+		"deliveryDateStr": "2017-07-17",
+		"id": "1100",
+		"isDel": "false",
+		"markAble": "1",
+		"modelCode": "01651377",
+		"orderCode": "C00123",
+		"orderNature": "Custom-pro",
+		"orderNatureName": "定制产品",
+		"orderResource": "HandMade",
+		"orderResourceName": "手工新增",
+		"orderType": "1",
+		"originalOrder": "",
+		"parentCode": "",
+		"planEndTime": "1499961600000",
+		"planEndTimeStr": "2017-07-14",
+		"planNum": "120",
+		"planStartTime": "1499184000000",
+		"planStartTimeStr": "2017-07-05",
+		"productLine": "SCXT001",
+		"productLineName": "生产车间",
+		"productName": "发动机油底壳调节板",
+		"remark": "",
+		"salesCode": "",
+		"updateDateStr": "2017-07-05 12:48:48",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"version": "V0261"
+	}, {
+		"createDateStr": "2017-06-13 10:25:09",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"deliveryDate": "1498752000000",
+		"deliveryDateStr": "2017-06-30",
+		"id": "1090",
+		"isDel": "false",
+		"markAble": "1",
+		"modelCode": "01651377",
+		"orderCode": "C00119",
+		"orderNature": "Custom-pro",
+		"orderNatureName": "定制产品",
+		"orderResource": "ERP_Sync",
+		"orderResourceName": "ERP同步",
+		"orderType": "1",
+		"originalOrder": "",
+		"parentCode": "",
+		"planEndTime": "1498752000000",
+		"planEndTimeStr": "2017-06-30",
+		"planNum": "2000",
+		"planStartTime": "1497369600000",
+		"planStartTimeStr": "2017-06-14",
+		"productLine": "SCXT001",
+		"productLineName": "生产车间",
+		"productName": "发动机油底壳调节板",
+		"remark": "",
+		"routeCode": "route00054",
+		"routeName": "发动机油底壳调节板工艺路线",
+		"salesCode": "",
+		"updateDateStr": "2017-06-13 10:25:09",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"version": "V0248"
+	}, {
+		"createDateStr": "2017-06-08 09:20:25",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"deliveryDate": "1496851200000",
+		"deliveryDateStr": "2017-06-08",
+		"id": "1077",
+		"isDel": "false",
+		"markAble": "1",
+		"modelCode": "demo001",
+		"orderCode": "C00114",
+		"orderNature": "",
+		"orderResource": "HandMade",
+		"orderResourceName": "手工新增",
+		"orderType": "1",
+		"originalOrder": "",
+		"parentCode": "",
+		"planEndTime": "1496851200000",
+		"planEndTimeStr": "2017-06-08",
+		"planNum": "100",
+		"planStartTime": "1496851200000",
+		"planStartTimeStr": "2017-06-08",
+		"productLine": "",
+		"productName": "钢板弹簧后吊耳总成",
+		"remark": "",
+		"salesCode": "",
+		"updateDateStr": "2017-06-08 09:20:25",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"version": "V0230"
+	}, {
+		"createDateStr": "2017-05-26 10:16:25",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"deliveryDate": "1496246400000",
+		"deliveryDateStr": "2017-06-01",
+		"id": "1023",
+		"isDel": "false",
+		"markAble": "1",
+		"materielStatusName": "创建",
+		"modelCode": "01651377",
+		"orderCode": "C00109",
+		"orderNature": "",
+		"orderResource": "HandMade",
+		"orderResourceName": "手工新增",
+		"orderType": "1",
+		"originalOrder": "",
+		"parentCode": "",
+		"planEndTime": "1496160000000",
+		"planEndTimeStr": "2017-05-31",
+		"planNum": "100",
+		"planStartTime": "1495728000000",
+		"planStartTimeStr": "2017-05-26",
+		"productLine": "SCXT001",
+		"productLineName": "生产车间",
+		"productName": "发动机油底壳调节板",
+		"remark": "",
+		"routeCode": "route00054",
+		"routeName": "发动机油底壳调节板工艺路线",
+		"salesCode": "",
+		"updateDateStr": "2017-05-26 10:16:25",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"version": "V0167"
+	}, {
+		"createDateStr": "2017-05-24 15:39:51",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"deliveryDate": "1495555200000",
+		"deliveryDateStr": "2017-05-24",
+		"id": "1022",
+		"isDel": "false",
+		"markAble": "1",
+		"modelCode": "demo001",
+		"orderCode": "C00108",
+		"orderNature": "",
+		"orderResource": "HandMade",
+		"orderResourceName": "手工新增",
+		"orderType": "1",
+		"originalOrder": "",
+		"parentCode": "",
+		"planEndTime": "1495555200000",
+		"planEndTimeStr": "2017-05-24",
+		"planNum": "10",
+		"planStartTime": "1495555200000",
+		"planStartTimeStr": "2017-05-24",
+		"productLine": "SCXT001",
+		"productLineName": "生产车间",
+		"productName": "钢板弹簧后吊耳总成",
+		"remark": "",
+		"routeCode": "route00045",
+		"routeName": "钢板弹簧后吊耳总成工艺路线",
+		"salesCode": "",
+		"updateDateStr": "2017-05-24 15:39:51",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"version": "V0166"
+	}, {
+		"createDateStr": "2017-05-24 09:25:22",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"deliveryDate": "1495728000000",
+		"deliveryDateStr": "2017-05-26",
+		"id": "1021",
+		"isDel": "false",
+		"markAble": "1",
+		"modelCode": "demo001",
+		"orderCode": "C00107",
+		"orderNature": "Custom-pro",
+		"orderNatureName": "定制产品",
+		"orderResource": "HandMade",
+		"orderResourceName": "手工新增",
+		"orderType": "1",
+		"originalOrder": "",
+		"parentCode": "",
+		"planEndTime": "1495641600000",
+		"planEndTimeStr": "2017-05-25",
+		"planNum": "10000",
+		"planStartTime": "1495555200000",
+		"planStartTimeStr": "2017-05-24",
+		"productLine": "SCXT001",
+		"productLineName": "生产车间",
+		"productName": "钢板弹簧后吊耳总成",
+		"remark": "",
+		"salesCode": "",
+		"updateDateStr": "2017-05-24 09:25:22",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"version": "V0165"
+	}, {
+		"createDateStr": "2017-05-24 06:42:58",
+		"createUser": "PENG019",
+		"createUserName": "测试组2.1",
+		"deliveryDate": "1495641600000",
+		"deliveryDateStr": "2017-05-25",
+		"id": "1019",
+		"isDel": "false",
+		"markAble": "1",
+		"modelCode": "demo001",
+		"orderCode": "C00105",
+		"orderNature": "",
+		"orderResource": "HandMade",
+		"orderResourceName": "手工新增",
+		"orderType": "1",
+		"originalOrder": "",
+		"parentCode": "",
+		"planEndTime": "1495555200000",
+		"planEndTimeStr": "2017-05-24",
+		"planNum": "50",
+		"planStartTime": "1495555200000",
+		"planStartTimeStr": "2017-05-24",
+		"productLine": "SCXT001",
+		"productLineName": "生产车间",
+		"productName": "钢板弹簧后吊耳总成",
+		"remark": "",
+		"routeCode": "route00045",
+		"routeName": "钢板弹簧后吊耳总成工艺路线",
+		"salesCode": "",
+		"updateDateStr": "2017-05-24 06:42:58",
+		"updateUser": "PENG019",
+		"updateUserName": "测试组2.1",
+		"version": "V0163"
+	}, {
+		"createDateStr": "2017-05-23 22:10:28",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"deliveryDate": "1496160000000",
+		"deliveryDateStr": "2017-05-31",
+		"id": "1018",
+		"isDel": "false",
+		"markAble": "1",
+		"modelCode": "demo001",
+		"orderCode": "C00103",
+		"orderNature": "Custom-pro",
+		"orderNatureName": "定制产品",
+		"orderResource": "HandMade",
+		"orderResourceName": "手工新增",
+		"orderType": "1",
+		"originalOrder": "",
+		"parentCode": "",
+		"planEndTime": "1495814400000",
+		"planEndTimeStr": "2017-05-27",
+		"planNum": "1000",
+		"planStartTime": "1495468800000",
+		"planStartTimeStr": "2017-05-23",
+		"productLine": "SCXT001",
+		"productLineName": "生产车间",
+		"productName": "钢板弹簧后吊耳总成",
+		"remark": "",
+		"routeCode": "route00045",
+		"routeName": "钢板弹簧后吊耳总成工艺路线",
+		"salesCode": "",
+		"updateDateStr": "2017-05-23 22:15:29",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"version": "V0161"
+	}],
         currentPage: 1
         }
     },

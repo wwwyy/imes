@@ -51,43 +51,81 @@
             </el-date-picker>
         </div>
         <el-table
-    :data="tableData"
+    :data="replacePartCountList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
-    </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="checkId"
+      label="	单号"
+      width="120"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="sparePartCode"
+      label="	备件代码"
+      width="120"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="sparePartName"
+      label="	备件名称"
+      width="120"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="checkTypeName"
+      label="盘点类型"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="quantity"
+      label="数量"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="occurrenceTimeStr"
+      label="发生时间"
+      width="150"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="statusName"
+      label="状态"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="checkUserName"
+      label="盘点人"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createUserName"
+      label="创建人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createDateStr"
+      label="创建时间"
+      width="160"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateUserName"
+      label="最后更新人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateDateStr"
+      label="最后更新时间"
+      width="160"
       >
     </el-table-column>
     <el-table-column
@@ -158,35 +196,99 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            replacePartCountList: [{
+		"checkId": "201702230032",
+		"checkType": "1",
+		"checkTypeName": "盘盈",
+		"checkUser": "PENG035",
+		"checkUserName": "高丽娟",
+		"createDate": "1487845402000",
+		"createDateStr": "2017-02-23 18:23:22",
+		"createUser": "PENG035",
+		"createUserName": "高丽娟",
+		"id": "1003",
+		"occurrenceTime": "1487845380000",
+		"occurrenceTimeStr": "2017-02-23 18:23:00",
+		"quantity": "1",
+		"remark": "",
+		"sparePartCode": "KRNYIGRML5",
+		"sparePartName": "曲轴",
+		"status": "1",
+		"statusName": "确认",
+		"updateDate": "1487845402000",
+		"updateDateStr": "2017-02-23 18:23:22",
+		"updateUser": "PENG035",
+		"updateUserName": "高丽娟"
+	}, {
+		"checkId": "201702210029",
+		"checkType": "1",
+		"checkTypeName": "盘盈",
+		"checkUser": "PENG028",
+		"checkUserName": "测试01",
+		"createDate": "1487655535000",
+		"createDateStr": "2017-02-21 13:38:55",
+		"createUser": "PENG028",
+		"createUserName": "测试01",
+		"id": "1000",
+		"occurrenceTime": "1487816700000",
+		"occurrenceTimeStr": "2017-02-23 10:25:00",
+		"quantity": "60",
+		"remark": "",
+		"sparePartCode": "8AL4TKDF3T",
+		"sparePartName": "备件03",
+		"status": "0",
+		"statusName": "创建",
+		"updateDate": "1487655535000",
+		"updateDateStr": "2017-02-21 13:38:55",
+		"updateUser": "PENG028",
+		"updateUserName": "测试01"
+	}, {
+		"checkId": "201702210030",
+		"checkType": "0",
+		"checkTypeName": "盘亏",
+		"checkUser": "PENG026",
+		"checkUserName": "张三",
+		"createDate": "1487655550000",
+		"createDateStr": "2017-02-21 13:39:10",
+		"createUser": "PENG028",
+		"createUserName": "测试01",
+		"id": "1001",
+		"occurrenceTime": "1487655540000",
+		"occurrenceTimeStr": "2017-02-21 13:39:00",
+		"quantity": "60",
+		"remark": "",
+		"sparePartCode": "2O8WO23USS",
+		"sparePartName": "备件01",
+		"status": "0",
+		"statusName": "创建",
+		"updateDate": "1487655550000",
+		"updateDateStr": "2017-02-21 13:39:10",
+		"updateUser": "PENG028",
+		"updateUserName": "测试01"
+	}, {
+		"checkId": "201702210031",
+		"checkType": "0",
+		"checkTypeName": "盘亏",
+		"checkUser": "PENG028",
+		"checkUserName": "测试01",
+		"createDate": "1487655572000",
+		"createDateStr": "2017-02-21 13:39:32",
+		"createUser": "PENG028",
+		"createUserName": "测试01",
+		"id": "1002",
+		"occurrenceTime": "1487655540000",
+		"occurrenceTimeStr": "2017-02-21 13:39:00",
+		"quantity": "46",
+		"remark": "",
+		"sparePartCode": "ZJODJCXPYA",
+		"sparePartName": "备件02",
+		"status": "0",
+		"statusName": "创建",
+		"updateDate": "1487655572000",
+		"updateDateStr": "2017-02-21 13:39:32",
+		"updateUser": "PENG028",
+		"updateUserName": "测试01"
+	}],
         currentPage: 1
         }
     },

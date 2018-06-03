@@ -29,43 +29,75 @@
             </el-select>
         </div>
         <el-table
-    :data="tableData"
+    :data="scList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
-    </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="selfCheckCode"
+      label="自检代码"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="selfCheckName"
+      label="自检项目名称"
+      width="120"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="equipCode"
+      label="设备代码"
+      width="180"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="equipName"
+      label="设备名称"
+      width="180"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="supplyPhone"
+      label="生效期"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="version"
+      label="版本号"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="markAble"
+      label="可用标识"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createUserName"
+      label="创建人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createDateStr"
+      label="创建时间"
+      width="160"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateUserName"
+      label="最后更新人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateDateStr"
+      label="最后更新时间"
+      width="160"
       >
     </el-table-column>
     <el-table-column
@@ -136,35 +168,64 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            scList: [{
+		"createDate": "1487655711000",
+		"createDateStr": "2017-02-21 13:41:51",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"equipCode": "9050BB00GZ0002",
+		"equipName": "B线灌注机02",
+		"id": "1002",
+		"markAble": "1",
+		"remark": "",
+		"selfCheckCode": "SC0036",
+		"selfCheckName": "线灌注机检验",
+		"updateDate": "1487655711000",
+		"updateDateStr": "2017-02-21 13:41:51",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "SCV",
+		"workUnitCode": "",
+		"workUnitName": "安装风门盖板\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tBA26003"
+	}, {
+		"createDate": "1487655674000",
+		"createDateStr": "2017-02-21 13:41:14",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"equipCode": "9050BAJTZD0026",
+		"equipName": "A线静态作电检验26",
+		"id": "1001",
+		"markAble": "1",
+		"remark": "",
+		"selfCheckCode": "SC0035",
+		"selfCheckName": "静态电检验",
+		"updateDate": "1487655674000",
+		"updateDateStr": "2017-02-21 13:41:14",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "SCV",
+		"workUnitCode": "",
+		"workUnitName": "安装风门盖板\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tBA26003"
+	}, {
+		"createDate": "1487655614000",
+		"createDateStr": "2017-02-21 13:40:14",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"equipCode": "9050MAMTFP0012",
+		"equipName": "新线门体发泡夹具12",
+		"id": "1000",
+		"markAble": "1",
+		"remark": "",
+		"selfCheckCode": "SC0034",
+		"selfCheckName": "发泡夹具检验",
+		"updateDate": "1487655614000",
+		"updateDateStr": "2017-02-21 13:40:14",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "SCV",
+		"workUnitCode": "",
+		"workUnitName": "安装风门盖板\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tBA26003"
+	}],
         currentPage: 1
         }
     },

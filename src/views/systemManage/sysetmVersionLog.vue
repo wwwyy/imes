@@ -7,53 +7,35 @@
         </el-breadcrumb>
         <hr>
        
-        <el-table
+       <el-table
     :data="tableData"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
+     >
     </el-table-column>
     <el-table-column
-      fixed
+      prop="bianhao"
+      label="编号"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="banben"
+      label="版本编码"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="gengxin"
+      label="更新简介"
+     >
+    </el-table-column>
+    <el-table-column
       prop="date"
-      label="日期"
+      label="	更新日期"
      >
-    </el-table-column>
-    <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
-     >
-    </el-table-column>
-    <el-table-column
-      prop="address"
-      label="地址"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="zip"
-      label="邮编"
-      >
-    </el-table-column>
-    <el-table-column
-      fixed="right"
-      label="操作"
-      >
-      <template slot-scope="scope">
-        <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
-      </template>
     </el-table-column>
   </el-table>
    <div style="margin:15px 0">
@@ -118,33 +100,15 @@ export default {
             startDate: '',
             endDate: '',
             tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
+          bianhao: '1',
+          banben: '1.0.0-M1',
+          gengxin: '第一版正式版',
+          date: '2017-01-24 00:00:00 +0000'
         }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
+          bianhao: '2',
+          banben: '1.2.49-SNAPSHOT',
+          gengxin: '第二版开发版',
+          date: '2017-08-19 06:52:55 +0000'
         }],
         currentPage: 1
         }

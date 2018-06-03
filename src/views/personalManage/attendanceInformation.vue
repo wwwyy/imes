@@ -36,54 +36,41 @@
             </el-date-picker>
                 </div>
                 <el-table
-            :data="tableData"
-            border
-            style="width: 100%"
-            size="mini">
-            <el-table-column
-            type="selection"
-            width="55">
-            </el-table-column>
-            <el-table-column
-            fixed
-            prop="date"
-            label="日期"
-            >
-            </el-table-column>
-            <el-table-column
-            prop="name"
-            label="姓名"
-            >
-            </el-table-column>
-            <el-table-column
-            prop="province"
-            label="省份"
-            >
-            </el-table-column>
-            <el-table-column
-            prop="city"
-            label="市区"
-            >
-            </el-table-column>
-            <el-table-column
-            prop="address"
-            label="地址"
-            >
-            </el-table-column>
-            <el-table-column
-            prop="zip"
-            label="邮编"
-            >
-            </el-table-column>
-            <el-table-column
-            fixed="right"
-            label="操作"
-            >
-            <template slot-scope="scope">
-                <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
-            </template>
-            </el-table-column>
-        </el-table>
+    :data="attendanceInformationList"
+    border
+    style="width: 100%"
+    align="left"
+    size="mini">
+     <el-table-column
+      type="selection"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="personCode"
+      label="人员代码"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="personName"
+      label="人员名称"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="attendanceDateStr"
+      label="考勤日期"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="onDutyTimeStr"
+      label="上班时间"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="offDutyTimeStr"
+      label="下班时间"
+      >
+    </el-table-column>
+  </el-table>
         <div style="margin:15px 0">
             <el-pagination
             background
@@ -106,44 +93,90 @@ export default {
     data () {
         return {
             data: [{
-          label: '一级 1',
-          children: [{
-            label: '二级 1-1',
-            children: [{
-              label: '三级 1-1-1'
-            }]
-          }]
-        }, {
-          label: '一级 2',
-          children: [{
-            label: '二级 2-1',
-            children: [{
-              label: '三级 2-1-1'
-            }]
-          }, {
-            label: '二级 2-2',
-            children: [{
-              label: '三级 2-2-1'
-            }]
-          }]
-        }, {
-          label: '一级 3',
-          children: [{
-            label: '二级 3-1',
-            children: [{
-              label: '三级 3-1-1'
-            }]
-          }, {
-            label: '二级 3-2',
-            children: [{
-              label: '三级 3-2-1'
-            }]
-          }]
-        }],
-        defaultProps: {
-          children: 'children',
-          label: 'label'
-        },
+	"children": [{
+		"children": [{
+			"id": "GZDY1001",
+			"label": "一车间落料工作单元"
+		}, {
+			"id": "GZDY1002",
+			"label": "一车间冲孔工作单元"
+		}, {
+			"id": "CY002",
+			"label": "冲压二单元"
+		}, {
+			"id": "GZDY1003",
+			"label": "一车间翻边工作单元"
+		}, {
+			"id": "GZDY1004",
+			"label": "一车间切断工作单元"
+		}, {
+			"id": "GZDY1005",
+			"label": "一车间修边工作单元"
+		}, {
+			"id": "GZDY1006",
+			"label": "一车间落料成型工作单元"
+		}],
+		"id": "CY001",
+		"label": "冲压一车间"
+	}, {
+		"children": [{
+			"id": "GZDY2001",
+			"label": "二车间落料工作单元"
+		}, {
+			"id": "GZDY2002",
+			"label": "二车间冲孔工作单元"
+		}, {
+			"id": "CY003",
+			"label": "冲压三"
+		}],
+		"id": "49257",
+		"label": "冲压二车间"
+	}, {
+		"children": [{
+			"id": "GZSY3001",
+			"label": "焊接工作单元"
+		}],
+		"id": "HJ001",
+		"label": "焊接车间"
+	}, {
+		"id": "SCXT001",
+		"label": "生产车间"
+	}, {
+		"children": [{
+			"id": "BZGZDY",
+			"label": "包装工作单元"
+		}],
+		"id": "BZCJ001",
+		"label": "包装车间"
+	}, {
+		"children": [{
+			"id": "DYDY007",
+			"label": "电泳包装入库工作单元"
+		}, {
+			"id": "DYDY002",
+			"label": "电泳人工分选工作单元"
+		}, {
+			"id": "DYDY003",
+			"label": "电泳半成品入库工作单元"
+		}, {
+			"id": "DYDY004",
+			"label": "电泳检验工作单元"
+		}, {
+			"id": "DYDY005",
+			"label": "电泳黑色电泳漆工作单元"
+		}, {
+			"id": "DYDY006",
+			"label": "电泳酸洗工作单元"
+		}, {
+			"id": "DYDY001",
+			"label": "测试工作单元"
+		}],
+		"id": "DY001",
+		"label": "电泳车间"
+    }],
+    	"id": "9050",
+	"label": "浙江长华汽车零配件有限公司"
+}],
             copyOptions: [
                 {
                     value: '存储',
@@ -184,35 +217,37 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            attendanceInformationList: [{
+		"attendanceDate": 1487214895000,
+		"attendanceDateStr": "2017-02-16",
+		"id": 3,
+		"offDutyTime": 1487239202000,
+		"offDutyTimeStr": "2017-02-16 18:00:02",
+		"onDutyTime": 1487206806000,
+		"onDutyTimeStr": "2017-02-16 09:00:06",
+		"personCode": "PENG035",
+		"personName": "高丽娟"
+	}, {
+		"attendanceDate": 1487128439000,
+		"attendanceDateStr": "2017-02-15",
+		"id": 2,
+		"offDutyTime": 1487152852000,
+		"offDutyTimeStr": "2017-02-15 18:00:52",
+		"onDutyTime": 1487120400000,
+		"onDutyTimeStr": "2017-02-15 09:00:00",
+		"personCode": "PENG035",
+		"personName": "高丽娟"
+	}, {
+		"attendanceDate": 1486955577000,
+		"attendanceDateStr": "2017-02-13",
+		"id": 1,
+		"offDutyTime": 1486980040000,
+		"offDutyTimeStr": "2017-02-13 18:00:40",
+		"onDutyTime": 1486947600000,
+		"onDutyTimeStr": "2017-02-13 09:00:00",
+		"personCode": "PENG035",
+		"personName": "高丽娟"
+	}],
         currentPage: 1
         }
     },

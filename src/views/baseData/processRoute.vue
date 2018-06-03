@@ -57,44 +57,84 @@
             </el-date-picker>
         </div>
         <el-table
-    :data="tableData"
+    :data="processRouteList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
+      >
     </el-table-column>
     <el-table-column
-      fixed
-      prop="date"
-      label="日期"
+      prop="routeCode"
+      label="路线代码"
+      width="100"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
+      prop="routeName"
+      label="路线名称"
+      width="200"
       >
     </el-table-column>
     <el-table-column
-      prop="province"
-      label="省份"
+      prop="modelCode"
+      label="型号代码"
+      width="180"
       >
     </el-table-column>
     <el-table-column
-      prop="city"
-      label="市区"
-     >
-    </el-table-column>
-    <el-table-column
-      prop="address"
-      label="地址"
+      prop="productName"
+      label="产品名称"
+      width="150"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="effDateStr"
+      label="生效日期"
+      width="150"
       >
+    </el-table-column>
+    <el-table-column
+      prop="expiryDateStr"
+      label="失效日期"
+      width="150"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="version"
+      label="版本号"
+      >
+    </el-table-column>
+    <el-table-column
+    prop="markAble"
+    label="可用标识	"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="createUserName"
+    label="创建人	"
+    width="150"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="createDateStr"
+    label="创建时间	"
+    width="160"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="updateUserName"
+    label="最后更新人	"
+    width="150"
+    >
+    </el-table-column>
+    <el-table-column
+    prop="updateDateStr"
+    label="最后更新时间	"
+    width="160"
+    >
     </el-table-column>
     <el-table-column
       fixed="right"
@@ -166,35 +206,161 @@ export default {
             copyName: '',
             startDate: '',
             endDate: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            processRouteList: [{
+		"createDate": "1495768493000",
+		"createDateStr": "2017-05-26 11:14:53",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"effDate": 1495728000000,
+		"effDateStr": "2017-05-26",
+		"expiryDate": 1588348799000,
+		"expiryDateStr": "2020-05-01",
+		"id": "1006",
+		"markAble": "1",
+		"markAbleName": "启用",
+		"modelCode": "demo003",
+		"productName": "后吊耳底板",
+		"remark": "",
+		"routeCode": "route00055",
+		"routeName": "后吊耳底板",
+		"updateDate": "1495768493000",
+		"updateDateStr": "2017-05-26 11:14:53",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"version": "V0.055"
+	}, {
+		"createDate": "1495763864000",
+		"createDateStr": "2017-05-26 09:57:44",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"effDate": 1495728000000,
+		"effDateStr": "2017-05-26",
+		"expiryDate": 1514735999000,
+		"expiryDateStr": "2017-12-31",
+		"id": "1005",
+		"markAble": "1",
+		"markAbleName": "启用",
+		"modelCode": "01651377",
+		"productName": "发动机油底壳调节板",
+		"remark": "",
+		"routeCode": "route00054",
+		"routeName": "发动机油底壳调节板工艺路线",
+		"updateDate": "1495777987000",
+		"updateDateStr": "2017-05-26 13:53:07",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"version": "V0.054"
+	}, {
+		"createDate": "1495186033000",
+		"createDateStr": "2017-05-19 17:27:13",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"effDate": 1493568000000,
+		"effDateStr": "2017-05-01",
+		"expiryDate": 1495209599000,
+		"expiryDateStr": "2017-05-19",
+		"id": "1004",
+		"markAble": "1",
+		"markAbleName": "启用",
+		"modelCode": "demo001",
+		"productName": "钢板弹簧后吊耳总成",
+		"remark": "",
+		"routeCode": "route00045",
+		"routeName": "钢板弹簧后吊耳总成工艺路线",
+		"updateDate": "1495768297000",
+		"updateDateStr": "2017-05-26 11:11:37",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"version": "V0.045"
+	}, {
+		"createDate": "1487835587000",
+		"createDateStr": "2017-02-23 15:39:47",
+		"createUser": "PENG035",
+		"createUserName": "高丽娟",
+		"effDate": 1487779200000,
+		"effDateStr": "2017-02-23",
+		"expiryDate": 1489247999000,
+		"expiryDateStr": "2017-03-11",
+		"id": "1003",
+		"markAble": "1",
+		"markAbleName": "启用",
+		"modelCode": "B00010B8V00",
+		"productName": "HB21FNNB以色列",
+		"remark": "",
+		"routeCode": "route00037",
+		"routeName": "卡萨帝系列冰箱",
+		"updateDate": "1487837183000",
+		"updateDateStr": "2017-02-23 16:06:23",
+		"updateUser": "PENG035",
+		"updateUserName": "高丽娟",
+		"version": "V0.037"
+	}, {
+		"createDate": "1487646802000",
+		"createDateStr": "2017-02-21 11:13:22",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"effDate": 1487606400000,
+		"effDateStr": "2017-02-21",
+		"expiryDate": 1489247999000,
+		"expiryDateStr": "2017-03-11",
+		"id": "1002",
+		"markAble": "1",
+		"markAbleName": "启用",
+		"modelCode": "B00010E9F00",
+		"productName": "HB21FGRAA",
+		"remark": "",
+		"routeCode": "route00036",
+		"routeName": "压力机操作",
+		"updateDate": "1487646802000",
+		"updateDateStr": "2017-02-21 11:13:22",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V0.036"
+	}, {
+		"createDate": "1487646600000",
+		"createDateStr": "2017-02-21 11:10:00",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"effDate": 1487606400000,
+		"effDateStr": "2017-02-21",
+		"expiryDate": 1489247999000,
+		"expiryDateStr": "2017-03-11",
+		"id": "1001",
+		"markAble": "1",
+		"markAbleName": "启用",
+		"modelCode": "B00010E8200",
+		"productName": "HB21FGBAA",
+		"remark": "",
+		"routeCode": "route00035",
+		"routeName": "钣金设备操作",
+		"updateDate": "1487646600000",
+		"updateDateStr": "2017-02-21 11:10:00",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V0.035"
+	}, {
+		"createDate": "1487646534000",
+		"createDateStr": "2017-02-21 11:08:54",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"effDate": 1487606400000,
+		"effDateStr": "2017-02-21",
+		"expiryDate": 1489247999000,
+		"expiryDateStr": "2017-03-11",
+		"id": "1000",
+		"markAble": "1",
+		"markAbleName": "启用",
+		"modelCode": "B00010B8V00",
+		"productName": "HB21FNNB(以色列)",
+		"remark": "",
+		"routeCode": "route00034",
+		"routeName": "吸附操作",
+		"updateDate": "1487646534000",
+		"updateDateStr": "2017-02-21 11:08:54",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V0.034"
+	}],
         currentPage: 1
         }
     },

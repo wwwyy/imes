@@ -44,52 +44,50 @@
             </el-date-picker>
         </div>
         <el-table
-    :data="tableData"
+    :data="odList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
-     <el-table-column
-      type="selection"
-      width="55">
-    </el-table-column>
     <el-table-column
-      fixed
-      prop="date"
-      label="日期"
+      prop="equipCode"
+      label="设备代码"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="equipName"
+      label="设备名称"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="supplierName"
+      label="设备供应商名称"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="faultDesc"
+      label="故障现象描述"
       >
     </el-table-column>
     <el-table-column
-      fixed="right"
-      label="操作"
+      prop="faultAnalysis"
+      label="	故障分析描述"
       >
-      <template slot-scope="scope">
-        <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
-      </template>
+    </el-table-column>
+    <el-table-column
+      prop="faultReason"
+      label="故障原因"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="repairDateStr"
+      label="修理日期"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="completeDateStr"
+      label="完成日期"
+      >
     </el-table-column>
   </el-table>
    <div style="margin:15px 0">
@@ -153,35 +151,37 @@ export default {
             copyName: '',
             startDate: '',
             endDate: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            odList: [{
+		"completeDateStr": "2017-02-23 18:50:00",
+		"equipCode": "9050BB00CK0055",
+		"equipName": "R600a-55",
+		"faultAnalysis": "",
+		"faultDesc": "停机",
+		"faultReason": "太热",
+		"id": "1002",
+		"repairDateStr": "2017-02-22 14:50:00",
+		"supplierName": "设备供应商"
+	}, {
+		"completeDateStr": "2017-02-21 14:50:00",
+		"equipCode": "9050BB00CK0055",
+		"equipName": "R600a-55",
+		"faultAnalysis": "",
+		"faultDesc": "停机",
+		"faultReason": "太热",
+		"id": "1001",
+		"repairDateStr": "2017-02-21 13:48:00",
+		"supplierName": "设备供应商"
+	}, {
+		"completeDateStr": "2017-02-18 15:55:00",
+		"equipCode": "9050BB00CK0055",
+		"equipName": "R600a-55",
+		"faultAnalysis": "",
+		"faultDesc": "停机",
+		"faultReason": "太热",
+		"id": "1000",
+		"repairDateStr": "2017-02-17 14:50:00",
+		"supplierName": "设备供应商"
+	}],
         currentPage: 1
         }
     },

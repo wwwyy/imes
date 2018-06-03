@@ -55,44 +55,62 @@
             </el-date-picker>
         </div>
         <el-table
-    :data="tableData"
+    :data="jobPlanList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
+      >
     </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
+     <el-table-column
+      prop="jobId"
+      label="作业ID"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="orderCodes"
+      label="订单代码"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="modelCode"
+      label="型号代码"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="productName"
+      label="产品名称"
+      width="150"
       >
+    </el-table-column>
+    <el-table-column
+      prop="workUnitName"
+      label="工作单元"
+      width="150"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="rounds"
+      label="轮次"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="planTimeStr"
+      label="作业开始时间"
+      width="160"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="operateTime"
+      label="作业时长"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="jobStatus"
+      label="作业状态"
+     >
     </el-table-column>
     <el-table-column
       fixed="right"
@@ -164,35 +182,304 @@ export default {
             copyName: '',
             startDate: '',
             endDate: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            jobPlanList: [{
+		"id": "1017",
+		"jobId": "job00103",
+		"jobStatus": "5",
+		"modelCode": "demo001",
+		"operateTime": "1.00",
+		"orderCodes": "C00103",
+		"planTime": "1495321925000",
+		"planTimeStr": "2017-05-21 07:12:05",
+		"productName": "钢板弹簧后吊耳总成",
+		"reason": "",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "GZSY3001",
+		"workUnitName": "焊接工作单元"
+	}, {
+		"id": "1020",
+		"jobId": "job00113",
+		"jobStatus": "4",
+		"modelCode": "01651377",
+		"operateTime": "2.00",
+		"orderCodes": "C00109",
+		"planTime": "1495766214000",
+		"planTimeStr": "2017-05-26 10:36:54",
+		"productName": "发动机油底壳调节板",
+		"reason": "",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "DYDY007",
+		"workUnitName": "电泳包装入库工作单元"
+	}, {
+		"id": "1022",
+		"jobId": "job00122",
+		"jobStatus": "4",
+		"modelCode": "demo003",
+		"operateTime": "1.00",
+		"orderCodes": "B00059",
+		"planTime": "1495843200000",
+		"planTimeStr": "2017-05-27 08:00:00",
+		"productName": "后吊耳底板",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "GZDY1001",
+		"workUnitName": "一车间落料工作单元"
+	}, {
+		"id": "1023",
+		"jobId": "job00123",
+		"jobStatus": "4",
+		"modelCode": "demo003",
+		"operateTime": "1.00",
+		"orderCodes": "B00059",
+		"planTime": "1495846800000",
+		"planTimeStr": "2017-05-27 09:00:00",
+		"productName": "后吊耳底板",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "GZDY1002",
+		"workUnitName": "一车间冲孔工作单元"
+	}, {
+		"id": "1021",
+		"jobId": "job00115",
+		"jobStatus": "4",
+		"modelCode": "01651377",
+		"operateTime": "2.00",
+		"orderCodes": "C00109",
+		"planTime": "1495854130000",
+		"planTimeStr": "2017-05-27 11:02:10",
+		"productName": "发动机油底壳调节板",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "GZDY1002",
+		"workUnitName": "一车间冲孔工作单元"
+	}, {
+		"id": "1040",
+		"jobId": "job00141",
+		"jobStatus": "4",
+		"modelCode": "demo003",
+		"operateTime": "1.00",
+		"orderCodes": "B00069",
+		"planTime": "1495868658000",
+		"planTimeStr": "2017-05-27 15:04:18",
+		"productName": "后吊耳底板",
+		"reason": "",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "GZDY1001",
+		"workUnitName": "一车间落料工作单元"
+	}, {
+		"id": "1041",
+		"jobId": "job00142",
+		"jobStatus": "4",
+		"modelCode": "demo003",
+		"operateTime": "1.00",
+		"orderCodes": "B00069",
+		"planTime": "1495872307000",
+		"planTimeStr": "2017-05-27 16:05:07",
+		"productName": "后吊耳底板",
+		"reason": "",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "GZDY1002",
+		"workUnitName": "一车间冲孔工作单元"
+	}, {
+		"id": "1042",
+		"jobId": "job00143",
+		"jobStatus": "4",
+		"modelCode": "demo003",
+		"operateTime": "1.00",
+		"orderCodes": "B00070",
+		"planTime": "1495876094000",
+		"planTimeStr": "2017-05-27 17:08:14",
+		"productName": "后吊耳底板",
+		"reason": "",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "GZDY1001",
+		"workUnitName": "一车间落料工作单元"
+	}, {
+		"id": "1043",
+		"jobId": "job00144",
+		"jobStatus": "4",
+		"modelCode": "demo003",
+		"operateTime": "1.00",
+		"orderCodes": "B00070",
+		"planTime": "1495876162000",
+		"planTimeStr": "2017-05-27 17:09:22",
+		"productName": "后吊耳底板",
+		"reason": "",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "GZDY1002",
+		"workUnitName": "一车间冲孔工作单元"
+	}, {
+		"id": "1044",
+		"jobId": "job00145",
+		"jobStatus": "4",
+		"modelCode": "demo003",
+		"operateTime": "1.00",
+		"orderCodes": "B00071",
+		"planTime": "1495879798000",
+		"planTimeStr": "2017-05-27 18:09:58",
+		"productName": "后吊耳底板",
+		"reason": "",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "GZDY1001",
+		"workUnitName": "一车间落料工作单元"
+	}, {
+		"id": "1045",
+		"jobId": "job00146",
+		"jobStatus": "4",
+		"modelCode": "demo003",
+		"operateTime": "1.00",
+		"orderCodes": "B00071",
+		"planTime": "1495879828000",
+		"planTimeStr": "2017-05-27 18:10:28",
+		"productName": "后吊耳底板",
+		"reason": "",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "GZDY1002",
+		"workUnitName": "一车间冲孔工作单元"
+	}, {
+		"id": "1046",
+		"jobId": "job00147",
+		"jobStatus": "4",
+		"modelCode": "demo003",
+		"operateTime": "1.00",
+		"orderCodes": "B00072",
+		"planTime": "1495883467000",
+		"planTimeStr": "2017-05-27 19:11:07",
+		"productName": "后吊耳底板",
+		"reason": "",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "GZDY1001",
+		"workUnitName": "一车间落料工作单元"
+	}, {
+		"id": "1047",
+		"jobId": "job00148",
+		"jobStatus": "4",
+		"modelCode": "demo003",
+		"operateTime": "1.00",
+		"orderCodes": "B00072",
+		"planTime": "1495883505000",
+		"planTimeStr": "2017-05-27 19:11:45",
+		"productName": "后吊耳底板",
+		"reason": "",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "GZDY1002",
+		"workUnitName": "一车间冲孔工作单元"
+	}, {
+		"id": "1024",
+		"jobId": "job00124",
+		"jobStatus": "4",
+		"modelCode": "demo003",
+		"operateTime": "1.00",
+		"orderCodes": "B00060",
+		"planTime": "1495937771000",
+		"planTimeStr": "2017-05-28 10:16:11",
+		"productName": "后吊耳底板",
+		"reason": "",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "GZDY1001",
+		"workUnitName": "一车间落料工作单元"
+	}, {
+		"id": "1025",
+		"jobId": "job00125",
+		"jobStatus": "4",
+		"modelCode": "demo003",
+		"operateTime": "1.00",
+		"orderCodes": "B00060",
+		"planTime": "1495937897000",
+		"planTimeStr": "2017-05-28 10:18:17",
+		"productName": "后吊耳底板",
+		"reason": "",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "GZDY1002",
+		"workUnitName": "一车间冲孔工作单元"
+	}, {
+		"id": "1032",
+		"jobId": "job00133",
+		"jobStatus": "4",
+		"modelCode": "demo003",
+		"operateTime": "1.00",
+		"orderCodes": "B00064",
+		"planTime": "1495946054000",
+		"planTimeStr": "2017-05-28 12:34:14",
+		"productName": "后吊耳底板",
+		"reason": "",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "GZDY1001",
+		"workUnitName": "一车间落料工作单元"
+	}, {
+		"id": "1036",
+		"jobId": "job00137",
+		"jobStatus": "4",
+		"modelCode": "demo003",
+		"operateTime": "1.00",
+		"orderCodes": "B00064",
+		"planTime": "1495946217000",
+		"planTimeStr": "2017-05-28 12:36:57",
+		"productName": "后吊耳底板",
+		"reason": "",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "GZDY1002",
+		"workUnitName": "一车间冲孔工作单元"
+	}, {
+		"id": "1026",
+		"jobId": "job00126",
+		"jobStatus": "4",
+		"modelCode": "demo003",
+		"operateTime": "1.00",
+		"orderCodes": "B00061",
+		"planTime": "1496024898000",
+		"planTimeStr": "2017-05-29 10:28:18",
+		"productName": "后吊耳底板",
+		"reason": "",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "GZDY1001",
+		"workUnitName": "一车间落料工作单元"
+	}, {
+		"id": "1027",
+		"jobId": "job00127",
+		"jobStatus": "4",
+		"modelCode": "demo003",
+		"operateTime": "1.00",
+		"orderCodes": "B00061",
+		"planTime": "1496024955000",
+		"planTimeStr": "2017-05-29 10:29:15",
+		"productName": "后吊耳底板",
+		"reason": "",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "GZDY1002",
+		"workUnitName": "一车间冲孔工作单元"
+	}, {
+		"id": "1033",
+		"jobId": "job00134",
+		"jobStatus": "4",
+		"modelCode": "demo003",
+		"operateTime": "1.00",
+		"orderCodes": "B00065",
+		"planTime": "1496032501000",
+		"planTimeStr": "2017-05-29 12:35:01",
+		"productName": "后吊耳底板",
+		"reason": "",
+		"remark": "",
+		"rounds": "1",
+		"workUnitCode": "GZDY1001",
+		"workUnitName": "一车间落料工作单元"
+	}],
         currentPage: 1
         }
     },

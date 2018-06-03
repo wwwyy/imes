@@ -29,51 +29,83 @@
             </el-select>
         </div>
         <el-table
-    :data="tableData"
+    :data="dataList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
+      >
     </el-table-column>
     <el-table-column
-      fixed
-      prop="date"
-      label="日期"
+      prop="modelCode"
+      label="	型号代码"
+      width="150"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
+      prop="productName"
+      label="产品名称"
+      width="200"
       >
     </el-table-column>
     <el-table-column
-      prop="province"
-      label="省份"
+      prop="bomVersion"
+      label="Bom版本"
       >
     </el-table-column>
     <el-table-column
-      prop="city"
-      label="市区"
-     >
-    </el-table-column>
-    <el-table-column
-      prop="address"
-      label="地址"
+      prop="effectiveDateStr"
+      label="生效日期	"
+      width="150"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="expiryDateStr"
+      label="失效日期"
+      width="150"
       >
+    </el-table-column>
+    <el-table-column
+    prop="markAble"
+    label="可用标识	"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="createUserName"
+    label="创建人	"
+    width="150"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="createDateStr"
+    label="创建时间	"
+    width="160"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="updateUserName"
+    label="最后更新人	"
+    width="150"
+    >
+    </el-table-column>
+    <el-table-column
+    prop="updateDateStr"
+    label="最后更新时间	"
+    width="160"
+    >
     </el-table-column>
     <el-table-column
       fixed="right"
       label="操作"
+      width="260"
       >
       <template slot-scope="scope">
         <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
+        <el-button type="text" size="small" @click="handleClick(scope.row)">删除</el-button>
+        <el-button type="text" size="small" @click="handleClick(scope.row)">查看BOM树</el-button>
+        <el-button type="text" size="small" @click="handleClick(scope.row)">制造BOM确认</el-button>
       </template>
     </el-table-column>
   </el-table>
@@ -89,53 +121,41 @@
       :total="400">
     </el-pagination>
    </div>
-   <el-table
-    :data="tableData"
+      <el-table
+    :data="productStructureDataBomList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
-     <el-table-column
-      type="selection"
-      width="55">
-    </el-table-column>
     <el-table-column
-      fixed
-      prop="date"
-      label="日期"
+      prop="materielCode"
+      label="物料代码"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
+      prop="materielName"
+      label="物料名称"
       >
     </el-table-column>
     <el-table-column
-      prop="province"
-      label="省份"
+      prop="typeName"
+      label="类型"
       >
     </el-table-column>
     <el-table-column
-      prop="city"
-      label="市区"
-     >
-    </el-table-column>
-    <el-table-column
-      prop="address"
-      label="地址"
+      prop="quantity"
+      label="	数量	"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="processName"
+      label="	所属工序"
       >
     </el-table-column>
     <el-table-column
-      fixed="right"
-      label="操作"
-      >
-      <template slot-scope="scope">
-        <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
-      </template>
+    prop="lostConsumption"
+    label="损耗	"
+    >
     </el-table-column>
   </el-table>
     </div>
@@ -185,35 +205,117 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            productStructureDataBomList: [{
+		"id": "33",
+		"lostConsumption": 1.300000,
+		"materielCode": "WL0099",
+		"materielName": "钢材(20号)",
+		"modelCode": "01651377",
+		"processCode": "208",
+		"processName": "落料成型",
+		"quantity": 12.0000,
+		"type": "BOM_MATERIAL_BUY",
+		"typeName": "采购"
+	}, {
+		"id": "34",
+		"lostConsumption": 0.000000,
+		"materielCode": "0060100765",
+		"materielName": "铰链-Q235A",
+		"modelCode": "01651377",
+		"processCode": "195",
+		"processName": "焊接工序",
+		"quantity": 2.0000,
+		"type": "BOM_MATERIAL_BUY",
+		"typeName": "采购"
+	}, {
+		"id": "35",
+		"lostConsumption": 0.000000,
+		"materielCode": "0060110136",
+		"materielName": "弹簧-65Mn-直径1.3-直径1.3",
+		"modelCode": "01651377",
+		"processCode": "195",
+		"processName": "焊接工序",
+		"quantity": 2.0000,
+		"type": "BOM_MATERIAL_BUY",
+		"typeName": "采购"
+	}],
+            dataList: [{
+		"bomStatus": false,
+		"bomVersion": "V001",
+		"createDate": 1495761866000,
+		"createDateStr": "2017-05-26 09:24:26",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"effectiveDateStr": "2017-05-26",
+		"expiryDate": 1514649600000,
+		"expiryDateStr": "2017-12-31",
+		"id": 1004,
+		"markAble": 1,
+		"modelCode": "01651377",
+		"productName": "发动机油底壳调节板",
+		"remark": "",
+		"updateDate": "1505269732000",
+		"updateDateStr": "2017-09-13 10:28:52",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"bomStatus": true,
+		"bomVersion": "V001",
+		"createDate": 1495184357000,
+		"createDateStr": "2017-05-19 16:59:17",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"effectiveDateStr": "2017-05-01",
+		"expiryDate": 1495123200000,
+		"expiryDateStr": "2017-05-19",
+		"id": 1003,
+		"markAble": 1,
+		"modelCode": "demo003",
+		"productName": "后吊耳底板",
+		"remark": "",
+		"updateDate": "1495184357000",
+		"updateDateStr": "2017-05-19 16:59:17",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"bomStatus": true,
+		"bomVersion": "V001",
+		"createDate": 1495184322000,
+		"createDateStr": "2017-05-19 16:58:42",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"effectiveDateStr": "2017-05-01",
+		"expiryDate": 1495123200000,
+		"expiryDateStr": "2017-05-19",
+		"id": 1002,
+		"markAble": 1,
+		"modelCode": "demo002",
+		"productName": "后吊耳销轴",
+		"remark": "",
+		"updateDate": "1495184322000",
+		"updateDateStr": "2017-05-19 16:58:42",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"bomStatus": true,
+		"bomVersion": "V001",
+		"createDate": 1495184231000,
+		"createDateStr": "2017-05-19 16:57:11",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"effectiveDateStr": "2017-05-01",
+		"expiryDate": 1495123200000,
+		"expiryDateStr": "2017-05-19",
+		"id": 1001,
+		"markAble": 1,
+		"modelCode": "demo001",
+		"productName": "钢板弹簧后吊耳总成",
+		"remark": "",
+		"updateDate": "1495184231000",
+		"updateDateStr": "2017-05-19 16:57:11",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}],
         currentPage: 1
         }
     },

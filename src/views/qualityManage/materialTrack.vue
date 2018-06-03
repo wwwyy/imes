@@ -42,54 +42,63 @@
               </el-date-picker>
             </div>
             <el-table
-              :data="tableData"
-              border
-              style="width: 100%"
-              size="mini">
-              <el-table-column
-                type="selection"
-                width="55">
-              </el-table-column>
-              <el-table-column
-                fixed
-                prop="date"
-                label="日期"
-              >
-              </el-table-column>
-              <el-table-column
-                prop="name"
-                label="姓名"
-                >
-              </el-table-column>
-              <el-table-column
-                prop="province"
-                label="省份"
-                >
-              </el-table-column>
-              <el-table-column
-                prop="city"
-                label="市区"
-              >
-              </el-table-column>
-              <el-table-column
-                prop="address"
-                label="地址"
-                >
-              </el-table-column>
-              <el-table-column
-                prop="zip"
-                label="邮编"
-                >
-              </el-table-column>
-              <el-table-column
-                fixed="right"
-                label="操作"
-                >
-                <template slot-scope="scope">
-                  <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
-                </template>
-              </el-table-column>
-            </el-table>
+    :data="equipmentTraceList"
+    border
+    style="width: 100%"
+    align="left"
+    size="mini">
+     <el-table-column
+      type="selection"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="materielCode"
+      label="物料代码"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="materielName"
+      label="物料名称"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="orderCode"
+      label="订单代码"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="materielCode"
+      label="型号代码"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="productName"
+      label="产品名称	"
+      width="180"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="supplyName"
+      label="物料供应商"
+      width="180"
+     >
+    </el-table-column>
+    <el-table-column
+      prop=""
+      label="物料批次	"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="materielNum"
+      label="消耗数量"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="updateDateStr"
+      label="确认日期"
+      >
+    </el-table-column>
+  </el-table>
             <div style="margin:15px 0">
                 <el-pagination
                 background
@@ -138,54 +147,73 @@
               </el-date-picker>
             </div>
             <el-table
-              :data="tableData"
-              border
-              style="width: 100%"
-              size="mini">
-              <el-table-column
-                type="selection"
-                width="55">
-              </el-table-column>
-              <el-table-column
-                fixed
-                prop="date"
-                label="日期"
-              >
-              </el-table-column>
-              <el-table-column
-                prop="name"
-                label="姓名"
-                >
-              </el-table-column>
-              <el-table-column
-                prop="province"
-                label="省份"
-                >
-              </el-table-column>
-              <el-table-column
-                prop="city"
-                label="市区"
-              >
-              </el-table-column>
-              <el-table-column
-                prop="address"
-                label="地址"
-                >
-              </el-table-column>
-              <el-table-column
-                prop="zip"
-                label="邮编"
-                >
-              </el-table-column>
-              <el-table-column
-                fixed="right"
-                label="操作"
-                >
-                <template slot-scope="scope">
-                  <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
-                </template>
-              </el-table-column>
-            </el-table>
+    :data="scrapTrackList"
+    border
+    style="width: 100%"
+    align="left"
+    size="mini">
+     <el-table-column
+      type="selection"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="materielCode"
+      label="物料代码"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="materielName"
+      label="物料名称"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="materielNum"
+      label="报废量"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="orderCode"
+      label="订单代码"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="materielCode"
+      label="型号代码"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="productName"
+      label="产品名称	"
+      width="180"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="supplyName"
+      label="物料供应商"
+      width="180"
+     >
+    </el-table-column>
+    <el-table-column
+      prop=""
+      label="物料批次	"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="scrappedReasonName"
+      label="报废类型"
+     >
+    </el-table-column>
+     <el-table-column
+      prop=""
+      label="原因说明"
+     >
+    </el-table-column>
+    <el-table-column
+      prop=""
+      label="确认日期"
+      >
+    </el-table-column>
+  </el-table>
             <div style="margin:15px 0">
                 <el-pagination
                 background
@@ -250,35 +278,71 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            equipmentTraceList: [{
+		"assemblyStation": "",
+		"id": "1003",
+		"materielBatch": "",
+		"materielCode": "0060145577",
+		"materielName": "ROHS套筒",
+		"materielNum": "200",
+		"orderCode": "B00047",
+		"remark": "",
+		"supplyCode": "sup00036",
+		"supplyName": "云南古创贸易有限公司"
+	}, {
+		"assemblyStation": "",
+		"id": "1004",
+		"materielBatch": "",
+		"materielCode": "WL0099",
+		"materielName": "钢材",
+		"materielNum": "100",
+		"modelCode": "01651377",
+		"orderCode": "C00109",
+		"productName": "发动机油底壳调节板",
+		"remark": "",
+		"supplyCode": "MYCOMPANY",
+		"supplyName": "公司资产"
+	}, {
+		"assemblyStation": "",
+		"id": "1001",
+		"materielBatch": "",
+		"materielCode": "0060145577",
+		"materielName": "ROHS套筒",
+		"materielNum": "20",
+		"orderCode": "B00048",
+		"remark": "",
+		"supplyCode": "sup00036",
+		"supplyName": "云南古创贸易有限公司",
+		"updateDate": "1487827267000",
+		"updateDateStr": "2017-02-23"
+	}, {
+		"assemblyStation": "",
+		"id": "1002",
+		"materielBatch": "",
+		"materielCode": "0060145577",
+		"materielName": "ROHS套筒",
+		"materielNum": "100",
+		"orderCode": "B00048",
+		"remark": "",
+		"supplyCode": "sup00036",
+		"supplyName": "云南古创贸易有限公司",
+		"updateDate": "1487827267000",
+		"updateDateStr": "2017-02-23"
+  }],
+  scrapTrackList: [{
+		"assemblyStation": "BA26015",
+		"id": "1000",
+		"materielBatch": "",
+		"materielCode": "0060145577",
+		"materielName": "ROHS套筒",
+		"materielNum": "20",
+		"orderCode": "C00064",
+		"remark": "",
+		"scrappedReason": "OLD",
+		"scrappedReasonName": "超保修日期",
+		"supplyCode": "sup00036",
+		"supplyName": "云南古创贸易有限公司"
+	}],
         currentPage: 1
         }
     },

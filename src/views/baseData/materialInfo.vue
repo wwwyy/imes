@@ -38,44 +38,119 @@
             </el-select>
         </div>
         <el-table
-    :data="tableData"
+    :data="dataList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
+      >
     </el-table-column>
     <el-table-column
-      fixed
-      prop="date"
-      label="日期"
+      prop="materialCode"
+      label="物料代码"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
+      prop="materialName"
+      label="物料名称"
+      width="240"
       >
     </el-table-column>
     <el-table-column
-      prop="province"
-      label="省份"
+      prop="materialTypeName"
+      label="物料类型"
       >
     </el-table-column>
     <el-table-column
-      prop="city"
-      label="市区"
-     >
-    </el-table-column>
-    <el-table-column
-      prop="address"
-      label="地址"
+      prop="materialPattern"
+      label="物料规格"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="materialTextureName"
+      label="物料材质"
       >
+    </el-table-column>
+    <el-table-column
+      prop="materialPatternName"
+      label="物料型号"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="wLAddress"
+      label="物料重量"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="wLCapacity"
+      label="物料单价"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="wLCapacity"
+      label="采购属性"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="wLCapacity"
+      label="存储属性"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="wLCapacity"
+      label="计划属性"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="wLCapacity"
+      label="质量等级"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="wLCapacity"
+      label="计量单位"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="wLCapacity"
+      label="保质期"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="version"
+      label="版本号"
+      >
+    </el-table-column>
+    <el-table-column
+    prop="markAble"
+    label="可用标识	"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="createUserName"
+    label="创建人	"
+    width="150"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="createDateStr"
+    label="创建时间	"
+    width="160"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="updateUserName"
+    label="最后更新人	"
+    width="150"
+    >
+    </el-table-column>
+    <el-table-column
+    prop="updateDateStr"
+    label="最后更新时间	"
+    width="160"
+    >
     </el-table-column>
     <el-table-column
       fixed="right"
@@ -145,35 +220,372 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            dataList: [{
+		"createDateStr": "2017-05-26 09:23:11",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1025",
+		"markAble": "1",
+		"materialCode": "WL0099",
+		"materialModel": "",
+		"materialName": "钢材(20号)",
+		"materialPattern": "",
+		"materialTexture": "JS",
+		"materialTextureName": "金属",
+		"materialType": "TYPE_YCL",
+		"materialTypeName": "原材料",
+		"measureUnit": "",
+		"planAtt": "",
+		"purchaseAtt": "",
+		"qualityLevel": "",
+		"remark": "",
+		"storageAtt": "",
+		"supplyCode": "MYCOMPANY",
+		"updateDateStr": "2017-09-13 10:28:40",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"version": "V0001"
+	}, {
+		"createDateStr": "2017-05-22 10:27:04",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1024",
+		"markAble": "1",
+		"materialCode": "demo001",
+		"materialModel": "",
+		"materialName": "钢板弹簧后吊耳总成",
+		"materialPattern": "XH",
+		"materialPatternName": "型号1",
+		"materialTexture": "",
+		"materialType": "TYPE_BCP",
+		"materialTypeName": "半成品",
+		"measureUnit": "",
+		"planAtt": "",
+		"purchaseAtt": "",
+		"qualityLevel": "",
+		"remark": "",
+		"storageAtt": "",
+		"supplyCode": "MYCOMPANY",
+		"updateDateStr": "2017-05-22 10:27:04",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"version": "V0001"
+	}, {
+		"createDateStr": "2017-05-19 15:21:02",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1023",
+		"markAble": "1",
+		"materialCode": "demo005",
+		"materialModel": "",
+		"materialName": "30号钢材",
+		"materialPattern": "",
+		"materialTexture": "",
+		"materialType": "TYPE_YCL",
+		"materialTypeName": "原材料",
+		"measureUnit": "",
+		"planAtt": "",
+		"purchaseAtt": "",
+		"qualityLevel": "",
+		"remark": "",
+		"storageAtt": "",
+		"supplyCode": "sup00037",
+		"updateDateStr": "2017-05-19 16:57:56",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"version": "V0001"
+	}, {
+		"createDateStr": "2017-05-19 15:20:39",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1022",
+		"markAble": "1",
+		"materialCode": "demo004",
+		"materialModel": "",
+		"materialName": "20号钢材",
+		"materialPattern": "",
+		"materialTexture": "",
+		"materialType": "TYPE_YCL",
+		"materialTypeName": "原材料",
+		"measureUnit": "",
+		"planAtt": "",
+		"purchaseAtt": "",
+		"qualityLevel": "",
+		"remark": "",
+		"storageAtt": "",
+		"supplyCode": "sup00036",
+		"updateDateStr": "2017-05-19 15:20:39",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"version": "V0001"
+	}, {
+		"createDateStr": "2017-05-19 15:11:55",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1021",
+		"markAble": "1",
+		"materialCode": "demo003",
+		"materialModel": "",
+		"materialName": "后吊耳底板",
+		"materialPattern": "",
+		"materialTexture": "",
+		"materialType": "TYPE_BCP",
+		"materialTypeName": "半成品",
+		"measureUnit": "",
+		"planAtt": "",
+		"purchaseAtt": "",
+		"qualityLevel": "",
+		"remark": "",
+		"storageAtt": "",
+		"supplyCode": "MYCOMPANY",
+		"updateDateStr": "2017-05-19 15:18:37",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"version": ""
+	}, {
+		"createDateStr": "2017-05-19 15:11:25",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1020",
+		"markAble": "1",
+		"materialCode": "demo002",
+		"materialModel": "",
+		"materialName": "后吊耳销轴",
+		"materialPattern": "",
+		"materialTexture": "",
+		"materialType": "TYPE_BCP",
+		"materialTypeName": "半成品",
+		"measureUnit": "",
+		"planAtt": "",
+		"purchaseAtt": "",
+		"qualityLevel": "",
+		"remark": "",
+		"storageAtt": "",
+		"supplyCode": "MYCOMPANY",
+		"updateDateStr": "2017-05-19 15:18:48",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"version": ""
+	}, {
+		"createDateStr": "2017-02-21 10:50:30",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1019",
+		"markAble": "1",
+		"materialCode": "0060161978",
+		"materialModel": "",
+		"materialName": "连接件-无",
+		"materialType": "TYPE_YCL",
+		"materialTypeName": "原材料",
+		"updateDateStr": "2017-02-21 10:50:30",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V0001"
+	}, {
+		"createDateStr": "2017-02-21 10:50:30",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1018",
+		"markAble": "1",
+		"materialCode": "0060161557",
+		"materialModel": "",
+		"materialName": "固定板-无-制冰机进水管弯头固定板",
+		"materialType": "TYPE_YCL",
+		"materialTypeName": "原材料",
+		"updateDateStr": "2017-02-21 10:50:30",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V0001"
+	}, {
+		"createDateStr": "2017-02-21 10:50:30",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1017",
+		"markAble": "1",
+		"materialCode": "0060145577",
+		"materialModel": "",
+		"materialName": "ROHS套筒",
+		"materialPattern": "",
+		"materialTexture": "",
+		"materialType": "TYPE_YCL",
+		"materialTypeName": "原材料",
+		"measureUnit": "",
+		"planAtt": "",
+		"purchaseAtt": "",
+		"qualityLevel": "",
+		"remark": "",
+		"storageAtt": "",
+		"supplyCode": "sup00036",
+		"updateDateStr": "2017-02-21 13:22:40",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V0001"
+	}, {
+		"createDateStr": "2017-02-21 10:50:30",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1016",
+		"markAble": "1",
+		"materialCode": "0060110768",
+		"materialModel": "",
+		"materialName": "脚轮轴-低碳钢丝",
+		"materialType": "TYPE_YCL",
+		"materialTypeName": "原材料",
+		"updateDateStr": "2017-02-21 10:50:30",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V0001"
+	}, {
+		"createDateStr": "2017-02-21 10:50:30",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1015",
+		"markAble": "1",
+		"materialCode": "0060110136",
+		"materialModel": "",
+		"materialName": "弹簧-65Mn-直径1.3-直径1.3",
+		"materialType": "TYPE_YCL",
+		"materialTypeName": "原材料",
+		"updateDateStr": "2017-02-21 10:50:30",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V0001"
+	}, {
+		"createDateStr": "2017-02-21 10:50:30",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1014",
+		"markAble": "1",
+		"materialCode": "0060107784",
+		"materialModel": "",
+		"materialName": "拨动杆-不锈钢",
+		"materialType": "TYPE_YCL",
+		"materialTypeName": "原材料",
+		"updateDateStr": "2017-02-21 10:50:30",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V0001"
+	}, {
+		"createDateStr": "2017-02-21 10:50:30",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1013",
+		"markAble": "1",
+		"materialCode": "0060107737",
+		"materialModel": "",
+		"materialName": "冲切钢板-08冷轧钢板-530*200*0.5 冷轧板-",
+		"materialType": "TYPE_YCL",
+		"materialTypeName": "原材料",
+		"updateDateStr": "2017-02-21 10:50:30",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V0001"
+	}, {
+		"createDateStr": "2017-02-21 10:50:30",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1012",
+		"markAble": "1",
+		"materialCode": "0060106659",
+		"materialModel": "",
+		"materialName": "工艺管-N/A",
+		"materialType": "TYPE_YCL",
+		"materialTypeName": "原材料",
+		"updateDateStr": "2017-02-21 10:50:30",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V0001"
+	}, {
+		"createDateStr": "2017-02-21 10:50:30",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1011",
+		"markAble": "1",
+		"materialCode": "0060106633",
+		"materialModel": "",
+		"materialName": "滑道-08电镀锌钢板",
+		"materialType": "TYPE_YCL",
+		"materialTypeName": "原材料",
+		"updateDateStr": "2017-02-21 10:50:30",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V0001"
+	}, {
+		"createDateStr": "2017-02-21 10:50:30",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1010",
+		"markAble": "1",
+		"materialCode": "0060105867",
+		"materialModel": "",
+		"materialName": "连接件-N/A",
+		"materialType": "TYPE_YCL",
+		"materialTypeName": "原材料",
+		"updateDateStr": "2017-02-21 10:50:30",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V0001"
+	}, {
+		"createDateStr": "2017-02-21 10:50:30",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1009",
+		"markAble": "1",
+		"materialCode": "0060105697",
+		"materialModel": "",
+		"materialName": "滑轨支撑铁-N/A",
+		"materialType": "TYPE_YCL",
+		"materialTypeName": "原材料",
+		"updateDateStr": "2017-02-21 10:50:30",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V0001"
+	}, {
+		"createDateStr": "2017-02-21 10:50:30",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1008",
+		"markAble": "1",
+		"materialCode": "0060105695",
+		"materialModel": "",
+		"materialName": "滑轨支撑铁-N/A",
+		"materialType": "TYPE_YCL",
+		"materialTypeName": "原材料",
+		"updateDateStr": "2017-02-21 10:50:30",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V0001"
+	}, {
+		"createDateStr": "2017-02-21 10:50:30",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1007",
+		"markAble": "1",
+		"materialCode": "0060104614",
+		"materialModel": "",
+		"materialName": "ROHS-垫片 BCD-559WJ",
+		"materialType": "TYPE_YCL",
+		"materialTypeName": "原材料",
+		"updateDateStr": "2017-02-21 10:50:30",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V0001"
+	}, {
+		"createDateStr": "2017-02-21 10:50:30",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1006",
+		"markAble": "1",
+		"materialCode": "0060103771",
+		"materialModel": "",
+		"materialName": "固定件-白色-N/A",
+		"materialType": "TYPE_YCL",
+		"materialTypeName": "原材料",
+		"updateDateStr": "2017-02-21 10:50:30",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"version": "V0001"
+	}],
         currentPage: 1
         }
     },

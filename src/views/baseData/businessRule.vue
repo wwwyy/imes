@@ -27,47 +27,51 @@
             </el-select>
         </div>
         <el-table
-    :data="tableData"
+    :data="businessRuleList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
+      >
     </el-table-column>
     <el-table-column
-      fixed
-      prop="date"
-      label="日期"
+      prop="ruleCode"
+      label="规则代码"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
+      prop="ruleName"
+      label="规则名称"
       >
     </el-table-column>
     <el-table-column
-      prop="province"
-      label="省份"
+      prop="markAble"
+      label="可用标识"
       >
     </el-table-column>
     <el-table-column
-      prop="city"
-      label="市区"
+      prop="createUserName"
+      label="创建人"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="createDateStr"
+      label="创建时间"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="updateUserName"
+      label="最后更新人"
+      >
+    </el-table-column>
+     <el-table-column
+      prop="updateDateStr"
+      label="最后更新时间"
       >
     </el-table-column>
     <el-table-column
-      fixed="right"
       label="操作"
       >
       <template slot-scope="scope">
@@ -134,35 +138,21 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            businessRuleList: [{
+		"createDate": "1499221938000",
+		"createDateStr": "2017-07-05 10:32:18",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1",
+		"markAble": "1",
+		"remark": "123324",
+		"ruleCode": "00005",
+		"ruleName": "321",
+		"updateDate": "1499221938000",
+		"updateDateStr": "2017-07-05 10:32:18",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}],
         currentPage: 1
         }
     },

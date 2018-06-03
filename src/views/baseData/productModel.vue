@@ -58,54 +58,112 @@
                     </el-select>
                 </div>
                 <el-table
-            :data="tableData"
-            border
-            style="width: 100%"
-            size="mini">
-            <el-table-column
-            type="selection"
-            width="55">
-            </el-table-column>
-            <el-table-column
-            fixed
-            prop="date"
-            label="日期"
-            >
-            </el-table-column>
-            <el-table-column
-            prop="name"
-            label="姓名"
-            >
-            </el-table-column>
-            <el-table-column
-            prop="province"
-            label="省份"
-            >
-            </el-table-column>
-            <el-table-column
-            prop="city"
-            label="市区"
-            >
-            </el-table-column>
-            <el-table-column
-            prop="address"
-            label="地址"
-            >
-            </el-table-column>
-            <el-table-column
-            prop="zip"
-            label="邮编"
-            >
-            </el-table-column>
-            <el-table-column
-            fixed="right"
-            label="操作"
-            >
-            <template slot-scope="scope">
-                <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
-            </template>
-            </el-table-column>
-        </el-table>
+    :data="productModelList"
+    border
+    style="width: 100%"
+    align="left"
+    size="mini">
+     <el-table-column
+      type="selection"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="modelCode"
+      label="	型号代码"
+      width="150"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="productName"
+      label="产品名称"
+      width="200"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="typeName"
+      label="型号类型"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="modelPropertyName"
+      label="型号性质"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="modelSeriesName"
+      label="型号系列"
+      width="150"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="modelUnitName"
+      label="型号单位"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="saleCategory"
+      label="销售类别"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="collectTypeName"
+      label="采集码类别"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="price"
+      label="标准价"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="manHour"
+      label="标准工时"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="validityDate"
+      label="有效期"
+      width="150"
+      >
+    </el-table-column>
+    <el-table-column
+    prop="markAble"
+    label="可用标识	"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="createUserName"
+    label="创建人	"
+    width="150"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="createDateStr"
+    label="创建时间	"
+    width="160"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="updateUserName"
+    label="最后更新人	"
+    width="150"
+    >
+    </el-table-column>
+    <el-table-column
+    prop="updateDateStr"
+    label="最后更新时间	"
+    width="160"
+    >
+    </el-table-column>
+    <el-table-column
+      fixed="right"
+      label="操作"
+      >
+      <template slot-scope="scope">
+        <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
+      </template>
+    </el-table-column>
+  </el-table>
         <div style="margin:15px 0">
             <el-pagination
             background
@@ -204,35 +262,389 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            productModelList: [{
+		"collectType": "",
+		"createDateStr": "2017-05-26 09:21:36",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1023",
+		"isDel": "false",
+		"markAble": "1",
+		"modelCode": "01651377",
+		"modelProperty": "PT",
+		"modelPropertyName": "普通",
+		"modelSeries": "SINGLETON",
+		"modelSeriesName": "单件类",
+		"modelUnit": "Ge",
+		"modelUnitName": "个",
+		"productName": "发动机油底壳调节板",
+		"remark": "",
+		"saleCategory": "",
+		"type": "JC_TYPE_PRODUCT",
+		"typeName": "成品",
+		"updateDateStr": "2017-05-26 09:21:36",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"validityDate": "2017-12-31"
+	}, {
+		"collectType": "",
+		"createDateStr": "2017-05-19 15:11:55",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1022",
+		"isDel": "false",
+		"markAble": "1",
+		"modelCode": "demo003",
+		"modelProperty": "AXDZ",
+		"modelPropertyName": "按需定制",
+		"modelSeries": "",
+		"modelUnit": "",
+		"productName": "后吊耳底板",
+		"remark": "",
+		"saleCategory": "",
+		"type": "BOM_MATERIAL_MADE",
+		"typeName": "自制半成品",
+		"updateDateStr": "2017-05-19 15:11:55",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"validityDate": "2020-05-01"
+	}, {
+		"collectType": "EWM",
+		"collectTypeName": "二维码",
+		"createDateStr": "2017-05-19 15:11:25",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1021",
+		"isDel": "false",
+		"markAble": "1",
+		"modelCode": "demo002",
+		"modelProperty": "AXDZ",
+		"modelPropertyName": "按需定制",
+		"modelSeries": "",
+		"modelUnit": "Ge",
+		"modelUnitName": "个",
+		"productName": "后吊耳销轴",
+		"remark": "",
+		"saleCategory": "",
+		"type": "BOM_MATERIAL_MADE",
+		"typeName": "自制半成品",
+		"updateDateStr": "2017-05-19 15:11:25",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"validityDate": "2020-05-01"
+	}, {
+		"collectType": "EWM",
+		"collectTypeName": "二维码",
+		"createDateStr": "2017-05-19 15:01:58",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1020",
+		"isDel": "false",
+		"markAble": "1",
+		"modelCode": "demo001",
+		"modelProperty": "AXDZ",
+		"modelPropertyName": "按需定制",
+		"modelSeries": "",
+		"modelUnit": "Ge",
+		"modelUnitName": "个",
+		"productName": "钢板弹簧后吊耳总成",
+		"remark": "",
+		"saleCategory": "",
+		"type": "JC_TYPE_PRODUCT",
+		"typeName": "成品",
+		"updateDateStr": "2017-05-19 15:01:58",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"validityDate": "2020-05-01"
+	}, {
+		"collectType": "EWM",
+		"collectTypeName": "二维码",
+		"createDateStr": "2017-02-21 10:47:59",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1019",
+		"isDel": "false",
+		"manHour": "24",
+		"markAble": "0",
+		"modelCode": "B00060EA000",
+		"modelProperty": "AXDZ",
+		"modelPropertyName": "按需定制",
+		"modelSeries": "QZDXYJ",
+		"modelSeriesName": "全自动洗衣机",
+		"modelUnit": "Tai",
+		"modelUnitName": "台",
+		"price": "2200.00",
+		"productName": "HB22TSAA",
+		"remark": "备注",
+		"saleCategory": "WaiXiao",
+		"saleCategoryName": "外销",
+		"type": "JC_TYPE_PRODUCT",
+		"typeName": "成品",
+		"updateDateStr": "2017-02-23 13:17:23",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"validityDate": "2017-12-30"
+	}, {
+		"createDateStr": "2017-02-21 10:47:59",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1018",
+		"isDel": "false",
+		"markAble": "0",
+		"modelCode": "B00030E0100",
+		"modelProperty": "AXDZ",
+		"modelPropertyName": "按需定制",
+		"productName": "HB21FWNN(伊朗)",
+		"type": "JC_TYPE_PRODUCT",
+		"typeName": "成品",
+		"updateDateStr": "2017-02-21 10:47:59",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"validityDate": "2017-12-30"
+	}, {
+		"collectType": "",
+		"createDateStr": "2017-02-21 10:47:59",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1017",
+		"isDel": "false",
+		"markAble": "1",
+		"modelCode": "B0001ME8N00",
+		"modelProperty": "AXDZ",
+		"modelPropertyName": "按需定制",
+		"modelSeries": "",
+		"modelUnit": "",
+		"productName": "HB21FWRSSAA(伊朗)",
+		"remark": "",
+		"saleCategory": "",
+		"type": "JC_TYPE_PRODUCT",
+		"typeName": "成品",
+		"updateDateStr": "2017-05-24 07:35:04",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"validityDate": "2017-12-30"
+	}, {
+		"createDateStr": "2017-02-21 10:47:59",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1016",
+		"isDel": "false",
+		"markAble": "0",
+		"modelCode": "B0001LE8N00",
+		"modelProperty": "AXDZ",
+		"modelPropertyName": "按需定制",
+		"productName": "HB21FWRSSAA(南非)",
+		"type": "JC_TYPE_PRODUCT",
+		"typeName": "成品",
+		"updateDateStr": "2017-02-21 10:47:59",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"validityDate": "2017-12-30"
+	}, {
+		"createDateStr": "2017-02-21 10:47:59",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1015",
+		"isDel": "false",
+		"markAble": "0",
+		"modelCode": "B0001KE8N00",
+		"modelProperty": "AXDZ",
+		"modelPropertyName": "按需定制",
+		"productName": "HB21FWRSSAA(沙特)",
+		"type": "JC_TYPE_PRODUCT",
+		"typeName": "成品",
+		"updateDateStr": "2017-02-21 10:47:59",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"validityDate": "2017-12-30"
+	}, {
+		"createDateStr": "2017-02-21 10:47:59",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1014",
+		"isDel": "false",
+		"markAble": "0",
+		"modelCode": "B0001JB8N00",
+		"modelProperty": "AXDZ",
+		"modelPropertyName": "按需定制",
+		"productName": "TITAN5.5(英国)",
+		"type": "JC_TYPE_PRODUCT",
+		"typeName": "成品",
+		"updateDateStr": "2017-02-21 10:47:59",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"validityDate": "2017-12-30"
+	}, {
+		"createDateStr": "2017-02-21 10:47:59",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1013",
+		"isDel": "false",
+		"markAble": "0",
+		"modelCode": "B0001HE8N00",
+		"modelProperty": "AXDZ",
+		"modelPropertyName": "按需定制",
+		"productName": "HB21FWRSSAA(欧洲)",
+		"type": "JC_TYPE_PRODUCT",
+		"typeName": "成品",
+		"updateDateStr": "2017-02-21 10:47:59",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"validityDate": "2017-12-30"
+	}, {
+		"createDateStr": "2017-02-21 10:47:59",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1012",
+		"isDel": "false",
+		"markAble": "0",
+		"modelCode": "B0001GE8N00",
+		"modelProperty": "AXDZ",
+		"modelPropertyName": "按需定制",
+		"productName": "RDXD910CR/C",
+		"type": "JC_TYPE_PRODUCT",
+		"typeName": "成品",
+		"updateDateStr": "2017-02-21 10:47:59",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"validityDate": "2017-12-30"
+	}, {
+		"createDateStr": "2017-02-21 10:47:59",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1011",
+		"isDel": "false",
+		"markAble": "0",
+		"modelCode": "B0001BB1G00",
+		"modelProperty": "AXDZ",
+		"modelPropertyName": "按需定制",
+		"productName": "PC86SC(英国)",
+		"type": "JC_TYPE_PRODUCT",
+		"typeName": "成品",
+		"updateDateStr": "2017-02-21 10:47:59",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"validityDate": "2017-12-30"
+	}, {
+		"createDateStr": "2017-02-21 10:47:59",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1010",
+		"isDel": "false",
+		"markAble": "0",
+		"modelCode": "B00018E8N00",
+		"modelProperty": "AXDZ",
+		"modelPropertyName": "按需定制",
+		"productName": "HB21FSSAA",
+		"type": "JC_TYPE_PRODUCT",
+		"typeName": "成品",
+		"updateDateStr": "2017-02-21 10:47:59",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"validityDate": "2017-12-30"
+	}, {
+		"createDateStr": "2017-02-21 10:47:59",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1009",
+		"isDel": "false",
+		"markAble": "0",
+		"modelCode": "B00013B8200",
+		"modelProperty": "AXDZ",
+		"modelPropertyName": "按需定制",
+		"productName": "HB21FWBAA",
+		"type": "JC_TYPE_PRODUCT",
+		"typeName": "成品",
+		"updateDateStr": "2017-02-21 10:47:59",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"validityDate": "2017-12-30"
+	}, {
+		"createDateStr": "2017-02-21 10:47:59",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1008",
+		"isDel": "false",
+		"markAble": "0",
+		"modelCode": "B00012E8200",
+		"modelProperty": "AXDZ",
+		"modelPropertyName": "按需定制",
+		"productName": "RDXD910SS/C",
+		"type": "JC_TYPE_PRODUCT",
+		"typeName": "成品",
+		"updateDateStr": "2017-02-21 10:47:59",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"validityDate": "2017-12-30"
+	}, {
+		"createDateStr": "2017-02-21 10:47:59",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1007",
+		"isDel": "false",
+		"markAble": "0",
+		"modelCode": "B00011E9F00",
+		"modelProperty": "AXDZ",
+		"modelPropertyName": "按需定制",
+		"productName": "HB21FGWAA",
+		"type": "JC_TYPE_PRODUCT",
+		"typeName": "成品",
+		"updateDateStr": "2017-02-21 10:47:59",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"validityDate": "2017-12-30"
+	}, {
+		"createDateStr": "2017-02-21 10:47:59",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1006",
+		"isDel": "false",
+		"markAble": "0",
+		"modelCode": "B00011E8200",
+		"modelProperty": "AXDZ",
+		"modelPropertyName": "按需定制",
+		"productName": "RDXD910GB/C",
+		"type": "JC_TYPE_PRODUCT",
+		"typeName": "成品",
+		"updateDateStr": "2017-02-21 10:47:59",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"validityDate": "2017-12-30"
+	}, {
+		"createDateStr": "2017-02-21 10:47:59",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1005",
+		"isDel": "false",
+		"markAble": "0",
+		"modelCode": "B00011B8V00",
+		"modelProperty": "AXDZ",
+		"modelPropertyName": "按需定制",
+		"productName": "HB21FWNNB以色列",
+		"type": "JC_TYPE_PRODUCT",
+		"typeName": "成品",
+		"updateDateStr": "2017-02-21 10:47:59",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"validityDate": "2017-12-30"
+	}, {
+		"createDateStr": "2017-02-21 10:47:59",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1004",
+		"isDel": "false",
+		"markAble": "0",
+		"modelCode": "B00010E9P00",
+		"modelProperty": "AXDZ",
+		"modelPropertyName": "按需定制",
+		"productName": "HB21FWNNAA(欧洲)",
+		"type": "JC_TYPE_PRODUCT",
+		"typeName": "成品",
+		"updateDateStr": "2017-02-21 10:47:59",
+		"updateUser": "admin",
+		"updateUserName": "administrator",
+		"validityDate": "2017-12-30"
+	}],
         currentPage: 1
         }
     },

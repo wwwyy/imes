@@ -55,43 +55,76 @@
             </el-select>
         </div>
         <el-table
-    :data="tableData"
+    :data="productCheckProjectList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
-    </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="testItemCode"
+      label="检验项目代码"
+      width="120"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="testItemName"
+      label="检验项目名称"
+      width="160"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="modelCode"
+      label="型号代码"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="productName"
+      label="产品名称"
+      width="160"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="inspectLevelName"
+      label="检验等级"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="inspectTypeName"
+      label="检验类型"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="markAble"
+      label="可用标识"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createUserName"
+      label="创建人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createDateStr"
+      label="创建时间"
+      width="160"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateUserName"
+      label="最后更新人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateDateStr"
+      label="最后更新时间"
+      width="160"
       >
     </el-table-column>
     <el-table-column
@@ -164,35 +197,100 @@ export default {
             copyName: '',
             startDate: '',
             endDate: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            productCheckProjectList: [{
+		"createDateStr": "2017-05-26 10:49:19",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1004",
+		"inspectLevel": "JYDJ_BJ",
+		"inspectLevelName": "必检",
+		"inspectType": "JYLX_ZX",
+		"inspectTypeName": "在线",
+		"isDel": "false",
+		"markAble": "1",
+		"modelCode": "01651377",
+		"productName": "发动机油底壳调节板",
+		"remark": "",
+		"testItemCode": "CP0041",
+		"testItemName": "油底壳调节板检验",
+		"updateDateStr": "2017-05-26 10:52:31",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDateStr": "2017-05-22 10:05:05",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1003",
+		"inspectLevel": "",
+		"inspectType": "",
+		"isDel": "false",
+		"markAble": "1",
+		"modelCode": "demo001",
+		"productName": "钢板弹簧后吊耳总成",
+		"remark": "",
+		"testItemCode": "CP0038",
+		"testItemName": "钢板弹簧后吊耳总成",
+		"updateDateStr": "2017-05-22 13:40:04",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDateStr": "2017-02-21 13:47:50",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1000",
+		"inspectLevel": "JYDJ_BJ",
+		"inspectLevelName": "必检",
+		"inspectType": "JYLX_ZX",
+		"inspectTypeName": "在线",
+		"isDel": "false",
+		"markAble": "1",
+		"modelCode": "B00010B8V00",
+		"productName": "产品1",
+		"remark": "",
+		"testItemCode": "CP0031",
+		"testItemName": "以色列外观检验",
+		"updateDateStr": "2017-02-24 12:32:41",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDateStr": "2017-02-21 13:49:29",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1002",
+		"inspectLevel": "JYDJ_KJ",
+		"inspectLevelName": "可检",
+		"inspectType": "JYLX_ZX",
+		"inspectTypeName": "在线",
+		"isDel": "false",
+		"markAble": "1",
+		"modelCode": "B00010E9P00",
+		"productName": "HB21FWNNAA(欧洲)",
+		"remark": "",
+		"testItemCode": "CP0033",
+		"testItemName": "外观检验",
+		"updateDateStr": "2017-02-21 13:49:29",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"createDateStr": "2017-02-21 13:48:58",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1001",
+		"inspectLevel": "JYDJ_BJ",
+		"inspectLevelName": "必检",
+		"inspectType": "JYLX_LX",
+		"inspectTypeName": "离线",
+		"isDel": "false",
+		"markAble": "1",
+		"modelCode": "B00010B8V00",
+		"productName": "HB21FNNB(以色列)",
+		"remark": "",
+		"testItemCode": "CP0032",
+		"testItemName": "质量检验",
+		"updateDateStr": "2017-02-21 13:48:58",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}],
         currentPage: 1
         }
     },

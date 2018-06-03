@@ -51,43 +51,70 @@
           
         </div>
         <el-table
-    :data="tableData"
+    :data="pgList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
-    </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="maintenanceCode"
+      label="单号ID"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="equipCode"
+      label="设备代码"
+      width="150"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="equipName"
+      label="设备名称"
+      width="150"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="maintenanceTypeName"
+      label="类型"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="actDateStr"
+      label="实际执行日期"
+      width="150"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="executeUserName"
+      label="执行人"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="createUserName"
+      label="创建人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createDateStr"
+      label="创建时间"
+      width="160"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateUserName"
+      label="最后更新人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateDateStr"
+      label="最后更新时间"
+      width="160"
       >
     </el-table-column>
     <el-table-column
@@ -160,35 +187,214 @@ export default {
             copyName: '',
             startDate: '',
             endDate: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            pgList: [{
+		"actDateStr": "2017-02-24",
+		"createDate": "1487897512000",
+		"createDateStr": "2017-02-24 08:51:52",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"equipCode": "9050MAMTFP0012",
+		"equipName": "新线门体发泡夹具12",
+		"equipType": "name2",
+		"executeUser": "PENG035",
+		"executeUserName": "高丽娟",
+		"id": "1005",
+		"instruction": "正常",
+		"maintenanceCode": "plan0210",
+		"maintenanceType": "MP_5",
+		"maintenanceTypeName": "保养",
+		"markAble": "1",
+		"nextActDateStr": "2017-03-24",
+		"planDate": "1487865600000",
+		"planDateStr": "2017-02-24",
+		"planStatus": "0",
+		"remark": "新线门体发泡夹具12",
+		"responsibleUser": "PENG017",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487905767000",
+		"updateDateStr": "2017-02-24 11:09:27",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": "1487900750000",
+		"createDateStr": "2017-02-24 09:45:50",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"equipCode": "9050MAMTFP0012",
+		"equipName": "新线门体发泡夹具12",
+		"equipType": "name2",
+		"executeUser": "PENG035",
+		"id": "1007",
+		"instruction": "正常",
+		"maintenanceCode": "plan0213",
+		"maintenanceType": "MP_5",
+		"maintenanceTypeName": "保养",
+		"markAble": "1",
+		"planDate": "1490284800000",
+		"planDateStr": "2017-03-24",
+		"planStatus": "0",
+		"remark": "新线门体发泡夹具12",
+		"responsibleUser": "PENG017",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487900750000",
+		"updateDateStr": "2017-02-24 09:45:50",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": "1487898743000",
+		"createDateStr": "2017-02-24 09:12:23",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"equipCode": "9050MAMTFP0012",
+		"equipName": "新线门体发泡夹具12",
+		"equipType": "name2",
+		"id": "1006",
+		"maintenanceCode": "plan0212",
+		"maintenanceType": "MP_5",
+		"maintenanceTypeName": "保养",
+		"markAble": "1",
+		"planDate": "1487865600000",
+		"planDateStr": "2017-02-24",
+		"planStatus": "0",
+		"remark": "",
+		"responsibleUser": "PENG035",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487898743000",
+		"updateDateStr": "2017-02-24 09:12:23",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": "1487844916000",
+		"createDateStr": "2017-02-23 18:15:16",
+		"createUser": "PENG035",
+		"createUserName": "高丽娟",
+		"equipCode": "9050MAMTFP0015",
+		"equipName": "新线门体发泡夹具15",
+		"equipType": "name2",
+		"id": "1004",
+		"maintenanceCode": "plan0209",
+		"maintenanceType": "MP_5",
+		"maintenanceTypeName": "保养",
+		"markAble": "1",
+		"planDate": "1487865600000",
+		"planDateStr": "2017-02-24",
+		"planStatus": "0",
+		"remark": "",
+		"responsibleUser": "PENG035",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487844916000",
+		"updateDateStr": "2017-02-23 18:15:16",
+		"updateUser": "PENG035",
+		"updateUserName": "高丽娟"
+	}, {
+		"createDate": "1487844731000",
+		"createDateStr": "2017-02-23 18:12:11",
+		"createUser": "PENG035",
+		"createUserName": "高丽娟",
+		"equipCode": "9050MAMTFP0012",
+		"equipName": "新线门体发泡夹具12",
+		"equipType": "name2",
+		"id": "1003",
+		"maintenanceCode": "plan0208",
+		"maintenanceType": "MP_5",
+		"maintenanceTypeName": "保养",
+		"markAble": "1",
+		"planDate": "1487865600000",
+		"planDateStr": "2017-02-24",
+		"planStatus": "0",
+		"remark": "",
+		"responsibleUser": "PENG035",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487844731000",
+		"updateDateStr": "2017-02-23 18:12:11",
+		"updateUser": "PENG035",
+		"updateUserName": "高丽娟"
+	}, {
+		"createDate": "1487655185000",
+		"createDateStr": "2017-02-21 13:33:05",
+		"createUser": "PENG028",
+		"createUserName": "测试01",
+		"equipCode": "9050MAMTFP0028",
+		"equipName": "新线门体发泡夹具28",
+		"equipType": "name2",
+		"id": "1002",
+		"maintenanceCode": "plan0205",
+		"maintenanceType": "MP_4",
+		"maintenanceTypeName": "维修",
+		"markAble": "1",
+		"planDate": "1487260800000",
+		"planDateStr": "2017-02-17",
+		"planStatus": "0",
+		"remark": "",
+		"responsibleUser": "PENG027",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487655185000",
+		"updateDateStr": "2017-02-21 13:33:05",
+		"updateUser": "PENG028",
+		"updateUserName": "测试01"
+	}, {
+		"createDate": "1487655133000",
+		"createDateStr": "2017-02-21 13:32:13",
+		"createUser": "PENG028",
+		"createUserName": "测试01",
+		"equipCode": "9050MAMTFP0012",
+		"equipName": "新线门体发泡夹具12",
+		"equipType": "name2",
+		"id": "1001",
+		"maintenanceCode": "plan0204",
+		"maintenanceType": "MP_1",
+		"maintenanceTypeName": "维保类型1",
+		"markAble": "1",
+		"planDate": "1487865600000",
+		"planDateStr": "2017-02-24",
+		"planStatus": "0",
+		"remark": "",
+		"responsibleUser": "PENG028",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487655133000",
+		"updateDateStr": "2017-02-21 13:32:13",
+		"updateUser": "PENG028",
+		"updateUserName": "测试01"
+	}, {
+		"createDate": "1487655091000",
+		"createDateStr": "2017-02-21 13:31:31",
+		"createUser": "PENG028",
+		"createUserName": "测试01",
+		"equipCode": "9050BADTZD0034",
+		"equipName": "A线动态作电检验34",
+		"equipType": "name2",
+		"id": "1000",
+		"maintenanceCode": "plan0203",
+		"maintenanceType": "MP_2",
+		"maintenanceTypeName": "维保类型2",
+		"markAble": "1",
+		"planDate": "1487088000000",
+		"planDateStr": "2017-02-15",
+		"planStatus": "0",
+		"remark": "",
+		"responsibleUser": "PENG027",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487655091000",
+		"updateDateStr": "2017-02-21 13:31:31",
+		"updateUser": "PENG028",
+		"updateUserName": "测试01"
+	}],
         currentPage: 1
         }
     },

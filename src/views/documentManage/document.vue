@@ -1,8 +1,8 @@
 <template>
     <div id="document">
         <el-breadcrumb separator-class="el-icon-arrow-right">
-            <el-breadcrumb-item>人员管理</el-breadcrumb-item>
-            <el-breadcrumb-item>考勤信息维护</el-breadcrumb-item>
+            <el-breadcrumb-item>文档管理 </el-breadcrumb-item>
+            <el-breadcrumb-item>文档维护</el-breadcrumb-item>
         </el-breadcrumb>
         <hr>
         <div style="text-align:left">
@@ -75,49 +75,71 @@
     :data="tableData"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
-    </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="personCode"
+      label="文档代码"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="personName"
+      label="文档名称"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="attendanceDateStr"
+      label="文档分类"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="onDutyTimeStr"
+      label="文件格式"
       >
     </el-table-column>
     <el-table-column
-      fixed="right"
-      label="操作"
+      prop="offDutyTimeStr"
+      label="产品名称"
       >
-      <template slot-scope="scope">
-        <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
-      </template>
+    </el-table-column>
+    <el-table-column
+      prop="personCode"
+      label="关联订单"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="personName"
+      label="文件名称"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="attendanceDateStr"
+      label="可用标识"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="onDutyTimeStr"
+      label="创建人"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="offDutyTimeStr"
+      label="创建时间"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="offDutyTimeStr"
+      label="最后更新人"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="offDutyTimeStr"
+      label="最后更新时间"
+      >
     </el-table-column>
   </el-table>
    <div style="margin:15px 0">
@@ -181,35 +203,7 @@ export default {
             copyName: '',
             startDate: '',
             endDate: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            tableData: [],
         currentPage: 1
         }
     },

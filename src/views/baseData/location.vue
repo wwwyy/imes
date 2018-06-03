@@ -28,44 +28,84 @@
             </el-select>
         </div>
         <el-table
-    :data="tableData"
+    :data="locationList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
+      >
     </el-table-column>
     <el-table-column
-      fixed
-      prop="date"
-      label="日期"
+      prop="WLCode"
+      label="库位代码"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
+      prop="WLName"
+      label="库位名称"
       >
     </el-table-column>
     <el-table-column
-      prop="province"
-      label="省份"
+      prop="wareHouseName"
+      label="所属仓库"
+      width="150"
       >
     </el-table-column>
     <el-table-column
-      prop="city"
-      label="市区"
-     >
-    </el-table-column>
-    <el-table-column
-      prop="address"
-      label="地址"
+      prop="wareHouseAreaName"
+      label="库区"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="rowNumber"
+      label="行号"
       >
+    </el-table-column>
+    <el-table-column
+      prop="colNumber"
+      label="列号"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="wLAddress"
+      label="库位地址"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="wLCapacity"
+      label="库容量"
+      >
+    </el-table-column>
+    <el-table-column
+    prop="markAbleName"
+    label="可用标识	"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="createUserName"
+    label="创建人	"
+    width="150"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="createDateStr"
+    label="创建时间	"
+    width="160"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="updateUserName"
+    label="最后更新人	"
+    width="150"
+    >
+    </el-table-column>
+    <el-table-column
+    prop="updateDateStr"
+    label="最后更新时间	"
+    width="160"
+    >
     </el-table-column>
     <el-table-column
       fixed="right"
@@ -135,35 +175,47 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            locationList: [{
+		"WLCode": "loca0004",
+		"WLName": "库位B001",
+		"colNumber": "",
+		"createDateStr": "2017-05-20 10:10:11",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "59",
+		"markAble": "1",
+		"remark": "",
+		"rowNumber": "",
+		"updateDateStr": "2017-06-13 10:58:25",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"wLAddress": "",
+		"wLCapacity": "",
+		"wareHouseArea": "WH_AREA_B",
+		"wareHouseAreaName": "B区",
+		"wareHouseCode": "WHC042",
+		"wareHouseName": "焊接半成品库"
+	}, {
+		"WLCode": "loca0002",
+		"WLName": "库位A001",
+		"colNumber": "1",
+		"createDateStr": "2017-05-20 10:09:44",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "58",
+		"markAble": "1",
+		"remark": "",
+		"rowNumber": "1",
+		"updateDateStr": "2017-05-20 10:09:44",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"wLAddress": "",
+		"wLCapacity": "100",
+		"wareHouseArea": "WH_AREA_A",
+		"wareHouseAreaName": "A区",
+		"wareHouseCode": "WHC042",
+		"wareHouseName": "焊接半成品库"
+	}],
         currentPage: 1
         }
     },

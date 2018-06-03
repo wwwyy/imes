@@ -219,7 +219,7 @@
             this.navData = [{title:'基础数据管理',index:'1',children:[{index:'selfCheckTemplate',name:'开工自检模板设定'},{index:'takeSample',name:'取样方案维护'},{index:'productCheckProject',name:'产品检验项目维护'},{index:'bugCode',name:'缺陷代码维护'},{index:'failureRepository',name:'故障知识库维护'}]},{title:'质检管理',index:'2',children:[{index:'qualityInspectionPlan',name:'（离线）质检计划维护'},{index:'qualityInspectionGrade',name:'（离线）质检实绩维护'}]},{title:'质量判定与处置',index:'3',children:[{index:'productQualityEvaluationAndDisposal',name:'质量判定与处置'}]},{title:'数据管理',index:'4',children:[{index:'materialAssemblySheet',name:'物料装配单'},{index:'materialScrapSheet',name:'物料报废单'},{index:'materialTrack',name:'物料追溯与跟踪'},{index:'selfCheckQuery',name:'自检查询'}]}]
             break;
           case 5:
-            this.navData = [{title:'维修保养管理',index:'1',children:[{index:'maintenanceProject',name:'维保项目维护'},{index:'maintenancePlan',name:'维保计划维护'},{index:'planGrade',name:'计划实绩维护'}]},{title:'备件仓库管理',index:'2',children:[{index:'replacepartRecord',name:'备件档案'},{index:'replacePartOutInWare',name:'备件出入库管理'},{index:'replacePartRepertory',name:'备件库存管理'},{index:'replacePartCount',name:'备件盘点'}]},{title:'设备监控',index:'3',children:[{index:'deviceRunRecord',name:'设备运行记录'},{index:'faultCode',name:'故障代码维护'},{index:'faultRepository',name:'设备故障知识库维护'},{index:'deviceFaultRepair',name:'设备故障维修'}]}]
+            this.navData = [{title:'维修保养管理',index:'1',children:[{index:'maintenanceProject',name:'维保项目维护'},{index:'maintenancePlan',name:'维保计划维护'},{index:'planGrade',name:'计划实绩维护'}]},{title:'备件仓库管理',index:'2',children:[{index:'replacepartRecord',name:'备件档案'},{index:'replacePartOutInWare',name:'备件出入库管理'},{index:'replacePartRepertory',name:'备件库存管理'},{index:'replacePartCount',name:'备件盘点'}]}]
             break;
           case 6:
             this.navData = [{title:'人员管理',index:'1',children:[{index:'personalTechnical',name:'人员技能/资质维护'},{index:'attendanceManage',name:'考勤信息维护'},{index:'attendanceInformation',name:'考勤信息查询'}]}]
@@ -300,12 +300,14 @@
       },
       
     },
+    beforeUpdate () {
+      this.navMinHeight= document.body.offsetHeight-60;
+    },
     beforeMount () {
-      this.navMinHeight= document.documentElement.clientHeight-60;
+      this.navMinHeight= document.body.offsetHeight-60;
     },
     mounted () {
       const that = this;
-     
       window.onresize = function windowResize () {
         that.navHeight= document.documentElement.offsetHeight-60
       }

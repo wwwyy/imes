@@ -38,43 +38,63 @@
             </el-select>
         </div>
         <el-table
-    :data="tableData"
+    :data="failureCodeList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
-    </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="defectCode"
+      label="缺陷代码"
+      width="120"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="defectName"
+      label="缺陷名称"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="categoryName"
+      label="分类"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="manifestation"
+      label="表现形式"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="markAble"
+      label="可用标识"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createUserName"
+      label="创建人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createDateStr"
+      label="创建时间"
+      width="160"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateUserName"
+      label="最后更新人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateDateStr"
+      label="最后更新时间"
+      width="160"
       >
     </el-table-column>
     <el-table-column
@@ -145,35 +165,58 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            failureCodeList: [{
+		"category": "DEF_CDOE2",
+		"categoryName": "缺陷类别测试2",
+		"createDate": 1487656254000,
+		"createDateStr": "2017-02-21 13:50:54",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"defectCode": "0000000035",
+		"defectName": "实用性缺陷",
+		"id": 1002,
+		"manifestation": "操作太繁琐",
+		"markAble": "1",
+		"remark": "",
+		"updateDate": "1487656254000",
+		"updateDateStr": "2017-02-21 13:50:54",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"category": "DEF_CDOE1",
+		"categoryName": "缺陷类别测试1",
+		"createDate": 1487656226000,
+		"createDateStr": "2017-02-21 13:50:26",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"defectCode": "0000000034",
+		"defectName": "质量缺陷",
+		"id": 1001,
+		"manifestation": "使用寿命不长",
+		"markAble": "1",
+		"remark": "",
+		"updateDate": "1487656226000",
+		"updateDateStr": "2017-02-21 13:50:26",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"category": "DEF_CDOE1",
+		"categoryName": "缺陷类别测试1",
+		"createDate": 1487656199000,
+		"createDateStr": "2017-02-21 13:49:59",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"defectCode": "0000000033",
+		"defectName": "外观缺陷",
+		"id": 1000,
+		"manifestation": "沿轧制方向钢带表面线状物理性伤害，程度较重，时有起皮，连续分布，一般超过半卷。",
+		"markAble": "1",
+		"remark": "",
+		"updateDate": "1487656199000",
+		"updateDateStr": "2017-02-21 13:49:59",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}],
         currentPage: 1
         }
     },

@@ -29,43 +29,63 @@
             </el-select>
         </div>
         <el-table
-    :data="tableData"
+    :data="takeSampleList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
-    </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="sampleCode"
+      label="方案代码"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="sampleName"
+      label="方案名称"
+      width="120"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="strictName"
+      label="严格度"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="inspectLevelName"
+      label="检验水平"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="markAble"
+      label="可用标识"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createUserName"
+      label="创建人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createDateStr"
+      label="创建时间"
+      width="160"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateUserName"
+      label="最后更新人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateDateStr"
+      label="最后更新时间"
+      width="160"
       >
     </el-table-column>
     <el-table-column
@@ -136,35 +156,75 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            takeSampleList: [{
+		"createDateStr": "2017-05-31 16:47:58",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1003",
+		"inspectLevel": "JYSP_TSXJY",
+		"inspectLevelName": "特殊性检验",
+		"isDel": "false",
+		"markAble": "1",
+		"remark": "",
+		"sampleCode": "TS0041",
+		"sampleName": "方案名称",
+		"strict": "Strict_nor",
+		"strictName": "正常",
+		"updateDateStr": "2017-05-31 16:47:58",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDateStr": "2017-02-21 13:44:41",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1002",
+		"inspectLevel": "JYSP_TSXJY",
+		"inspectLevelName": "特殊性检验",
+		"isDel": "false",
+		"markAble": "1",
+		"remark": "",
+		"sampleCode": "TS0034",
+		"sampleName": "批次检验方案",
+		"strict": "Strict_nor",
+		"strictName": "正常",
+		"updateDateStr": "2017-02-21 13:44:41",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"createDateStr": "2017-02-21 13:44:31",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1001",
+		"inspectLevel": "JYSP_TSXJY",
+		"inspectLevelName": "特殊性检验",
+		"isDel": "false",
+		"markAble": "1",
+		"remark": "",
+		"sampleCode": "TS0033",
+		"sampleName": "首件检验方案",
+		"strict": "Strict_str",
+		"strictName": "加严",
+		"updateDateStr": "2017-02-21 13:44:31",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"createDateStr": "2017-02-21 13:43:07",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1000",
+		"inspectLevel": "JYSP_YBXJY",
+		"inspectLevelName": "一般性检验",
+		"isDel": "false",
+		"markAble": "1",
+		"remark": "",
+		"sampleCode": "TS0032",
+		"sampleName": "以色列",
+		"strict": "Strict_nor",
+		"strictName": "正常",
+		"updateDateStr": "2017-02-21 13:43:07",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}],
         currentPage: 1
         }
     },

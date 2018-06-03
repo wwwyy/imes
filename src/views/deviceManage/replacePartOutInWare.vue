@@ -55,43 +55,76 @@
           
         </div>
         <el-table
-    :data="tableData"
+    :data="spareOutStorageList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
-    </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="storageCode"
+      label="单号ID"
+      width="120"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="sparepartsCode"
+      label="	备件代码"
+      width="120"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="sparepartsName"
+      label="	备件名称"
+      width="120"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="storageTypeName"
+      label="类型"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="sparepartsCount"
+      label="数量"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="occurrenceTimeStr"
+      label="发生时间"
+      width="150"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="storageStatusName"
+      label="状态"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createUserName"
+      label="创建人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createDateStr"
+      label="创建时间"
+      width="160"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateUserName"
+      label="最后更新人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateDateStr"
+      label="最后更新时间"
+      width="160"
       >
     </el-table-column>
     <el-table-column
@@ -164,35 +197,139 @@ export default {
             copyName: '',
             startDate: '',
             endDate: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            spareOutStorageList: [{
+		"createDate": "1488874401000",
+		"createDateStr": "2017-03-07 16:13:21",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1005",
+		"maintenanceCode": "",
+		"occurrenceTime": "1488849000000",
+		"occurrenceTimeStr": "2017-03-07 09:10:00",
+		"remark": "123123",
+		"sparepartsCode": "KRNYIGRML5",
+		"sparepartsCount": "123",
+		"sparepartsName": "曲轴",
+		"storageCode": "store0150",
+		"storageStatus": "0",
+		"storageStatusName": "创建",
+		"storageType": "BJCRKLX_RK",
+		"storageTypeName": "入库",
+		"updateDate": "1496909557000",
+		"updateDateStr": "2017-06-08 16:12:37",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": "1487845298000",
+		"createDateStr": "2017-02-23 18:21:38",
+		"createUser": "PENG035",
+		"createUserName": "高丽娟",
+		"id": "1004",
+		"maintenanceCode": "",
+		"occurrenceTime": "1487845260000",
+		"occurrenceTimeStr": "2017-02-23 18:21:00",
+		"remark": "",
+		"sparepartsCode": "KRNYIGRML5",
+		"sparepartsCount": "14",
+		"sparepartsName": "曲轴",
+		"storageCode": "store0131",
+		"storageStatus": "1",
+		"storageStatusName": "确认",
+		"storageType": "BJCRKLX_RK",
+		"storageTypeName": "入库",
+		"updateDate": "1487845357000",
+		"updateDateStr": "2017-02-23 18:22:37",
+		"updateUser": "PENG035",
+		"updateUserName": "高丽娟"
+	}, {
+		"createDate": "1487655453000",
+		"createDateStr": "2017-02-21 13:37:33",
+		"createUser": "PENG028",
+		"createUserName": "测试01",
+		"id": "1003",
+		"maintenanceCode": "plan0204",
+		"occurrenceTime": "1487310600000",
+		"occurrenceTimeStr": "2017-02-17 13:50:00",
+		"remark": "",
+		"sparepartsCode": "2O8WO23USS",
+		"sparepartsCount": "80",
+		"sparepartsName": "备件01",
+		"storageCode": "store0130",
+		"storageStatus": "0",
+		"storageStatusName": "创建",
+		"storageType": "BJCRKLX_CK",
+		"storageTypeName": "出库",
+		"updateDate": "1487655453000",
+		"updateDateStr": "2017-02-21 13:37:33",
+		"updateUser": "PENG028",
+		"updateUserName": "测试01"
+	}, {
+		"createDate": "1487655413000",
+		"createDateStr": "2017-02-21 13:36:53",
+		"createUser": "PENG028",
+		"createUserName": "测试01",
+		"id": "1002",
+		"maintenanceCode": "plan0204",
+		"occurrenceTime": "1487918100000",
+		"occurrenceTimeStr": "2017-02-24 14:35:00",
+		"remark": "",
+		"sparepartsCode": "8AL4TKDF3T",
+		"sparepartsCount": "60",
+		"sparepartsName": "备件03",
+		"storageCode": "store0128",
+		"storageStatus": "0",
+		"storageStatusName": "创建",
+		"storageType": "BJCRKLX_CK",
+		"storageTypeName": "出库",
+		"updateDate": "1487655413000",
+		"updateDateStr": "2017-02-21 13:36:53",
+		"updateUser": "PENG028",
+		"updateUserName": "测试01"
+	}, {
+		"createDate": "1487655396000",
+		"createDateStr": "2017-02-21 13:36:36",
+		"createUser": "PENG028",
+		"createUserName": "测试01",
+		"id": "1001",
+		"maintenanceCode": "",
+		"occurrenceTime": "1486522200000",
+		"occurrenceTimeStr": "2017-02-08 10:50:00",
+		"remark": "",
+		"sparepartsCode": "8AL4TKDF3T",
+		"sparepartsCount": "82",
+		"sparepartsName": "备件03",
+		"storageCode": "store0127",
+		"storageStatus": "1",
+		"storageStatusName": "确认",
+		"storageType": "BJCRKLX_RK",
+		"storageTypeName": "入库",
+		"updateDate": "1487827335000",
+		"updateDateStr": "2017-02-23 13:22:15",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": "1487655377000",
+		"createDateStr": "2017-02-21 13:36:17",
+		"createUser": "PENG028",
+		"createUserName": "测试01",
+		"id": "1000",
+		"maintenanceCode": "",
+		"occurrenceTime": "1487655360000",
+		"occurrenceTimeStr": "2017-02-21 13:36:00",
+		"remark": "",
+		"sparepartsCode": "8AL4TKDF3T",
+		"sparepartsCount": "60",
+		"sparepartsName": "备件03",
+		"storageCode": "store0126",
+		"storageStatus": "0",
+		"storageStatusName": "创建",
+		"storageType": "BJCRKLX_RK",
+		"storageTypeName": "入库",
+		"updateDate": "1487655377000",
+		"updateDateStr": "2017-02-21 13:36:17",
+		"updateUser": "PENG028",
+		"updateUserName": "测试01"
+	}],
         currentPage: 1
         }
     },

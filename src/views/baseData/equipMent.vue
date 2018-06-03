@@ -31,43 +31,110 @@
                     </el-select>
                 </div>
                 <el-table
-            :data="tableData"
+            :data="emList"
             border
             style="width: 100%"
+            align="left"
             size="mini">
-            <el-table-column
+             <el-table-column
             type="selection"
-            width="55">
-            </el-table-column>
-            <el-table-column
-            fixed
-            prop="date"
-            label="日期"
             >
             </el-table-column>
             <el-table-column
-            prop="name"
-            label="姓名"
+            prop="equipCode"
+            label="设备代码"
             >
             </el-table-column>
             <el-table-column
-            prop="province"
-            label="省份"
+            prop="equipName"
+            label="设备名称"
+            width="200"
             >
             </el-table-column>
             <el-table-column
-            prop="city"
-            label="市区"
+            prop="equipTypeName"
+            label="设备类别	"
+            >
+            </el-table-column>
+                <el-table-column
+            prop="equipModelName"
+            label="设备规格型号	"
+            width="150"
             >
             </el-table-column>
             <el-table-column
-            prop="address"
-            label="地址"
+            prop="buyDateStr"
+            label="采购日期"
+            width="150"
             >
             </el-table-column>
             <el-table-column
-            prop="zip"
-            label="邮编"
+            prop="workCenterName"
+            label="保养周期"
+            >
+            </el-table-column>
+            <el-table-column
+            prop="markAbleName"
+            label="	保养周期单位	"
+            width="100"
+            >
+            </el-table-column>
+                <el-table-column
+            prop="useLimit"
+            label="使用年限	"
+            >
+            </el-table-column>
+            <el-table-column
+            prop="supplierName"
+            label="供应商名称"
+            width="220"
+            >
+            </el-table-column>
+            <el-table-column
+            prop="supplier"
+            label="供应商联系人"
+            width="100"
+            >
+            </el-table-column>
+            <el-table-column
+            prop="telephone"
+            label="供应商联系电话		"
+            width="160"
+            >
+            </el-table-column>
+                <el-table-column
+            prop="createUserName"
+            label="	供应商联系邮箱	"
+            width="150"
+            >
+            </el-table-column>
+             <el-table-column
+            prop="organizationName"
+            label="所属工作单元	"
+            width="150"
+            >
+            </el-table-column>
+            <el-table-column
+            prop="markAble"
+            label="可用标识"
+            >
+            </el-table-column>
+                <el-table-column
+            prop="createDateStr"
+            label="创建时间	"
+            width="160"
+            >
+            </el-table-column>
+                <el-table-column
+            prop="updateUserName"
+            label="最后更新人	"
+            width="150"
+            >
+            </el-table-column>
+            <el-table-column
+            prop="updateDateStr"
+            label="最后更新时间	"
+            width="160"
             >
             </el-table-column>
             <el-table-column
@@ -177,35 +244,417 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            emList: [{
+		"createDate": "1495766077000",
+		"createDateStr": "2017-05-26 10:34:37",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"email": "",
+		"equipCode": "equip059",
+		"equipModel": "OCP-160E",
+		"equipModelName": "OCP-160E",
+		"equipName": "直轴式强力钢架开式压力机",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1025",
+		"maintainUnitCode": "",
+		"markAble": "1",
+		"organization": "",
+		"remark": "",
+		"supplier": "",
+		"supplierName": "云南英泽机械设备有限公司",
+		"telephone": "0532-87654321",
+		"updateDate": "1495766077000",
+		"updateDateStr": "2017-05-26 10:34:37",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": "1495244981000",
+		"createDateStr": "2017-05-20 09:49:41",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"email": "",
+		"equipCode": "equip053",
+		"equipModel": "model1",
+		"equipModelName": "modelName1",
+		"equipName": "全自动焊机器人",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1024",
+		"maintainUnitCode": "",
+		"markAble": "1",
+		"organization": "GZSY3001",
+		"organizationName": "焊接工作单元",
+		"remark": "",
+		"supplier": "",
+		"supplierName": "云南英泽机械设备有限公司",
+		"telephone": "0532-87654321",
+		"updateDate": "1495244981000",
+		"updateDateStr": "2017-05-20 09:49:41",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": "1495244946000",
+		"createDateStr": "2017-05-20 09:49:06",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"email": "",
+		"equipCode": "equip052",
+		"equipModel": "model1",
+		"equipModelName": "modelName1",
+		"equipName": "阿玛达冲床2",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1023",
+		"maintainUnitCode": "",
+		"markAble": "1",
+		"organization": "GZDY2002",
+		"organizationName": "二车间冲孔工作单元",
+		"remark": "",
+		"supplier": "",
+		"supplierName": "云南英泽机械设备有限公司",
+		"telephone": "0532-87654321",
+		"updateDate": "1495244946000",
+		"updateDateStr": "2017-05-20 09:49:06",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"buyDate": "1495209600000",
+		"buyDateStr": "2017-05-20",
+		"createDate": "1495244925000",
+		"createDateStr": "2017-05-20 09:48:45",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"email": "",
+		"equipCode": "equip051",
+		"equipModel": "model1",
+		"equipModelName": "modelName1",
+		"equipName": "阿玛达冲床1",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1022",
+		"maintainUnitCode": "",
+		"markAble": "1",
+		"organization": "GZDY1002",
+		"organizationName": "一车间冲孔工作单元",
+		"remark": "",
+		"supplier": "",
+		"supplierName": "云南英泽机械设备有限公司",
+		"telephone": "0532-87654321",
+		"updateDate": "1495771075000",
+		"updateDateStr": "2017-05-26 11:57:55",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": "1495244766000",
+		"createDateStr": "2017-05-20 09:46:06",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"email": "",
+		"equipCode": "equip049",
+		"equipModel": "model1",
+		"equipModelName": "modelName1",
+		"equipName": "直轴式强力钢架开式压力机2",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1021",
+		"maintainUnitCode": "",
+		"markAble": "1",
+		"organization": "GZDY2001",
+		"organizationName": "二车间落料工作单元",
+		"remark": "",
+		"supplier": "",
+		"supplierName": "云南英泽机械设备有限公司",
+		"telephone": "0532-87654321",
+		"updateDate": "1495244766000",
+		"updateDateStr": "2017-05-20 09:46:06",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": "1495244722000",
+		"createDateStr": "2017-05-20 09:45:22",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"email": "",
+		"equipCode": "equip048",
+		"equipModel": "model1",
+		"equipModelName": "modelName1",
+		"equipName": "直轴式强力钢架开式压力机1",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1020",
+		"maintainUnitCode": "",
+		"markAble": "1",
+		"organization": "GZDY1001",
+		"organizationName": "一车间落料工作单元",
+		"remark": "",
+		"supplier": "",
+		"supplierName": "云南英泽机械设备有限公司",
+		"telephone": "0532-87654321",
+		"updateDate": "1495771063000",
+		"updateDateStr": "2017-05-26 11:57:43",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"useLimit": "10"
+	}, {
+		"createDate": "1487644851000",
+		"createDateStr": "2017-02-21 10:40:51",
+		"email": "",
+		"equipCode": "9050BB00CK0055",
+		"equipModel": "model1",
+		"equipModelName": "modelName1",
+		"equipName": "R600a55",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1019",
+		"maintainUnitCode": "",
+		"markAble": "1",
+		"organization": "BA26003",
+		"organizationName": "整管",
+		"remark": "",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487839084000",
+		"updateDateStr": "2017-02-23 16:38:04",
+		"updateUser": "PENG035",
+		"updateUserName": "高丽娟"
+	}, {
+		"createDate": "1487644851000",
+		"createDateStr": "2017-02-21 10:40:51",
+		"equipCode": "9050MAMTFP0012",
+		"equipModel": "model1",
+		"equipModelName": "modelName1",
+		"equipName": "新线门体发泡夹具12",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1018",
+		"markAble": "1",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487644851000",
+		"updateDateStr": "2017-02-21 10:40:51"
+	}, {
+		"createDate": "1487644851000",
+		"createDateStr": "2017-02-21 10:40:51",
+		"equipCode": "9050MAMTFP0015",
+		"equipModel": "model1",
+		"equipModelName": "modelName1",
+		"equipName": "新线门体发泡夹具15",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1017",
+		"markAble": "1",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487644851000",
+		"updateDateStr": "2017-02-21 10:40:51"
+	}, {
+		"createDate": "1487644851000",
+		"createDateStr": "2017-02-21 10:40:51",
+		"email": "",
+		"equipCode": "9050BA00CK0040",
+		"equipModel": "model1",
+		"equipModelName": "modelName1",
+		"equipName": "A40",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1016",
+		"maintainUnitCode": "",
+		"markAble": "1",
+		"organization": "BA26040",
+		"organizationName": "插管2",
+		"remark": "",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487658463000",
+		"updateDateStr": "2017-02-21 14:27:43",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"createDate": "1487644851000",
+		"createDateStr": "2017-02-21 10:40:51",
+		"equipCode": "9050BA00CK0007",
+		"equipModel": "model1",
+		"equipModelName": "modelName1",
+		"equipName": "A-07",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1015",
+		"markAble": "1",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487644851000",
+		"updateDateStr": "2017-02-21 10:40:51"
+	}, {
+		"createDate": "1487644851000",
+		"createDateStr": "2017-02-21 10:40:51",
+		"equipCode": "9050BB00CK0070",
+		"equipModel": "model1",
+		"equipModelName": "modelName1",
+		"equipName": "R600a-70",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1014",
+		"markAble": "1",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487644851000",
+		"updateDateStr": "2017-02-21 10:40:51"
+	}, {
+		"createDate": "1487644851000",
+		"createDateStr": "2017-02-21 10:40:51",
+		"equipCode": "9050BAJTZD0026",
+		"equipModel": "model1",
+		"equipModelName": "modelName1",
+		"equipName": "A线静态作电检验26",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1013",
+		"markAble": "1",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487644851000",
+		"updateDateStr": "2017-02-21 10:40:51"
+	}, {
+		"createDate": "1487644851000",
+		"createDateStr": "2017-02-21 10:40:51",
+		"equipCode": "9050BADTZD0034",
+		"equipModel": "model1",
+		"equipModelName": "modelName1",
+		"equipName": "A线动态作电检验34",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1012",
+		"markAble": "1",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487644851000",
+		"updateDateStr": "2017-02-21 10:40:51"
+	}, {
+		"createDate": "1487644851000",
+		"createDateStr": "2017-02-21 10:40:51",
+		"equipCode": "9050BAJTZD0009",
+		"equipModel": "model1",
+		"equipModelName": "modelName1",
+		"equipName": "A线静态作电检验09",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1011",
+		"markAble": "1",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487644851000",
+		"updateDateStr": "2017-02-21 10:40:51"
+	}, {
+		"createDate": "1487644851000",
+		"createDateStr": "2017-02-21 10:40:51",
+		"equipCode": "9050BA00CK0035",
+		"equipModel": "model1",
+		"equipModelName": "modelName1",
+		"equipName": "A-35",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1010",
+		"markAble": "1",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487644851000",
+		"updateDateStr": "2017-02-21 10:40:51"
+	}, {
+		"createDate": "1487644851000",
+		"createDateStr": "2017-02-21 10:40:51",
+		"equipCode": "9050BBDTZD0008",
+		"equipModel": "model1",
+		"equipModelName": "modelName1",
+		"equipName": "B线动态作电检验08",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1009",
+		"markAble": "1",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487644851000",
+		"updateDateStr": "2017-02-21 10:40:51"
+	}, {
+		"createDate": "1487644851000",
+		"createDateStr": "2017-02-21 10:40:51",
+		"equipCode": "9050MAMTFP0007",
+		"equipModel": "model1",
+		"equipModelName": "modelName1",
+		"equipName": "新线门体发泡夹具07",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1008",
+		"markAble": "1",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487644851000",
+		"updateDateStr": "2017-02-21 10:40:51"
+	}, {
+		"createDate": "1487644851000",
+		"createDateStr": "2017-02-21 10:40:51",
+		"equipCode": "9050BBDTZD0013",
+		"equipModel": "model1",
+		"equipModelName": "modelName1",
+		"equipName": "B线动态作电检验13",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1007",
+		"markAble": "1",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487644851000",
+		"updateDateStr": "2017-02-21 10:40:51"
+	}, {
+		"createDate": "1487644851000",
+		"createDateStr": "2017-02-21 10:40:51",
+		"equipCode": "9050BB00GZ0002",
+		"equipModel": "model1",
+		"equipModelName": "modelName1",
+		"equipName": "B线灌注机02",
+		"equipStatus": "status1",
+		"equipType": "type2",
+		"equipTypeName": "name2",
+		"id": "1006",
+		"markAble": "1",
+		"supplier": "",
+		"supplierName": "设备供应商",
+		"telephone": "0532-87654321",
+		"updateDate": "1487644851000",
+		"updateDateStr": "2017-02-21 10:40:51"
+	}],
         currentPage: 1
         }
     },

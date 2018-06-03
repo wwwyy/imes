@@ -27,52 +27,60 @@
                 </el-option>
             </el-select>
         </div>
-        <el-table
-    :data="tableData"
+        <<el-table
+    :data="selfCheckResultList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
-    </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
+      prop="resultCode"
+      label="自检代码"
       >
     </el-table-column>
     <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="selfCheckName"
+      label="自检项目名称"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="workUnitName"
+      label="对应工位"
+      width="200"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="equipName"
+      label="设备"
+      width="200"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
-      >
+      prop="checkResultStr"
+      label="自检结果"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="operatorName"
+      label="操作人"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="operatorDateStr"
+      label="操作时间"
+     >
     </el-table-column>
     <el-table-column
       fixed="right"
       label="操作"
       >
       <template slot-scope="scope">
-        <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
+           <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
+        <el-button type="text" size="small" @click="handleClick(scope.row)">删除</el-button>
       </template>
     </el-table-column>
   </el-table>
@@ -135,35 +143,49 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            selfCheckResultList: [{
+		"checkResult": "0",
+		"checkResultStr": "不合格",
+		"equipName": "A线静态作电检验26",
+		"id": "1004",
+		"operatorCode": "PENG028",
+		"operatorDate": "1486656000000",
+		"operatorDateStr": "2017-02-10",
+		"operatorName": "测试01(PENG028)",
+		"remark": "",
+		"resultCode": "SCR0039",
+		"selfCheckCode": "SC0035",
+		"selfCheckName": "静态电检验",
+		"workUnitName": "安装风门盖板\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tBA26003"
+	}, {
+		"checkResult": "1",
+		"checkResultStr": "合格",
+		"equipName": "A线静态作电检验26",
+		"id": "1002",
+		"operatorCode": "PENG026",
+		"operatorDate": "1487692800000",
+		"operatorDateStr": "2017-02-22",
+		"operatorName": "张三(PENG026)",
+		"remark": "",
+		"resultCode": "SCR0038",
+		"selfCheckCode": "SC0035",
+		"selfCheckName": "静态电检验",
+		"workUnitName": "安装风门盖板\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tBA26003"
+	}, {
+		"checkResult": "1",
+		"checkResultStr": "合格",
+		"equipName": "A线静态作电检验26",
+		"id": "1001",
+		"operatorCode": "PENG027",
+		"operatorDate": "1487174400000",
+		"operatorDateStr": "2017-02-16",
+		"operatorName": "李四(PENG027)",
+		"remark": "",
+		"resultCode": "SCR0037",
+		"selfCheckCode": "SC0035",
+		"selfCheckName": "静态电检验",
+		"workUnitName": "安装风门盖板\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tBA26003"
+	}],
         currentPage: 1
         }
     },

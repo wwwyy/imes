@@ -28,52 +28,44 @@
            
         </div>
         <el-table
-    :data="tableData"
+    :data="dataList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
-    </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="materialCode"
+      label="物料代码"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="materialName"
+      label="	物料名称"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="wareHouseName"
+      label="	仓库"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="WLName"
+      label="	库位"
       >
     </el-table-column>
     <el-table-column
-      fixed="right"
-      label="操作"
+      prop="materialBatch"
+      label="		物料批次"
       >
-      <template slot-scope="scope">
-        <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
-      </template>
+    </el-table-column>
+    <el-table-column
+      prop="inventoryNumber"
+      label="存放数量"
+      >
     </el-table-column>
   </el-table>
    <div style="margin:15px 0">
@@ -138,35 +130,17 @@ export default {
             copyName: '',
             startDate: '',
             endDate: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            dataList: [{
+		"WLCode": "loca0002",
+		"WLName": "库位A001",
+		"id": "23",
+		"inventoryNumber": "0.0000",
+		"materialBatch": "6512",
+		"materialCode": "WL0099",
+		"materialName": "钢材(20号)",
+		"wareHouseCode": "WHC042",
+		"wareHouseName": "焊接半成品库"
+	}],
         currentPage: 1
         }
     },

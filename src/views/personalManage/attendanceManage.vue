@@ -51,52 +51,63 @@
               <el-input v-model="copyCode" placeholder="请输入内容" style="width:194px" size="small"></el-input>
         </div>
         <el-table
-    :data="tableData"
+    :data="attendanceManageList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
+     >
     </el-table-column>
     <el-table-column
-      fixed
-      prop="date"
+      prop="personCode"
+      label="员工代码"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="personName"
+      label="员工名称"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="banGroupName"
+      label="班组"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="organizationName"
+      label="部门"
+      width="200"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="attendanceTypeName"
+      label="	业务类型"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="attendanceDateStr"
       label="日期"
-     >
-    </el-table-column>
-    <el-table-column
-      prop="name"
-      label="姓名"
+      width="150"
       >
     </el-table-column>
     <el-table-column
-      prop="province"
-      label="省份"
+      prop="attendanceStartTimeStr"
+      label="	开始时间"
+      width="120"
       >
     </el-table-column>
     <el-table-column
-      prop="city"
-      label="市区"
-     >
-    </el-table-column>
-    <el-table-column
-      prop="address"
-      label="地址"
+      prop="attendanceEndTimeStr"
+      label="结束时间"
+      width="120"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="attendanceStatusName"
+      label="状态"
       >
-    </el-table-column>
-    <el-table-column
-      fixed="right"
-      label="操作"
-      >
-      <template slot-scope="scope">
-        <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
-      </template>
     </el-table-column>
   </el-table>
    <div style="margin:15px 0">
@@ -160,35 +171,203 @@ export default {
             copyName: '',
             startDate: '',
             endDate: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            attendanceManageList: [{
+		"attendanceDate": "1497974400000",
+		"attendanceDateStr": "2017-06-21",
+		"attendanceDuration": "10",
+		"attendanceEndTime": "1498039200000",
+		"attendanceEndTimeStr": "18:00:00",
+		"attendanceStartTime": "1498003200000",
+		"attendanceStartTimeStr": "08:00:00",
+		"attendanceStatus": "2",
+		"attendanceStatusName": "审核",
+		"attendanceType": "1",
+		"attendanceTypeName": "事假",
+		"createDate": "1497324286000",
+		"createDateStr": "2017-06-13 11:24:46",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": 1007,
+		"organizationName": "浙江长华汽车零配件有限公司",
+		"personCode": "admin",
+		"personName": "系统管理员",
+		"remark": "",
+		"updateDate": "1497324291000",
+		"updateDateStr": "2017-06-13 11:24:51",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"attendanceDate": "1487865600000",
+		"attendanceDateStr": "2017-02-24",
+		"attendanceDuration": "1",
+		"attendanceEndTime": "1487908800000",
+		"attendanceEndTimeStr": "12:00:00",
+		"attendanceStartTime": "1487905200000",
+		"attendanceStartTimeStr": "11:00:00",
+		"attendanceStatus": "2",
+		"attendanceStatusName": "审核",
+		"attendanceType": "1",
+		"attendanceTypeName": "事假",
+		"banGroupName": "甲",
+		"createDate": "1487906929000",
+		"createDateStr": "2017-02-24 11:28:49",
+		"createUser": "PENG035",
+		"createUserName": "高丽娟",
+		"id": 1006,
+		"organizationName": "A线小微",
+		"personCode": "PENG035",
+		"personName": "高丽娟",
+		"remark": "",
+		"updateDate": "1487906936000",
+		"updateDateStr": "2017-02-24 11:28:56",
+		"updateUser": "PENG035",
+		"updateUserName": "高丽娟"
+	}, {
+		"attendanceDate": "1487865600000",
+		"attendanceDateStr": "2017-02-24",
+		"attendanceDuration": "1",
+		"attendanceEndTime": "1487912400000",
+		"attendanceEndTimeStr": "13:00:00",
+		"attendanceStartTime": "1487908800000",
+		"attendanceStartTimeStr": "12:00:00",
+		"attendanceStatus": "2",
+		"attendanceStatusName": "审核",
+		"attendanceType": "0",
+		"attendanceTypeName": "公出",
+		"banGroupName": "甲",
+		"createDate": "1487906530000",
+		"createDateStr": "2017-02-24 11:22:10",
+		"createUser": "PENG035",
+		"createUserName": "高丽娟",
+		"id": 1005,
+		"organizationName": "A线小微",
+		"personCode": "PENG035",
+		"personName": "高丽娟",
+		"remark": "",
+		"updateDate": "1487906880000",
+		"updateDateStr": "2017-02-24 11:28:00",
+		"updateUser": "PENG035",
+		"updateUserName": "高丽娟"
+	}, {
+		"attendanceDate": "1487865600000",
+		"attendanceDateStr": "2017-02-24",
+		"attendanceDuration": "0.5",
+		"attendanceEndTime": "1487905200000",
+		"attendanceEndTimeStr": "11:00:00",
+		"attendanceStartTime": "1487903400000",
+		"attendanceStartTimeStr": "10:30:00",
+		"attendanceStatus": "2",
+		"attendanceStatusName": "审核",
+		"attendanceType": "0",
+		"attendanceTypeName": "公出",
+		"createDate": "1487905166000",
+		"createDateStr": "2017-02-24 10:59:26",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": 1004,
+		"organizationName": "浙江长华汽车零配件有限公司",
+		"personCode": "admin",
+		"personName": "系统管理员",
+		"remark": "",
+		"updateDate": "1489721129000",
+		"updateDateStr": "2017-03-17 11:25:29",
+		"updateUser": "PENG016",
+		"updateUserName": "测试组4.0"
+	}, {
+		"attendanceDate": "1486569600000",
+		"attendanceDateStr": "2017-02-09",
+		"attendanceDuration": "1",
+		"attendanceEndTime": "1486629000000",
+		"attendanceEndTimeStr": "16:30:00",
+		"attendanceStartTime": "1486625400000",
+		"attendanceStartTimeStr": "15:30:00",
+		"attendanceStatus": "2",
+		"attendanceStatusName": "审核",
+		"attendanceType": "0",
+		"attendanceTypeName": "公出",
+		"banGroupName": "乙",
+		"createDate": "1487654978000",
+		"createDateStr": "2017-02-21 13:29:38",
+		"createUser": "PENG028",
+		"createUserName": "测试01",
+		"id": 1003,
+		"organizationName": "上压机后盖",
+		"personCode": "PENG028",
+		"personName": "测试01",
+		"remark": "",
+		"updateDate": "1487905531000",
+		"updateDateStr": "2017-02-24 11:05:31",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"attendanceDate": "1485878400000",
+		"attendanceDateStr": "2017-02-01",
+		"attendanceDuration": "2.5",
+		"attendanceEndTime": "1485937800000",
+		"attendanceEndTimeStr": "16:30:00",
+		"attendanceStartTime": "1485928800000",
+		"attendanceStartTimeStr": "14:00:00",
+		"attendanceStatus": "2",
+		"attendanceStatusName": "审核",
+		"attendanceType": "1",
+		"attendanceTypeName": "事假",
+		"banGroupName": "乙",
+		"createDate": "1487654953000",
+		"createDateStr": "2017-02-21 13:29:13",
+		"createUser": "PENG028",
+		"createUserName": "测试01",
+		"id": 1002,
+		"organizationName": "上压机后盖",
+		"personCode": "PENG028",
+		"personName": "测试01",
+		"remark": "",
+		"updateDate": "1496971685000",
+		"updateDateStr": "2017-06-09 09:28:05",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"attendanceDate": "1486483200000",
+		"attendanceDateStr": "2017-02-08",
+		"attendanceDuration": "0.5",
+		"attendanceEndTime": "1486537200000",
+		"attendanceEndTimeStr": "15:00:00",
+		"attendanceStartTime": "1486535400000",
+		"attendanceStartTimeStr": "14:30:00",
+		"attendanceStatus": "1",
+		"attendanceStatusName": "创建",
+		"attendanceType": "0",
+		"attendanceTypeName": "公出",
+		"createDate": "1487654803000",
+		"createDateStr": "2017-02-21 13:26:43",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": 1001,
+		"organizationName": "浙江长华汽车零配件有限公司",
+		"personCode": "admin",
+		"personName": "系统管理员",
+		"remark": ""
+	}, {
+		"attendanceDate": "1485792000000",
+		"attendanceDateStr": "2017-01-31",
+		"attendanceDuration": "9",
+		"attendanceEndTime": "1485856800000",
+		"attendanceEndTimeStr": "18:00:00",
+		"attendanceStartTime": "1485824400000",
+		"attendanceStartTimeStr": "09:00:00",
+		"attendanceStatus": "1",
+		"attendanceStatusName": "创建",
+		"attendanceType": "1",
+		"attendanceTypeName": "事假",
+		"createDate": "1487654769000",
+		"createDateStr": "2017-02-21 13:26:09",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": 1000,
+		"organizationName": "浙江长华汽车零配件有限公司",
+		"personCode": "admin",
+		"personName": "系统管理员",
+		"remark": ""
+	}],
         currentPage: 1
         }
     },

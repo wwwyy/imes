@@ -17,11 +17,11 @@
             <el-button size="small" type="primary" style="width:100px"> 清 空 </el-button>
         </div>
         <div style="text-align:left;margin:20px 0;">
-             <span style="line-height:32px;font-size:14px;">员工代码：		</span>
+             <span style="display:inline-block;width:70px;line-height:32px;font-size:14px;">员工代码：		</span>
             <el-input v-model="copyCode" placeholder="请输入内容" style="width:194px" size="small"></el-input>
            
             
-             <span style="margin-left:40px;line-height:32px;font-size:14px;">角色：	</span>
+             <span style="display:inline-block;width:70px;margin-left:40px;line-height:32px;font-size:14px;">角色：	</span>
              <el-select v-model="copyType" placeholder="请选择" size="small" style="width:194px">
                 <el-option
                 v-for="item in copyOptions"
@@ -30,7 +30,7 @@
                 :value="item.value">
                 </el-option>
             </el-select>
-              <span style="margin-left:40px;line-height:32px;font-size:14px;">状态：	</span>
+              <span style="display:inline-block;width:70px;margin-left:40px;line-height:32px;font-size:14px;">状态：	</span>
              <el-select v-model="copyType" placeholder="请选择" size="small" style="width:194px">
                 <el-option
                 v-for="item in copyOptions"
@@ -41,9 +41,9 @@
             </el-select>
             <br>
             <br>
-             <span style="line-height:32px;font-size:14px;">员工名称：		</span>
+             <span style="display:inline-block;width:70px;line-height:32px;font-size:14px;">员工名称：		</span>
             <el-input v-model="copyCode" placeholder="请输入内容" style="width:194px" size="small"></el-input>
-              <span style="margin-left:40px;line-height:32px;font-size:14px;">所属组织：		</span>
+              <span style="display:inline-block;width:70px;margin-left:40px;line-height:32px;font-size:14px;">所属组织：		</span>
              <el-select v-model="copyType" placeholder="请选择" size="small" style="width:194px">
                 <el-option
                 v-for="item in copyOptions"
@@ -52,7 +52,7 @@
                 :value="item.value">
                 </el-option>
             </el-select>
-              <span style="margin-left:40px;line-height:32px;font-size:14px;">可用标识：</span>
+              <span style="display:inline-block;width:70px;margin-left:40px;line-height:32px;font-size:14px;">可用标识：</span>
              <el-select v-model="copyType" placeholder="请选择" size="small" style="width:194px">
                 <el-option
                 v-for="item in copyOptions"
@@ -62,53 +62,74 @@
                 </el-option>
             </el-select>
         </div>
-        <el-table
-    :data="tableData"
+       <el-table
+    :data="userAuthorSettingList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
-    </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="personCode"
+      label="员工代码"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="personName"
+      label="员工名称"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="personSex"
+      label="性别"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="organizationName"
+      label="所属组织"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="roleNames"
+      label="角色"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="telephone"
+      label="手机号码"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="markAble"
+      label="可用标识"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="createUserName"
+      label="创建人"
+      width="120"
       >
     </el-table-column>
     <el-table-column
-      fixed="right"
-      label="操作"
+      prop="createDateStr"
+      label="创建时间"
+      width="160"
       >
-      <template slot-scope="scope">
-        <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
-      </template>
+    </el-table-column>
+    <el-table-column
+      prop="updateUserName"
+      label="最后更新人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateDateStr"
+      label="最后更新时间"
+      width="160"
+      >
     </el-table-column>
   </el-table>
    <div style="margin:15px 0">
@@ -172,35 +193,307 @@ export default {
             copyName: '',
             startDate: '',
             endDate: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            userAuthorSettingList: [{
+		"account": "PENG035",
+		"createDate": "1487830584000",
+		"createDateStr": "2017-02-23 14:16:24",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1021",
+		"isLock": "false",
+		"markAble": "1",
+		"organizationName": "A线小微",
+		"personCode": "PENG035",
+		"personName": "高丽娟",
+		"personSex": "女",
+		"roleCodes": "shengchan",
+		"roleNames": "生产",
+		"telephone": "",
+		"updateDate": "1487830584000",
+		"updateDateStr": "2017-02-23 14:16:24",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"account": "PENG022",
+		"createDate": "1487658540000",
+		"createDateStr": "2017-02-21 14:29:00",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1019",
+		"isLock": "false",
+		"markAble": "1",
+		"organizationName": "上压机后盖",
+		"personCode": "PENG013",
+		"personName": "测试组1.0",
+		"personSex": "男",
+		"roleCodes": "admin",
+		"roleNames": "管理员",
+		"telephone": "",
+		"updateDate": "1487658540000",
+		"updateDateStr": "2017-02-21 14:29:00",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"account": "PENG021",
+		"createDate": "1487658540000",
+		"createDateStr": "2017-02-21 14:29:00",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1018",
+		"isLock": "false",
+		"markAble": "1",
+		"organizationName": "上压机后盖",
+		"personCode": "PENG013",
+		"personName": "测试组1.0",
+		"personSex": "男",
+		"roleCodes": "admin",
+		"roleNames": "管理员",
+		"telephone": "",
+		"updateDate": "1487658540000",
+		"updateDateStr": "2017-02-21 14:29:00",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"account": "PENG020",
+		"createDate": "1487658540000",
+		"createDateStr": "2017-02-21 14:29:00",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1017",
+		"isLock": "false",
+		"markAble": "1",
+		"organizationName": "上压机后盖",
+		"personCode": "PENG013",
+		"personName": "测试组1.0",
+		"personSex": "男",
+		"roleCodes": "admin",
+		"roleNames": "管理员",
+		"telephone": "",
+		"updateDate": "1487658540000",
+		"updateDateStr": "2017-02-21 14:29:00",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"account": "PENG019",
+		"createDate": "1487658540000",
+		"createDateStr": "2017-02-21 14:29:00",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1016",
+		"isLock": "false",
+		"markAble": "1",
+		"organizationName": "上压机后盖",
+		"personCode": "PENG013",
+		"personName": "测试组1.0",
+		"personSex": "男",
+		"roleCodes": "admin",
+		"roleNames": "管理员",
+		"telephone": "",
+		"updateDate": "1487658540000",
+		"updateDateStr": "2017-02-21 14:29:00",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"account": "PENG018",
+		"createDate": "1487658540000",
+		"createDateStr": "2017-02-21 14:29:00",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1015",
+		"isLock": "false",
+		"markAble": "1",
+		"organizationName": "上压机后盖",
+		"personCode": "PENG013",
+		"personName": "测试组1.0",
+		"personSex": "男",
+		"roleCodes": "admin",
+		"roleNames": "管理员",
+		"telephone": "",
+		"updateDate": "1487658540000",
+		"updateDateStr": "2017-02-21 14:29:00",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"account": "PENG017",
+		"createDate": "1487658540000",
+		"createDateStr": "2017-02-21 14:29:00",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1014",
+		"isLock": "false",
+		"markAble": "1",
+		"organizationName": "上压机后盖",
+		"personCode": "PENG013",
+		"personName": "测试组1.0",
+		"personSex": "男",
+		"roleCodes": "admin",
+		"roleNames": "管理员",
+		"telephone": "",
+		"updateDate": "1487658540000",
+		"updateDateStr": "2017-02-21 14:29:00",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"account": "PENG016",
+		"createDate": "1487658540000",
+		"createDateStr": "2017-02-21 14:29:00",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1013",
+		"isLock": "false",
+		"markAble": "1",
+		"organizationName": "上压机后盖",
+		"personCode": "PENG013",
+		"personName": "测试组1.0",
+		"personSex": "男",
+		"roleCodes": "admin",
+		"roleNames": "管理员",
+		"telephone": "",
+		"updateDate": "1487658540000",
+		"updateDateStr": "2017-02-21 14:29:00",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"account": "PENG015",
+		"createDate": "1487658540000",
+		"createDateStr": "2017-02-21 14:29:00",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1012",
+		"isLock": "false",
+		"markAble": "1",
+		"organizationName": "上压机后盖",
+		"personCode": "PENG013",
+		"personName": "测试组1.0",
+		"personSex": "男",
+		"roleCodes": "admin",
+		"roleNames": "管理员",
+		"telephone": "",
+		"updateDate": "1487658540000",
+		"updateDateStr": "2017-02-21 14:29:00",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"account": "PENG014",
+		"createDate": "1487658540000",
+		"createDateStr": "2017-02-21 14:29:00",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1011",
+		"isLock": "false",
+		"markAble": "1",
+		"organizationName": "上压机后盖",
+		"personCode": "PENG013",
+		"personName": "测试组1.0",
+		"personSex": "男",
+		"roleCodes": "admin",
+		"roleNames": "管理员",
+		"telephone": "",
+		"updateDate": "1487658540000",
+		"updateDateStr": "2017-02-21 14:29:00",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"account": "PENG013",
+		"createDate": "1487658540000",
+		"createDateStr": "2017-02-21 14:29:00",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1010",
+		"isLock": "false",
+		"markAble": "1",
+		"organizationName": "上压机后盖",
+		"personCode": "PENG013",
+		"personName": "测试组1.0",
+		"personSex": "男",
+		"roleCodes": "admin",
+		"roleNames": "管理员",
+		"telephone": "",
+		"updateDate": "1487658540000",
+		"updateDateStr": "2017-02-21 14:29:00",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"account": "PENG028",
+		"createDate": "1487654907000",
+		"createDateStr": "2017-02-21 13:28:27",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1002",
+		"isLock": "false",
+		"markAble": "1",
+		"organizationName": "上压机后盖",
+		"personCode": "PENG028",
+		"personName": "测试01",
+		"personSex": "男",
+		"roleCodes": "role_02",
+		"roleNames": "领导角色",
+		"telephone": "",
+		"updateDate": "1487654907000",
+		"updateDateStr": "2017-02-21 13:28:27",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"account": "PENG026",
+		"createDate": "1487654630000",
+		"createDateStr": "2017-02-21 13:23:50",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1001",
+		"isLock": "false",
+		"markAble": "1",
+		"organizationName": "上压机后盖",
+		"personCode": "PENG026",
+		"personName": "张三",
+		"personSex": "男",
+		"roleCodes": "role_02",
+		"roleNames": "领导角色",
+		"telephone": "",
+		"updateDate": "1487654630000",
+		"updateDateStr": "2017-02-21 13:23:50",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"account": "PENG027",
+		"createDate": "1487654616000",
+		"createDateStr": "2017-02-21 13:23:36",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1000",
+		"isLock": "false",
+		"markAble": "1",
+		"organizationName": "上压机后盖",
+		"personCode": "PENG027",
+		"personName": "李四",
+		"personSex": "男",
+		"roleCodes": "role_01",
+		"roleNames": "员工角色",
+		"telephone": "",
+		"updateDate": "1487654616000",
+		"updateDateStr": "2017-02-21 13:23:36",
+		"updateUser": "admin",
+		"updateUserName": "administrator"
+	}, {
+		"account": "admin",
+		"createDate": "1487037600000",
+		"createDateStr": "2017-02-14 10:00:00",
+		"createUser": "Import",
+		"createUserName": "Import",
+		"id": "1",
+		"isLock": "false",
+		"markAble": "1",
+		"organizationName": "浙江长华汽车零配件有限公司",
+		"personCode": "admin",
+		"personName": "系统管理员",
+		"personSex": "男",
+		"roleCodes": "admin",
+		"roleNames": "管理员",
+		"telephone": "",
+		"updateDate": "1487037600000",
+		"updateDateStr": "2017-02-14 10:00:00",
+		"updateUser": "Import",
+		"updateUserName": "Import"
+	}],
         currentPage: 1
         }
     },

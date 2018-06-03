@@ -37,43 +37,58 @@
             </el-select>
         </div>
         <el-table
-    :data="tableData"
+    :data="maintenanceProjectList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
-    </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="projectCode"
+      label="项目代码"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="projectName"
+      label="项目名称"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="projectTypeName"
+      label="	类型"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="markAble"
+      label="可用标识"
+      width="80"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createUserName"
+      label="创建人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createDateStr"
+      label="创建时间"
+      width="160"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateUserName"
+      label="最后更新人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateDateStr"
+      label="最后更新时间"
+      width="160"
       >
     </el-table-column>
     <el-table-column
@@ -144,35 +159,119 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            maintenanceProjectList: [{
+		"createDate": 1487897412000,
+		"createDateStr": "2017-02-24 08:50:12",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"description": "保养维护",
+		"id": 1006,
+		"markAble": "1",
+		"projectCode": "5T1LZGZQ8Y",
+		"projectName": "保养维护",
+		"projectType": "MP_1",
+		"projectTypeName": "维保类型1",
+		"updateDate": 1487897439000,
+		"updateDateStr": "2017-02-24 08:50:39",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": 1487844670000,
+		"createDateStr": "2017-02-23 18:11:10",
+		"createUser": "PENG035",
+		"createUserName": "高丽娟",
+		"description": "混合头通道是否正常",
+		"id": 1005,
+		"markAble": "1",
+		"projectCode": "YFQAVGBWVK",
+		"projectName": "发泡机保养",
+		"projectType": "MP_5",
+		"projectTypeName": "保养",
+		"updateDate": 1487844670000,
+		"updateDateStr": "2017-02-23 18:11:10",
+		"updateUser": "PENG035",
+		"updateUserName": "高丽娟"
+	}, {
+		"createDate": 1487844652000,
+		"createDateStr": "2017-02-23 18:10:52",
+		"createUser": "PENG035",
+		"createUserName": "高丽娟",
+		"description": "检查料筒加温是否正常",
+		"id": 1004,
+		"markAble": "1",
+		"projectCode": "TVSM4AK61L",
+		"projectName": "发泡机保养",
+		"projectType": "MP_5",
+		"projectTypeName": "保养",
+		"updateDate": 1487844652000,
+		"updateDateStr": "2017-02-23 18:10:52",
+		"updateUser": "PENG035",
+		"updateUserName": "高丽娟"
+	}, {
+		"createDate": 1487838173000,
+		"createDateStr": "2017-02-23 16:22:53",
+		"createUser": "PENG035",
+		"createUserName": "高丽娟",
+		"description": "检查液压是否正常",
+		"id": 1003,
+		"markAble": "1",
+		"projectCode": "ESJFZSYGOT",
+		"projectName": "发泡机保养",
+		"projectType": "MP_5",
+		"projectTypeName": "保养",
+		"updateDate": 1487844622000,
+		"updateDateStr": "2017-02-23 18:10:22",
+		"updateUser": "PENG035",
+		"updateUserName": "高丽娟"
+	}, {
+		"createDate": 1487655049000,
+		"createDateStr": "2017-02-21 13:30:49",
+		"createUser": "PENG028",
+		"createUserName": "测试01",
+		"description": "",
+		"id": 1002,
+		"markAble": "1",
+		"projectCode": "OJLDR2TNPV",
+		"projectName": "项目03",
+		"projectType": "MP_1",
+		"projectTypeName": "维保类型1",
+		"updateDate": 1487655049000,
+		"updateDateStr": "2017-02-21 13:30:49",
+		"updateUser": "PENG028",
+		"updateUserName": "测试01"
+	}, {
+		"createDate": 1487655042000,
+		"createDateStr": "2017-02-21 13:30:42",
+		"createUser": "PENG028",
+		"createUserName": "测试01",
+		"description": "",
+		"id": 1001,
+		"markAble": "1",
+		"projectCode": "BE4GIDKVET",
+		"projectName": "项目02",
+		"projectType": "MP_1",
+		"projectTypeName": "维保类型1",
+		"updateDate": 1487655042000,
+		"updateDateStr": "2017-02-21 13:30:42",
+		"updateUser": "PENG028",
+		"updateUserName": "测试01"
+	}, {
+		"createDate": 1487655033000,
+		"createDateStr": "2017-02-21 13:30:33",
+		"createUser": "PENG028",
+		"createUserName": "测试01",
+		"description": "",
+		"id": 1000,
+		"markAble": "1",
+		"projectCode": "56E5Z4ZNMZ",
+		"projectName": "项目01",
+		"projectType": "MP_1",
+		"projectTypeName": "维保类型1",
+		"updateDate": 1487655033000,
+		"updateDateStr": "2017-02-21 13:30:33",
+		"updateUser": "PENG028",
+		"updateUserName": "测试01"
+	}],
         currentPage: 1
         }
     },

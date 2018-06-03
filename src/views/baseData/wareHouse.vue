@@ -38,44 +38,63 @@
             </el-select>
         </div>
         <el-table
-    :data="tableData"
+    :data="wpList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
-    </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
-     >
-    </el-table-column>
-    <el-table-column
-      prop="name"
-      label="姓名"
       >
     </el-table-column>
     <el-table-column
-      prop="province"
-      label="省份"
-      >
+      prop="wareHouseCode"
+      label="仓库代码"
+     >
     </el-table-column>
     <el-table-column
-      prop="city"
-      label="市区"
-     >
+      prop="wareHouseName"
+      label="	仓库名称"
+      >
     </el-table-column>
     <el-table-column
       prop="address"
-      label="地址"
+      label="	仓库地址"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="capacity"
+      label="	库容量"
       >
+    </el-table-column>
+    <el-table-column
+    prop="markAbleName"
+    label="可用标识	"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="createUserName"
+    label="创建人	"
+    width="150"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="createDateStr"
+    label="创建时间	"
+    width="160"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="updateUserName"
+    label="最后更新人	"
+    width="150"
+    >
+    </el-table-column>
+    <el-table-column
+    prop="updateDateStr"
+    label="最后更新时间	"
+    width="160"
+    >
     </el-table-column>
     <el-table-column
       fixed="right"
@@ -145,35 +164,90 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            wpList: [{
+		"address": "",
+		"capacity": "1000",
+		"createDate": 1495768312000,
+		"createDateStr": "2017-05-26 11:11:52",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1004",
+		"markAble": "1",
+		"markAbleName": "启用",
+		"remark": "",
+		"updateDate": 1495777715000,
+		"updateDateStr": "2017-05-26 13:48:35",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"wareHouseCode": "WHC052",
+		"wareHouseName": "电泳半成品库"
+	}, {
+		"capacity": "4000",
+		"createDate": 1495768079000,
+		"createDateStr": "2017-05-26 11:07:59",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1003",
+		"markAble": "1",
+		"markAbleName": "启用",
+		"updateDate": 1495768079000,
+		"updateDateStr": "2017-05-26 11:07:59",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"wareHouseCode": "WHC051",
+		"wareHouseName": "成品库"
+	}, {
+		"address": "",
+		"capacity": "5000",
+		"createDate": 1487755771000,
+		"createDateStr": "2017-02-22 17:29:31",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1002",
+		"markAble": "0",
+		"markAbleName": "停用",
+		"remark": "",
+		"updateDate": 1495245605000,
+		"updateDateStr": "2017-05-20 10:00:05",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"wareHouseCode": "WHC044",
+		"wareHouseName": "仓库3"
+	}, {
+		"address": "",
+		"capacity": "3000",
+		"createDate": 1487755762000,
+		"createDateStr": "2017-02-22 17:29:22",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1001",
+		"markAble": "0",
+		"markAbleName": "停用",
+		"remark": "",
+		"updateDate": 1495245597000,
+		"updateDateStr": "2017-05-20 09:59:57",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"wareHouseCode": "WHC043",
+		"wareHouseName": "仓库2"
+	}, {
+		"address": "",
+		"capacity": "2000",
+		"createDate": 1487755748000,
+		"createDateStr": "2017-02-22 17:29:08",
+		"createUser": "admin",
+		"createUserName": "administrator",
+		"id": "1000",
+		"markAble": "1",
+		"markAbleName": "启用",
+		"remark": "",
+		"updateDate": 1495245914000,
+		"updateDateStr": "2017-05-20 10:05:14",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"wareHouseCode": "WHC042",
+		"wareHouseName": "焊接半成品库"
+	}],
         currentPage: 1
         }
     },

@@ -39,52 +39,49 @@
             </el-date-picker>
         </div>
         <el-table
-    :data="tableData"
+    :data="ocList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
-    </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="orderCode"
+      label="订单代码"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="modelCode"
+      label="型号代码"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="productName"
+      label="产品名称"
       >
     </el-table-column>
     <el-table-column
-      fixed="right"
-      label="操作"
+      prop="planNum"
+      label="计划数量"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="planStartTimeStr"
+      label="计划开始日期"
       >
-      <template slot-scope="scope">
-        <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
-      </template>
+    </el-table-column>
+    <el-table-column
+      prop="qualifiedNum"
+      label="合格数量"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="remadeNum"
+      label="返工数量"
+      >
     </el-table-column>
   </el-table>
    <div style="margin:15px 0">
@@ -148,35 +145,207 @@ export default {
             copyName: '',
             startDate: '',
             endDate: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            ocList: [{
+		"modelCode": "demo003",
+		"orderCode": "B00190",
+		"planEndTime": "1501689600000",
+		"planNum": "111",
+		"planStartTime": "1501689600000",
+		"planStartTimeStr": "2017-08-03",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}, {
+		"modelCode": "demo003",
+		"orderCode": "B00189",
+		"planEndTime": "1501689600000",
+		"planNum": "432",
+		"planStartTime": "1501689600000",
+		"planStartTimeStr": "2017-08-03",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}, {
+		"modelCode": "demo003",
+		"orderCode": "B00188",
+		"planEndTime": "1501689600000",
+		"planNum": "321",
+		"planStartTime": "1501689600000",
+		"planStartTimeStr": "2017-08-03",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}, {
+		"modelCode": "demo003",
+		"orderCode": "B00187",
+		"planEndTime": "1501689600000",
+		"planNum": "123",
+		"planStartTime": "1501689600000",
+		"planStartTimeStr": "2017-08-03",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}, {
+		"modelCode": "demo003",
+		"orderCode": "B00186",
+		"planEndTime": "1501689600000",
+		"planNum": "100",
+		"planStartTime": "1501689600000",
+		"planStartTimeStr": "2017-08-03",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}, {
+		"modelCode": "demo003",
+		"orderCode": "B00185",
+		"planEndTime": "1501689600000",
+		"planNum": "300",
+		"planStartTime": "1501689600000",
+		"planStartTimeStr": "2017-08-03",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}, {
+		"modelCode": "demo003",
+		"orderCode": "B00184",
+		"planEndTime": "1501603200000",
+		"planNum": "523",
+		"planStartTime": "1501603200000",
+		"planStartTimeStr": "2017-08-02",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}, {
+		"modelCode": "demo003",
+		"orderCode": "B00183",
+		"planEndTime": "1501603200000",
+		"planNum": "111",
+		"planStartTime": "1501603200000",
+		"planStartTimeStr": "2017-08-02",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}, {
+		"modelCode": "demo003",
+		"orderCode": "B00182",
+		"planEndTime": "1501603200000",
+		"planNum": "333",
+		"planStartTime": "1501603200000",
+		"planStartTimeStr": "2017-08-02",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}, {
+		"modelCode": "demo003",
+		"orderCode": "B00181",
+		"planEndTime": "1501603200000",
+		"planNum": "888",
+		"planStartTime": "1501603200000",
+		"planStartTimeStr": "2017-08-02",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}, {
+		"modelCode": "demo003",
+		"orderCode": "B00180",
+		"planEndTime": "1501603200000",
+		"planNum": "666",
+		"planStartTime": "1501603200000",
+		"planStartTimeStr": "2017-08-02",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}, {
+		"modelCode": "demo003",
+		"orderCode": "B00179",
+		"planEndTime": "1501603200000",
+		"planNum": "233",
+		"planStartTime": "1501603200000",
+		"planStartTimeStr": "2017-08-02",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}, {
+		"modelCode": "demo003",
+		"orderCode": "B00178",
+		"planEndTime": "1504022400000",
+		"planNum": "1000",
+		"planStartTime": "1501603200000",
+		"planStartTimeStr": "2017-08-02",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}, {
+		"modelCode": "demo003",
+		"orderCode": "B00177",
+		"planEndTime": "1501516800000",
+		"planNum": "222",
+		"planStartTime": "1501516800000",
+		"planStartTimeStr": "2017-08-01",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}, {
+		"modelCode": "demo003",
+		"orderCode": "B00176",
+		"planEndTime": "1501516800000",
+		"planNum": "111",
+		"planStartTime": "1501516800000",
+		"planStartTimeStr": "2017-08-01",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}, {
+		"modelCode": "demo003",
+		"orderCode": "B00175",
+		"planEndTime": "1501516800000",
+		"planNum": "233",
+		"planStartTime": "1501516800000",
+		"planStartTimeStr": "2017-08-01",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}, {
+		"modelCode": "demo003",
+		"orderCode": "B00174",
+		"planEndTime": "1501516800000",
+		"planNum": "555",
+		"planStartTime": "1501516800000",
+		"planStartTimeStr": "2017-08-01",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}, {
+		"modelCode": "demo003",
+		"orderCode": "B00172",
+		"planEndTime": "1501516800000",
+		"planNum": "123",
+		"planStartTime": "1501516800000",
+		"planStartTimeStr": "2017-08-01",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}, {
+		"modelCode": "demo003",
+		"orderCode": "B00171",
+		"planEndTime": "1501516800000",
+		"planNum": "333",
+		"planStartTime": "1501516800000",
+		"planStartTimeStr": "2017-08-01",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}, {
+		"modelCode": "demo003",
+		"orderCode": "B00170",
+		"planEndTime": "1501603200000",
+		"planNum": "233",
+		"planStartTime": "1501516800000",
+		"planStartTimeStr": "2017-08-01",
+		"productName": "后吊耳底板",
+		"qualifiedNum": "0",
+		"remadeNum": "0"
+	}],
         currentPage: 1
         }
     },

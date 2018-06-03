@@ -50,43 +50,64 @@
             </el-date-picker>
         </div>
         <el-table
-    :data="tableData"
+    :data="emList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
-    </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="moveCode"
+      label="移动单号"
+      width="120"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="moveReasonName"
+      label="移动原因"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="operateDateStr"
+      label="操作日期"
+      width="120"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="stateName"
+      label="状态"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="markAble"
+      label="可用标识"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createUserName"
+      label="创建人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createDateStr"
+      label="创建时间"
+      width="160"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateUserName"
+      label="最后更新人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateDateStr"
+      label="最后更新时间"
+      width="160"
       >
     </el-table-column>
     <el-table-column
@@ -159,35 +180,79 @@ export default {
             copyName: '',
             startDate: '',
             endDate: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            emList: [{
+		"createDate": "1499324059000",
+		"createDateStr": "2017-07-06 14:54:19",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "28",
+		"markAble": "1",
+		"moveCode": "MC00000022",
+		"moveFrom": "WHC052",
+		"moveFromName": "电泳半成品库",
+		"moveReason": "move1",
+		"moveReasonName": "作业计划",
+		"moveTo": "WHC051",
+		"moveToName": "成品库",
+		"operateDate": "1499270400000",
+		"operateDateStr": "2017-07-06",
+		"relevantID": "",
+		"remark": "",
+		"state": "1",
+		"stateName": "已提交",
+		"updateDate": "1499324059000",
+		"updateDateStr": "2017-07-06 14:54:19",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": "1499322767000",
+		"createDateStr": "2017-07-06 14:32:47",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "27",
+		"markAble": "1",
+		"moveCode": "MC00000021",
+		"moveFrom": "WHC042",
+		"moveFromName": "焊接半成品库",
+		"moveReason": "move1",
+		"moveReasonName": "作业计划",
+		"moveTo": "WHC051",
+		"moveToName": "成品库",
+		"operateDate": "1499270400000",
+		"operateDateStr": "2017-07-06",
+		"relevantID": "",
+		"remark": "",
+		"state": "2",
+		"stateName": "审核通过",
+		"updateDate": "1499322767000",
+		"updateDateStr": "2017-07-06 14:32:47",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": "1496198258000",
+		"createDateStr": "2017-05-31 10:37:38",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "26",
+		"markAble": "1",
+		"moveCode": "MC00000011",
+		"moveFrom": "WHC052",
+		"moveFromName": "电泳半成品库",
+		"moveReason": "move2",
+		"moveReasonName": "机组产出",
+		"moveTo": "WHC051",
+		"moveToName": "成品库",
+		"operateDate": "1496160000000",
+		"operateDateStr": "2017-05-31",
+		"relevantID": "C00103",
+		"remark": "",
+		"state": "5",
+		"stateName": "作废",
+		"updateDate": "1496198258000",
+		"updateDateStr": "2017-05-31 10:37:38",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}],
         currentPage: 1
         }
     },

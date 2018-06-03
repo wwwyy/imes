@@ -28,44 +28,53 @@
             </el-select>
         </div>
         <el-table
-    :data="tableData"
+    :data="processDataList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
+      >
     </el-table-column>
     <el-table-column
-      fixed
-      prop="date"
-      label="日期"
+      prop="processCode"
+      label="工序代码"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
+      prop="processName"
+      label="工序名称"
       >
     </el-table-column>
     <el-table-column
-      prop="province"
-      label="省份"
-      >
+    prop="markAble"
+    label="可用标识	"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="createUserName"
+    label="创建人	"
+    width="150"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="createDateStr"
+    label="创建时间	"
+    width="160"
+    >
+    </el-table-column>
+        <el-table-column
+    prop="updateUserName"
+    label="最后更新人	"
+    width="150"
+    >
     </el-table-column>
     <el-table-column
-      prop="city"
-      label="市区"
-     >
-    </el-table-column>
-    <el-table-column
-      prop="address"
-      label="地址"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="zip"
-      label="邮编"
-      >
+    prop="updateDateStr"
+    label="最后更新时间	"
+    width="160"
+    >
     </el-table-column>
     <el-table-column
       fixed="right"
@@ -135,35 +144,307 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            processDataList: [{
+		"createDate": 1495763436000,
+		"createDateStr": "2017-05-26 09:50:36",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": 1040,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "208",
+		"processName": "落料成型",
+		"remark": "",
+		"updateDate": 1495763436000,
+		"updateDateStr": "2017-05-26 09:50:36",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": 1495763424000,
+		"createDateStr": "2017-05-26 09:50:24",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": 1039,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "319",
+		"processName": "修边",
+		"remark": "",
+		"updateDate": 1495763424000,
+		"updateDateStr": "2017-05-26 09:50:24",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": 1495763413000,
+		"createDateStr": "2017-05-26 09:50:13",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": 1038,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "318",
+		"processName": "切断",
+		"remark": "",
+		"updateDate": 1495763413000,
+		"updateDateStr": "2017-05-26 09:50:13",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": 1495763382000,
+		"createDateStr": "2017-05-26 09:49:42",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": 1037,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "206",
+		"processName": "翻边",
+		"remark": "",
+		"updateDate": 1495763382000,
+		"updateDateStr": "2017-05-26 09:49:42",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": 1495763370000,
+		"createDateStr": "2017-05-26 09:49:30",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": 1036,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "205",
+		"processName": "冲孔",
+		"remark": "",
+		"updateDate": 1495763370000,
+		"updateDateStr": "2017-05-26 09:49:30",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": 1495763356000,
+		"createDateStr": "2017-05-26 09:49:16",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": 1035,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "204",
+		"processName": "酸洗",
+		"remark": "",
+		"updateDate": 1495763356000,
+		"updateDateStr": "2017-05-26 09:49:16",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": 1495763342000,
+		"createDateStr": "2017-05-26 09:49:02",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": 1034,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "203",
+		"processName": "黑色电泳漆",
+		"remark": "",
+		"updateDate": 1495763342000,
+		"updateDateStr": "2017-05-26 09:49:02",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": 1495763322000,
+		"createDateStr": "2017-05-26 09:48:42",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": 1033,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "202",
+		"processName": "检验",
+		"remark": "",
+		"updateDate": 1495763322000,
+		"updateDateStr": "2017-05-26 09:48:42",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": 1495763306000,
+		"createDateStr": "2017-05-26 09:48:26",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": 1032,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "201",
+		"processName": "半成品入库",
+		"remark": "",
+		"updateDate": 1495763306000,
+		"updateDateStr": "2017-05-26 09:48:26",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": 1495763284000,
+		"createDateStr": "2017-05-26 09:48:04",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": 1031,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "200",
+		"processName": "人工分选",
+		"remark": "",
+		"updateDate": 1495763284000,
+		"updateDateStr": "2017-05-26 09:48:04",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": 1495763264000,
+		"createDateStr": "2017-05-26 09:47:44",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": 1030,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "309",
+		"processName": "包装入库",
+		"remark": "",
+		"updateDate": 1495763264000,
+		"updateDateStr": "2017-05-26 09:47:44",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": 1495185915000,
+		"createDateStr": "2017-05-19 17:25:15",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": 1029,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "195",
+		"processName": "焊接工序",
+		"remark": "",
+		"updateDate": 1495185915000,
+		"updateDateStr": "2017-05-19 17:25:15",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": 1495185859000,
+		"createDateStr": "2017-05-19 17:24:19",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": 1028,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "194",
+		"processName": "落料工序",
+		"remark": "",
+		"updateDate": 1495185859000,
+		"updateDateStr": "2017-05-19 17:24:19",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": 1495185827000,
+		"createDateStr": "2017-05-19 17:23:47",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": 1027,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "193",
+		"processName": "冲压工序",
+		"remark": "",
+		"updateDate": 1495185827000,
+		"updateDateStr": "2017-05-19 17:23:47",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": 1488783064000,
+		"createDateStr": "2017-03-06 14:51:04",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": 1026,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "292",
+		"processName": "12  45",
+		"remark": "",
+		"updateDate": 1488783064000,
+		"updateDateStr": "2017-03-06 14:51:04",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": 1488782930000,
+		"createDateStr": "2017-03-06 14:48:50",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": 1025,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "291",
+		"processName": "12",
+		"remark": "",
+		"updateDate": 1488782930000,
+		"updateDateStr": "2017-03-06 14:48:50",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDate": 1487836305000,
+		"createDateStr": "2017-02-23 15:51:45",
+		"createUser": "PENG035",
+		"createUserName": "高丽娟",
+		"id": 1024,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "287",
+		"processName": "固定中铰链",
+		"remark": "",
+		"updateDate": 1487836305000,
+		"updateDateStr": "2017-02-23 15:51:45",
+		"updateUser": "PENG035",
+		"updateUserName": "高丽娟"
+	}, {
+		"createDate": 1487836252000,
+		"createDateStr": "2017-02-23 15:50:52",
+		"createUser": "PENG035",
+		"createUserName": "高丽娟",
+		"id": 1023,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "286",
+		"processName": "按滑道",
+		"remark": "",
+		"updateDate": 1487836252000,
+		"updateDateStr": "2017-02-23 15:50:52",
+		"updateUser": "PENG035",
+		"updateUserName": "高丽娟"
+	}, {
+		"createDate": 1487836236000,
+		"createDateStr": "2017-02-23 15:50:36",
+		"createUser": "PENG035",
+		"createUserName": "高丽娟",
+		"id": 1022,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "285",
+		"processName": "固定马达",
+		"remark": "",
+		"updateDate": 1487836236000,
+		"updateDateStr": "2017-02-23 15:50:36",
+		"updateUser": "PENG035",
+		"updateUserName": "高丽娟"
+	}, {
+		"createDate": 1487836220000,
+		"createDateStr": "2017-02-23 15:50:20",
+		"createUser": "PENG035",
+		"createUserName": "高丽娟",
+		"id": 1021,
+		"markAble": 1,
+		"markAbleName": "启用",
+		"processCode": "284",
+		"processName": "安装风机",
+		"remark": "",
+		"updateDate": 1487836220000,
+		"updateDateStr": "2017-02-23 15:50:20",
+		"updateUser": "PENG035",
+		"updateUserName": "高丽娟"
+	}],
         currentPage: 1
         }
     },

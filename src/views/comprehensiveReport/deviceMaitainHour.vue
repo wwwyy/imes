@@ -43,53 +43,51 @@
                 size="small">
             </el-date-picker>
         </div>
-        <el-table
-    :data="tableData"
+       <el-table
+    :data="odList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
-     <el-table-column
-      type="selection"
-      width="55">
-    </el-table-column>
     <el-table-column
-      fixed
-      prop="date"
-      label="日期"
+      prop="equipCode"
+      label="设备代码"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="equipName"
+      label="设备名称"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="supplierName"
+      label="设备供应商名称"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="projectName"
+      label="保养项目"
       >
     </el-table-column>
     <el-table-column
-      fixed="right"
-      label="操作"
+      prop="beginDateStr"
+      label="	保养开始时间"
       >
-      <template slot-scope="scope">
-        <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
-      </template>
+    </el-table-column>
+    <el-table-column
+      prop="endDateStr"
+      label="保养结束时间"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="maintenanceTime"
+      label="保养时间(小时)"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="operatorName"
+      label="操作人"
+      >
     </el-table-column>
   </el-table>
    <div style="margin:15px 0">
@@ -153,35 +151,88 @@ export default {
             copyName: '',
             startDate: '',
             endDate: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            odList: [{
+		"beginDate": "1487922600000",
+		"beginDateStr": "2017-02-24 15:50:00",
+		"endDate": "1488007800000",
+		"endDateStr": "2017-02-25 15:30:00",
+		"equipCode": "9050MAMTFP0012",
+		"equipName": "新线门体发泡夹具12",
+		"maintenanceTime": "23.67",
+		"operator": "PENG035",
+		"operatorName": "高丽娟",
+		"projectName": "发泡机保养",
+		"supplierName": "设备供应商"
+	}, {
+		"beginDate": "1487919000000",
+		"beginDateStr": "2017-02-24 14:50:00",
+		"endDate": "1487975100000",
+		"endDateStr": "2017-02-25 06:25:00",
+		"equipCode": "9050MAMTFP0012",
+		"equipName": "新线门体发泡夹具12",
+		"maintenanceTime": "15.58",
+		"operator": "PENG035",
+		"operatorName": "高丽娟",
+		"projectName": "发泡机保养",
+		"supplierName": "设备供应商"
+	}, {
+		"beginDate": "1487900520000",
+		"beginDateStr": "2017-02-24 09:42:00",
+		"endDate": "1487974200000",
+		"endDateStr": "2017-02-25 06:10:00",
+		"equipCode": "9050MAMTFP0012",
+		"equipName": "新线门体发泡夹具12",
+		"maintenanceTime": "20.47",
+		"operator": "PENG035",
+		"operatorName": "高丽娟",
+		"projectName": "发泡机保养",
+		"supplierName": "设备供应商"
+	}, {
+		"equipCode": "9050MAMTFP0012",
+		"equipName": "新线门体发泡夹具12",
+		"projectName": "发泡机保养",
+		"supplierName": "设备供应商"
+	}, {
+		"equipCode": "9050MAMTFP0015",
+		"equipName": "新线门体发泡夹具15",
+		"projectName": "发泡机保养",
+		"supplierName": "设备供应商"
+	}, {
+		"equipCode": "9050MAMTFP0012",
+		"equipName": "新线门体发泡夹具12",
+		"projectName": "发泡机保养",
+		"supplierName": "设备供应商"
+	}, {
+		"equipCode": "9050MAMTFP0012",
+		"equipName": "新线门体发泡夹具12",
+		"projectName": "发泡机保养",
+		"supplierName": "设备供应商"
+	}, {
+		"equipCode": "9050MAMTFP0015",
+		"equipName": "新线门体发泡夹具15",
+		"projectName": "发泡机保养",
+		"supplierName": "设备供应商"
+	}, {
+		"equipCode": "9050MAMTFP0012",
+		"equipName": "新线门体发泡夹具12",
+		"projectName": "发泡机保养",
+		"supplierName": "设备供应商"
+	}, {
+		"equipCode": "9050MAMTFP0012",
+		"equipName": "新线门体发泡夹具12",
+		"projectName": "发泡机保养",
+		"supplierName": "设备供应商"
+	}, {
+		"equipCode": "9050MAMTFP0015",
+		"equipName": "新线门体发泡夹具15",
+		"projectName": "发泡机保养",
+		"supplierName": "设备供应商"
+	}, {
+		"equipCode": "9050MAMTFP0012",
+		"equipName": "新线门体发泡夹具12",
+		"projectName": "发泡机保养",
+		"supplierName": "设备供应商"
+	}],
         currentPage: 1
         }
     },

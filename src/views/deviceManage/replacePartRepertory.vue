@@ -20,52 +20,35 @@
             <el-input v-model="copyCode" placeholder="请输入内容" style="width:194px" size="small"></el-input>
         </div>
         <el-table
-    :data="tableData"
+    :data="pgList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
-     <el-table-column
-      type="selection"
-      width="55">
-    </el-table-column>
     <el-table-column
-      fixed
-      prop="date"
-      label="日期"
+      prop="sparePartCode"
+      label="	备件代码"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
+      prop="sparePartName"
+      label="	备件名称"
       >
     </el-table-column>
     <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="supplyName"
+      label="供应商名称"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
-      >
+      prop="inventory"
+      label="	库存数量"
+     >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
-      >
-    </el-table-column>
-    <el-table-column
-      fixed="right"
-      label="操作"
-      >
-      <template slot-scope="scope">
-        <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
-      </template>
+      prop="status"
+      label="	备件状态"
+     >
     </el-table-column>
   </el-table>
    <div style="margin:15px 0">
@@ -129,35 +112,23 @@ export default {
             copyName: '',
             startDate: '',
             endDate: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            pgList: [{
+		"id": "1000",
+		"inventory": "82",
+		"sparePartCode": "8AL4TKDF3T",
+		"sparePartName": "备件03",
+		"status": "1",
+		"supplyCode": "sup00036",
+		"supplyName": "云南古创贸易有限公司"
+	}, {
+		"id": "1001",
+		"inventory": "15",
+		"sparePartCode": "KRNYIGRML5",
+		"sparePartName": "曲轴",
+		"status": "1",
+		"supplyCode": "sup00037",
+		"supplyName": "昆明浩杰科技有限公司"
+	}],
         currentPage: 1
         }
     },

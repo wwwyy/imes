@@ -16,11 +16,11 @@
             <el-button size="small" type="primary" style="width:100px"> 清 空 </el-button>
         </div>
         <div style="text-align:left;margin:20px 0;">
-              <span style="margin-left:40px;display:inline-block;line-height:32px;font-size:14px;width:70px">员工代码：</span>
+              <span style="margin-left:40px;display:inline-block;line-height:32px;font-size:14px;width:90px">员工代码：</span>
             <el-input v-model="copyCode" placeholder="请输入内容" style="width:194px" size="small"></el-input>
-              <span style="display:inline-block;margin-left:40px;line-height:32px;font-size:14px;width:70px;">员工名称：	</span>
+              <span style="display:inline-block;margin-left:40px;line-height:32px;font-size:14px;width:90px;">员工名称：	</span>
               <el-input v-model="copyCode" placeholder="请输入内容" style="width:194px" size="small"></el-input>
-             <span style="display:inline-block;line-height:32px;font-size:14px;width:70px">可用标识：	</span>
+             <span style="display:inline-block;margin-left:40px;line-height:32px;font-size:14px;width:90px">可用标识：	</span>
             <el-select v-model="copyType" placeholder="请选择" size="small" style="width:194px">
                 <el-option
                 v-for="item in copyOptions"
@@ -32,7 +32,7 @@
           
             <br>
             <br>
-            <span style="margin-left:40px;line-height:32px;font-size:14px;">操作日期从：	</span>
+            <span style="display:inline-block;margin-left:40px;line-height:32px;font-size:14px;width:90px;">操作日期从：	</span>
              <el-date-picker
                 v-model="startDate"
                 type="date"
@@ -40,7 +40,7 @@
                 style="width:194px"
                 size="small">
             </el-date-picker>
-             <span style="margin-left:40px;line-height:32px;font-size:14px;">操作日期到：	</span>
+             <span style="display:inline-block;margin-left:40px;line-height:32px;font-size:14px;width:90px;">操作日期到：	</span>
              <el-date-picker
                 v-model="endDate"
                 type="date"
@@ -53,49 +53,56 @@
     :data="tableData"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
-    </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="personCode"
+      label="补料单号"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="personName"
+      label="订单编号"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="attendanceDateStr"
+      label="操作日期"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="onDutyTimeStr"
+      label="	状态"
       >
     </el-table-column>
     <el-table-column
-      fixed="right"
-      label="操作"
+      prop="attendanceDateStr"
+      label="可用标识"
       >
-      <template slot-scope="scope">
-        <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
-      </template>
+    </el-table-column>
+    <el-table-column
+      prop="onDutyTimeStr"
+      label="创建人"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="offDutyTimeStr"
+      label="创建时间"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="offDutyTimeStr"
+      label="最后更新人"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="offDutyTimeStr"
+      label="最后更新时间"
+      >
     </el-table-column>
   </el-table>
    <div style="margin:15px 0">
@@ -159,35 +166,7 @@ export default {
             copyName: '',
             startDate: '',
             endDate: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            tableData: [],
         currentPage: 1
         }
     },

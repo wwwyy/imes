@@ -37,43 +37,83 @@
             </el-select>
         </div>
         <el-table
-    :data="tableData"
+    :data="supplyList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
-    </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="supplyTypeName"
+      label="供应商类别"
+      width="120"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="supplyCode"
+      label="供应商代码"
+      width="120"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="supplyName"
+      label="供应商名称"
+      width="200"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="supplyLinke"
+      label="供应商联系人"
+      width="120"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="supplyPhone"
+      label="供应商联系电话"
+      width="160"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="supplyEmail"
+      label="供应商联系邮箱"
+      width="160"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="supplyAddress"
+      label="供应商联系地址"
+      width="200"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="markAble"
+      label="可用标识"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createUserName"
+      label="创建人"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createDateStr"
+      label="创建时间"
+      width="160"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateUserName"
+      label="最后更新人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateDateStr"
+      label="最后更新时间"
+      width="160"
       >
     </el-table-column>
     <el-table-column
@@ -144,35 +184,83 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            supplyList: [{
+		"createDateStr": "2017-05-19 15:16:12",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1003",
+		"isDel": "false",
+		"markAble": "1",
+		"remark": "",
+		"supplyAddress": "",
+		"supplyCode": "MYCOMPANY",
+		"supplyEmail": "",
+		"supplyLinke": "",
+		"supplyName": "公司资产",
+		"supplyPhone": "13800138000",
+		"supplyType": "SUPPLY_WL",
+		"supplyTypeName": "物料",
+		"updateDateStr": "2017-05-19 15:16:12",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}, {
+		"createDateStr": "2017-02-23 13:12:10",
+		"createUser": "PENG035",
+		"createUserName": "高丽娟",
+		"id": "1002",
+		"isDel": "false",
+		"markAble": "1",
+		"remark": "",
+		"supplyAddress": "",
+		"supplyCode": "sup00037",
+		"supplyEmail": "",
+		"supplyLinke": "李四",
+		"supplyName": "昆明浩杰科技有限公司",
+		"supplyPhone": "13300000000",
+		"supplyType": "SUPPLY_WL",
+		"supplyTypeName": "物料",
+		"updateDateStr": "2017-02-23 18:17:27",
+		"updateUser": "PENG035",
+		"updateUserName": "高丽娟"
+	}, {
+		"createDateStr": "2017-02-21 13:21:04",
+		"createUser": "PENG035",
+		"createUserName": "高丽娟",
+		"id": "1001",
+		"isDel": "false",
+		"markAble": "1",
+		"remark": "",
+		"supplyAddress": "",
+		"supplyCode": "sup00036",
+		"supplyEmail": "10454444@qq.com",
+		"supplyLinke": "张三",
+		"supplyName": "云南古创贸易有限公司",
+		"supplyPhone": "0532-87812345",
+		"supplyType": "SUPPLY_WL",
+		"supplyTypeName": "物料",
+		"updateDateStr": "2017-02-23 18:17:01",
+		"updateUser": "PENG035",
+		"updateUserName": "高丽娟"
+	}, {
+		"createDateStr": "2017-02-21 10:38:51",
+		"createUser": "PENG035",
+		"createUserName": "高丽娟",
+		"id": "1000",
+		"isDel": "false",
+		"markAble": "1",
+		"remark": "",
+		"supplyAddress": "",
+		"supplyCode": "sup00035",
+		"supplyEmail": "",
+		"supplyLinke": "",
+		"supplyName": "云南英泽机械设备有限公司",
+		"supplyPhone": "0532-87654321",
+		"supplyType": "SUPPLY_SB",
+		"supplyTypeName": "设备",
+		"updateDateStr": "2017-02-23 18:17:46",
+		"updateUser": "PENG035",
+		"updateUserName": "高丽娟"
+	}],
         currentPage: 1
         }
     },

@@ -37,43 +37,58 @@
             </el-select>
         </div>
         <el-table
-    :data="tableData"
+    :data="emList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
+      >
     </el-table-column>
     <el-table-column
-      fixed
-      prop="date"
-      label="日期"
+      prop="parameterCode"
+      label="参数代码"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
+      prop="parameterName"
+      label="参数名称"
       >
     </el-table-column>
     <el-table-column
-      prop="province"
-      label="省份"
+      prop="parameterTypeName"
+      label="参数类型"
       >
     </el-table-column>
     <el-table-column
-      prop="city"
-      label="市区"
+      prop="parameterValue"
+      label="值"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="markAble"
+      label="可用标识"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="createUserName"
+      label="创建人"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createDateStr"
+      label="创建时间"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateUserName"
+      label="最后更新人"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateDateStr"
+      label="最后更新时间"
       >
     </el-table-column>
     <el-table-column
@@ -144,35 +159,24 @@ export default {
             markType: '',
             copyCode: '',
             copyName: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            emList: [{
+		"createDate": "1499221892000",
+		"createDateStr": "2017-07-05 10:31:32",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"id": "1",
+		"markAble": "1",
+		"parameterCode": "121",
+		"parameterName": "A1",
+		"parameterType": "BUSINESS_PARAMTYPE1",
+		"parameterTypeName": "1类",
+		"parameterValue": "100",
+		"remark": "12",
+		"updateDate": "1499221892000",
+		"updateDateStr": "2017-07-05 10:31:32",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员"
+	}],
         currentPage: 1
         }
     },

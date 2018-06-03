@@ -56,51 +56,82 @@
             </el-date-picker>
         </div>
         <el-table
-    :data="tableData"
+    :data="materialInWareList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
      <el-table-column
       type="selection"
-      width="55">
-    </el-table-column>
-    <el-table-column
-      fixed
-      prop="date"
-      label="日期"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="inCode"
+      label="入库单号"
+      width="120"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="fromCode"
+      label="来源编码"
+     >
+    </el-table-column>
+    <el-table-column
+      prop="deliveryDateStr"
+      label="操作日期"
+      width="120"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="warehouseName"
+      label="目标仓库"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="stateName"
+      label="状态"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="markAble"
+      label="可用标识"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createUserName"
+      label="创建人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="createDateStr"
+      label="创建时间"
+      width="160"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateUserName"
+      label="最后更新人"
+      width="120"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="updateDateStr"
+      label="最后更新时间"
+      width="160"
       >
     </el-table-column>
     <el-table-column
       fixed="right"
       label="操作"
+      width="200"
       >
       <template slot-scope="scope">
         <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
+         <el-button type="text" size="small" @click="handleClick(scope.row)">删除</el-button>
+          <el-button type="text" size="small" @click="handleClick(scope.row)">确认</el-button>
+           <el-button type="text" size="small" @click="handleClick(scope.row)">红冲</el-button>
       </template>
     </el-table-column>
   </el-table>
@@ -117,38 +148,34 @@
     </el-pagination>
    </div>
    <el-table
-    :data="tableData"
+    :data="materialInWareDetailVOList"
     border
     style="width: 100%"
+    align="left"
     size="mini">
     <el-table-column
-      prop="date"
-      label="日期"
+      prop="materialCode"
+      label="物料代码"
      >
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="province"
-      label="省份"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
+      prop="materialName"
+      label="物料名称"
      >
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址"
+      prop="materialBatch"
+      label="物料批次"
       >
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="inCount"
+      label="入库数量"
+      >
+    </el-table-column>
+    <el-table-column
+      prop="WLName"
+      label="库位"
       >
     </el-table-column>
   </el-table>
@@ -201,35 +228,37 @@ export default {
             copyName: '',
             startDate: '',
             endDate: '',
-            tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
+            materialInWareList: [{
+		"createDate": "1496198031000",
+		"createDateStr": "2017-05-31 10:33:51",
+		"createUser": "admin",
+		"createUserName": "系统管理员",
+		"deliveryDate": "1496246400000",
+		"deliveryDateStr": "2017-06-01",
+		"fromCode": "123312",
+		"id": "46",
+		"inCode": "IN0011",
+		"markAble": "1",
+		"remark": "",
+		"state": "2",
+		"stateName": "红冲",
+		"updateDate": "1496198069000",
+		"updateDateStr": "2017-05-31 10:34:29",
+		"updateUser": "admin",
+		"updateUserName": "系统管理员",
+		"warehouseCode": "WHC042",
+		"warehouseName": "焊接半成品库"
+  }],
+  materialInWareDetailVOList: [{
+		"WLCode": "loca0002",
+		"WLName": "库位A001",
+		"id": "91",
+		"inCount": "100.0000",
+		"materialBatch": "6512",
+		"materialCode": "WL0099",
+		"materialInCode": "IN0011",
+		"materialName": "钢材(20号)"
+	}],
         currentPage: 1
         }
     },
