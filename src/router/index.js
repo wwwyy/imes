@@ -20,7 +20,13 @@ import codeRule from '@/views/baseData/codeRule'
 import businessParameter from '@/views/baseData/businessParameter'
 import businessRule from '@/views/baseData/businessRule'
 import exRateAdd from '@/views/baseData/exRateAdd'
-
+import exRateEdit from '@/views/baseData/exRateEdit'
+import measureDataAdd from '@/views/baseData/measureDataAdd'
+import measureDataEdit from '@/views/baseData/measureDataEdit'
+import holidayManageAdd from '@/views/baseData/holidayManageAdd'
+import holidayManageEdit from '@/views/baseData/holidayManageEdit'
+import codeTypeAdd from '@/views/baseData/codeTypeAdd'
+import codeTypeEdit from '@/views/baseData/codeTypeEdit'
 
 import organizationalTree from '@/views/baseData/organizationalTree'
 import personnelMaintenanceTree from '@/views/baseData/personnelMaintenanceTree'
@@ -163,9 +169,24 @@ export default new Router({
               component: exRateAdd
             },
             {
+              path: '/exRateEdit',
+              name: 'exRateEdit',
+              component: exRateEdit
+            },
+            {
               path: '/measureData',
               name: 'measureData',
               component: measureData
+            },
+            {
+              path: '/measureDataAdd',
+              name: 'measureDataAdd',
+              component: measureDataAdd
+            },
+            {
+              path: '/measureDataEdit',
+              name: 'measureDataEdit',
+              component: measureDataEdit
             },
             {
               path: '/unitTrans',
@@ -178,9 +199,29 @@ export default new Router({
               component: holidayManage
             },
             {
+              path: '/holidayManageAdd',
+              name: 'holidayManageAdd',
+              component: holidayManageAdd
+            },
+            {
+              path: '/holidayManageEdit',
+              name: 'holidayManageEdit',
+              component: holidayManageEdit
+            },
+            {
               path: '/codeType',
               name: 'codeType',
               component: codeType
+            },
+            {
+              path: '/codeTypeAdd',
+              name: 'codeTypeAdd',
+              component: codeTypeAdd
+            },
+            {
+              path: '/codeTypeEdit',
+              name: 'codeTypeEdit',
+              component: codeTypeEdit
             },
             {
               path: '/codeDef',

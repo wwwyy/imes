@@ -234,6 +234,7 @@ export default {
     methods: {
       handleClick(row) {
         console.log(row);
+        this.$router.push('exRateEdit')
       },
        handleSizeChange(val) {
         console.log(`每页 ${val} 条`);

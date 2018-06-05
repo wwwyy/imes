@@ -1,10 +1,10 @@
 <template>
-    <div id="exRateAdd">
+    <div id="exRateEdit">
          <el-breadcrumb separator-class="el-icon-arrow-right">
             <el-breadcrumb-item>基础数据管理</el-breadcrumb-item>
             <el-breadcrumb-item>公共数据管理</el-breadcrumb-item>
             <el-breadcrumb-item>汇率维护</el-breadcrumb-item>
-            <el-breadcrumb-item>新增</el-breadcrumb-item>
+            <el-breadcrumb-item>编辑</el-breadcrumb-item>
         </el-breadcrumb>
         <hr>
         <div>
@@ -126,7 +126,7 @@
 </template>
 <script>
 export default {
-  name: "exRateAdd",
+  name: "exRateEdit",
   data() {
     return {
         value3:'',

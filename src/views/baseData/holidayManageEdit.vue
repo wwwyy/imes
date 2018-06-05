@@ -1,13 +1,13 @@
 <template>
-    <div id="exRateAdd">
+    <div id="holidayManageEdit">
          <el-breadcrumb separator-class="el-icon-arrow-right">
             <el-breadcrumb-item>基础数据管理</el-breadcrumb-item>
             <el-breadcrumb-item>公共数据管理</el-breadcrumb-item>
-            <el-breadcrumb-item>汇率维护</el-breadcrumb-item>
-            <el-breadcrumb-item>新增</el-breadcrumb-item>
+            <el-breadcrumb-item>节假日维护</el-breadcrumb-item>
+            <el-breadcrumb-item>编辑</el-breadcrumb-item>
         </el-breadcrumb>
         <hr>
-        <div>
+        <div style="text-align:left;">
                <el-button type="primary" @click="save" style="width:120px;">保存</el-button>
         <el-button @click="back">返回</el-button>
            </div>
@@ -15,86 +15,39 @@
         <el-form label-position="left" label-width="120px" :model="formLabelAlign" style="margin-top:30px">
             <el-row type="flex" class="row-bg" justify="center">
                 <el-col :span="6">
-                    <el-form-item label="本币名称：">
-                        <el-select v-model="nameType" placeholder="请选择" style="width:100%;">
-                            <el-option
-                            v-for="item in nameOptions"
-                            :key="item.value"
-                            :label="item.label"
-                            :value="item.value">
-                            </el-option>
-                        </el-select>
-                    </el-form-item>
-                </el-col>
-                <el-col :span="6"></el-col>
-                <el-col :span="6">
-                    <el-form-item label="本币代码：">
-                        <el-input v-model="formLabelAlign.name" disabled style="width:100%;"></el-input>
-                    </el-form-item>
-                </el-col>
-                </el-row>
-                <el-row type="flex" class="row-bg" justify="center">
-                <el-col :span="6">
-                    <el-form-item label="原币名称：">
-                        <el-select v-model="nameType" placeholder="请选择" style="width:100%;">
-                            <el-option
-                            v-for="item in nameOptions"
-                            :key="item.value"
-                            :label="item.label"
-                            :value="item.value">
-                            </el-option>
-                        </el-select>
-                    </el-form-item>
-                </el-col>
-                <el-col :span="6"></el-col>
-                <el-col :span="6">
-                    <el-form-item label="原币代码：">
-                        <el-input v-model="oldCode" disabled style="width:100%;"></el-input>
-                    </el-form-item>
-                </el-col>
-                </el-row>
-                <el-row type="flex" class="row-bg" justify="center">
-                <el-col :span="6">
-                    <el-form-item label="原币换算单位：">
-                        <el-select v-model="exChange" placeholder="请选择" style="width:100%;">
-                            <el-option
-                            v-for="item in exChangeUnit"
-                            :key="item.value"
-                            :label="item.label"
-                            :value="item.value">
-                            </el-option>
-                        </el-select>
-                    </el-form-item>
-                </el-col>
-                <el-col :span="6"></el-col>
-                <el-col :span="6">
-                    <el-form-item label="原币折算价：">
-                        <el-input v-model="formLabelAlign.name" style="width:100%;"></el-input>
-                    </el-form-item>
-                </el-col>
-                </el-row>
-                <el-row type="flex" class="row-bg" justify="center">
-                <el-col :span="6">
-                    <el-form-item label="发布时间：">
+                    <el-form-item label="年份:">
                         <el-date-picker
-                        style="width:100%;"
-                        v-model="value3"
-                        type="datetime"
-                        placeholder="选择日期时间"
-                        default-time="12:00:00">
+                            style="width:100%;"
+                            v-model="value5"
+                            type="year"
+                            placeholder="选择年">
                         </el-date-picker>
                     </el-form-item>
                 </el-col>
                 <el-col :span="6"></el-col>
                 <el-col :span="6">
-                    <el-form-item label="版本号：">
-                        <el-input v-model="v" disabled style="width:100%;"></el-input>
+                    <el-form-item label="	假日名称：">
+                        <el-input v-model="oldCode" style="width:100%;"></el-input>
+                        
                     </el-form-item>
                 </el-col>
-            </el-row>
-            <el-row type="flex" class="row-bg" justify="center">
+                </el-row>
+                <el-row type="flex" class="row-bg" justify="center">
                 <el-col :span="6">
-                    <el-form-item label="可用标识:">
+                    <el-form-item label="所属组织：	">
+                        <el-select v-model="copyCode" placeholder="请选择" style="width:100%;">
+                            <el-option
+                            v-for="item in codeTypeList"
+                            :key="item.typeName"
+                            :label="item.typeCode"
+                            :value="item.typeName">
+                            </el-option>
+                        </el-select>
+                    </el-form-item>
+                </el-col>
+                <el-col :span="6"></el-col>
+                <el-col :span="6">
+                    <el-form-item label="可用标识	">
                         <el-select v-model="markType" placeholder="请选择" style="width:100%;">
                             <el-option
                             v-for="item in markOptions"
@@ -103,6 +56,19 @@
                             :value="item.value">
                             </el-option>
                         </el-select>
+                        
+                    </el-form-item>
+                </el-col>
+                </el-row>
+            <el-row type="flex" class="row-bg" justify="center">
+                <el-col :span="6">
+                    <el-form-item label="	开始日期:">
+                        <el-date-picker
+                        style="width:100%;"
+      v-model="value1"
+      type="date"
+      placeholder="选择日期">
+    </el-date-picker>
                     </el-form-item>
                 </el-col>
                 <el-col :span="6"></el-col>
@@ -111,8 +77,13 @@
             </el-row>
             <el-row type="flex" class="row-bg" justify="center">
                 <el-col :span="6">
-                        <el-form-item label="备注：">
-                <el-input type="textarea"></el-input>
+                        <el-form-item label="结束日期:">
+                <el-date-picker
+                style="width:100%;"
+      v-model="value2"
+      type="date"
+      placeholder="选择日期">
+    </el-date-picker>
             </el-form-item>
                 </el-col>
                 <el-col :span="6"></el-col>
@@ -126,33 +97,42 @@
 </template>
 <script>
 export default {
-  name: "exRateAdd",
+  name: "holidayManageEdit",
   data() {
     return {
-        value3:'',
+        copyCode:'',
         exChange: '',
-        nameType: '',
+        value1: '',
+        value2: '',
+        value5: '',
+        copy: '',
             markType: '',
-            oldCode: 'RMB',
+            oldCode: '',
             v: "V1.149",
-            exChangeUnit: [
+            copyOptions: [
                 {
-                    value: '1',
-                    label: '1'
+                    value: '存储',
+                    label: '存储'
                 }, 
                 {
-                    value: '100',
-                    label: '100'
-                }
-            ],
-        nameOptions: [
+                    value: '温度',
+                    label: '温度'
+                },
                 {
-                    value: '欧元',
-                    label: '欧元'
+                    value: '容量',
+                    label: '容量'
                 }, 
                 {
-                    value: '人民币',
-                    label: '人民币'
+                    value: '面积',
+                    label: '面积'
+                },
+                {
+                    value: '重量',
+                    label: '重量'
+                }, 
+                {
+                    value: '长度',
+                    label: '长度'
                 }
             ],
             markOptions: [
@@ -165,6 +145,25 @@ export default {
                     label: '停用'
                 }
             ],
+            codeTypeList: [{
+		"typeCode": "JC_DWZH_CC",
+		"typeName": "存储"
+	}, {
+		"typeCode": "JC_DWZH_WD",
+		"typeName": "温度"
+	}, {
+		"typeCode": "JC_DWZH_RL",
+		"typeName": "容量"
+	}, {
+		"typeCode": "JC_DWZH_MJ",
+		"typeName": "面积"
+	}, {
+		"typeCode": "JC_DWZH_ZL",
+		"typeName": "重量"
+	}, {
+		"typeCode": "JC_DWZH_CD",
+		"typeName": "长度"
+	}],
       formLabelAlign: {
         name: "",
         region: "",

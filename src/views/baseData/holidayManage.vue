@@ -3,11 +3,11 @@
         <el-breadcrumb separator-class="el-icon-arrow-right">
             <el-breadcrumb-item>基础数据管理</el-breadcrumb-item>
             <el-breadcrumb-item>公共数据管理</el-breadcrumb-item>
-            <el-breadcrumb-item>计量维护</el-breadcrumb-item>
+            <el-breadcrumb-item>节假日维护</el-breadcrumb-item>
         </el-breadcrumb>
         <hr>
         <div style="text-align:left">
-            <el-button size="small" icon="el-icon-plus" style="width:100px"> 新 增 </el-button>
+            <el-button size="small" icon="el-icon-plus" style="width:100px" @click="add"> 新 增 </el-button>
             <el-button size="small" icon="el-icon-delete" style="width:100px"> 删 除 </el-button>
               <el-button size="small" icon="el-icon-success" style="width:100px"> 保 存 </el-button>
             <el-button size="small" icon="el-icon-error" style="width:100px"> 撤 销 </el-button>
@@ -15,7 +15,7 @@
             <el-button size="small" type="primary" style="width:100px"> 查 询 </el-button>
             <el-button size="small" type="primary" style="width:100px"> 清 空 </el-button>
         </div>
-        <div style="text-align:center;margin:20px 0;">
+        <div style="text-align:left;margin:20px 0;">
              <span style="line-height:32px;font-size:14px;">假日名称：</span>
             <el-input v-model="copyCode" placeholder="请输入内容" style="width:194px" size="small"></el-input>
             <span style="margin-left:40px;line-height:32px;font-size:14px;">单位类别：</span>
@@ -283,8 +283,12 @@ export default {
         }
     },
     methods: {
+        add(){
+            this.$router.push('holidayManageAdd')
+        },
       handleClick(row) {
         console.log(row);
+        this.$router.push('holidayManageEdit')
       },
        handleSizeChange(val) {
         console.log(`每页 ${val} 条`);
