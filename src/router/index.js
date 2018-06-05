@@ -27,6 +27,17 @@ import holidayManageAdd from '@/views/baseData/holidayManageAdd'
 import holidayManageEdit from '@/views/baseData/holidayManageEdit'
 import codeTypeAdd from '@/views/baseData/codeTypeAdd'
 import codeTypeEdit from '@/views/baseData/codeTypeEdit'
+import codeDefAdd from '@/views/baseData/codeDefAdd'
+import codeDefEdit from '@/views/baseData/codeDefEdit'
+import supplyInfoAdd from '@/views/baseData/supplyInfoAdd'
+import supplyInfoEdit from '@/views/baseData/supplyInfoEdit'
+import codeRuleAdd from '@/views/baseData/codeRuleAdd'
+import codeRuleEdit from '@/views/baseData/codeRuleEdit'
+import businessParameterAdd from '@/views/baseData/businessParameterAdd'
+import businessParameterEdit from '@/views/baseData/businessParameterEdit'
+import businessRuleAdd from '@/views/baseData/businessRuleAdd'
+import businessRuleEdit from '@/views/baseData/businessRuleEdit'
+
 
 import organizationalTree from '@/views/baseData/organizationalTree'
 import personnelMaintenanceTree from '@/views/baseData/personnelMaintenanceTree'
@@ -34,12 +45,34 @@ import workCenter from '@/views/baseData/workCenter'
 import equipMent from '@/views/baseData/equipMent'
 import wareHouse from '@/views/baseData/wareHouse'
 import location from '@/views/baseData/location'
+import organizationalTreeAdd from '@/views/baseData/organizationalTreeAdd'
+import organizationalTreeEdit from '@/views/baseData/organizationalTreeEdit'
+import personnelMaintenanceTreeAdd from '@/views/baseData/personnelMaintenanceTreeAdd'
+import personnelMaintenanceTreeEdit from '@/views/baseData/personnelMaintenanceTreeEdit'
+import workCenterAdd from '@/views/baseData/workCenterAdd'
+import workCenterEdit from '@/views/baseData/workCenterEdit'
+import equipMentAdd from '@/views/baseData/equipMentAdd'
+import equipMentEdit from '@/views/baseData/equipMentEdit'
+import wareHouseAdd from '@/views/baseData/wareHouseAdd'
+import wareHouseEdit from '@/views/baseData/wareHouseEdit'
+import locationAdd from '@/views/baseData/locationAdd'
+import locationEdit from '@/views/baseData/locationEdit'
 
 import materialInfo from '@/views/baseData/materialInfo'
 import productModel from '@/views/baseData/productModel'
 import productStructure from '@/views/baseData/productStructure'
 import processData from '@/views/baseData/processData'
 import processRoute from '@/views/baseData/processRoute'
+import materialInfoAdd from '@/views/baseData/materialInfoAdd'
+import materialInfoEdit from '@/views/baseData/materialInfoEdit'
+import productModelAdd from '@/views/baseData/productModelAdd'
+import productModelEdit from '@/views/baseData/productModelEdit'
+import productStructureAdd from '@/views/baseData/productStructureAdd'
+import productStructureEdit from '@/views/baseData/productStructureEdit'
+import processDataAdd from '@/views/baseData/processDataAdd'
+import processDataEdit from '@/views/baseData/processDataEdit'
+import processRouteAdd from '@/views/baseData/processRouteAdd'
+import processRouteEdit from '@/views/baseData/processRouteEdit'
 
 //productPlan
 import productPlan from '@/views/productPlan/productPlan'
@@ -49,11 +82,17 @@ import orderWorkcenter from '@/views/productPlan/orderWorkcenter'
 import plannedOrderDesign from '@/views/productPlan/plannedOrderDesign'
 import productOrder from '@/views/productPlan/productOrder'
 import unproductOrder from '@/views/productPlan/unproductOrder'
+import productOrderAdd from '@/views/productPlan/productOrderAdd'
+import productOrderEdit from '@/views/productPlan/productOrderEdit'
+import unproductOrderAdd from '@/views/productPlan/unproductOrderAdd'
+import unproductOrderEdit from '@/views/productPlan/unproductOrderEdit'
 
 //productPlan
 import productSchedule from '@/views/productSchedule/productSchedule'
 import operatelPlanManage from '@/views/productSchedule/operatelPlanManage'
 import operatePlanTrack from '@/views/productSchedule/operatePlanTrack'
+import operatelPlanManageAdd from '@/views/productSchedule/operatelPlanManageAdd'
+import operatelPlanManageEdit from '@/views/productSchedule/operatelPlanManageEdit'
 
 //qualityManage
 import qualityManage from '@/views/qualityManage/qualityManage'
@@ -69,6 +108,8 @@ import materialAssemblySheet from '@/views/qualityManage/materialAssemblySheet'
 import materialScrapSheet from '@/views/qualityManage/materialScrapSheet'
 import materialTrack from '@/views/qualityManage/materialTrack'
 import selfCheckQuery from '@/views/qualityManage/selfCheckQuery'
+import selfCheckTemplateAdd from '@/views/qualityManage/selfCheckTemplateAdd'
+import selfCheckTemplateEdit from '@/views/qualityManage/selfCheckTemplateEdit'
 
 //deviceManage
 import deviceManage from '@/views/deviceManage/deviceManage'
@@ -224,6 +265,16 @@ export default new Router({
               component: codeTypeEdit
             },
             {
+              path: '/codeDefAdd',
+              name: 'codeDefAdd',
+              component: codeDefAdd
+            },
+            {
+              path: '/codeDefEdit',
+              name: 'codeDefEdit',
+              component: codeDefEdit
+            },
+            {
               path: '/codeDef',
               name: 'codeDef',
               component: codeDef
@@ -234,9 +285,29 @@ export default new Router({
               component: supplyInfo
             },
             {
+              path: '/supplyInfoAdd',
+              name: 'supplyInfoAdd',
+              component: supplyInfoAdd
+            },
+            {
+              path: '/supplyInfoEdit',
+              name: 'supplyInfoEdit',
+              component: supplyInfoEdit
+            },
+            {
               path: '/codeRule',
               name: 'codeRule',
               component: codeRule
+            },
+            {
+              path: '/codeRuleAdd',
+              name: 'codeRuleAdd',
+              component: codeRuleAdd
+            },
+            {
+              path: '/codeRuleEdit',
+              name: 'codeRuleEdit',
+              component: codeRuleEdit
             },
             {
               path: '/businessParameter',
@@ -244,9 +315,29 @@ export default new Router({
               component: businessParameter
             },
             {
+              path: '/businessParameterAdd',
+              name: 'businessParameterAdd',
+              component: businessParameterAdd
+            },
+            {
+              path: '/businessParameterEdit',
+              name: 'businessParameterEdit',
+              component: businessParameterEdit
+            },
+            {
               path: '/businessRule',
               name: 'businessRule',
               component: businessRule
+            },
+            {
+              path: '/businessRuleAdd',
+              name: 'businessRuleAdd',
+              component: businessRuleAdd
+            },
+            {
+              path: '/businessRuleEdit',
+              name: 'businessRuleEdit',
+              component: businessRuleEdit
             },
             {
               path: '/organizationalTree',
@@ -254,9 +345,29 @@ export default new Router({
               component: organizationalTree
             },
             {
+              path: '/organizationalTreeAdd',
+              name: 'organizationalTreeAdd',
+              component: organizationalTreeAdd
+            },
+            {
+              path: '/organizationalTreeEdit',
+              name: 'organizationalTreeEdit',
+              component: organizationalTreeEdit
+            },
+            {
               path: '/personnelMaintenanceTree',
               name: 'personnelMaintenanceTree',
               component: personnelMaintenanceTree
+            },
+            {
+              path: '/personnelMaintenanceTreeAdd',
+              name: 'personnelMaintenanceTreeAdd',
+              component: personnelMaintenanceTreeAdd
+            },
+            {
+              path: '/personnelMaintenanceTreeEdit',
+              name: 'personnelMaintenanceTreeEdit',
+              component: personnelMaintenanceTreeEdit
             },
             {
               path: '/workCenter',
@@ -264,9 +375,29 @@ export default new Router({
               component: workCenter
             },
             {
+              path: '/workCenterAdd',
+              name: 'workCenterAdd',
+              component: workCenterAdd
+            },
+            {
+              path: '/workCenterEdit',
+              name: 'workCenterEdit',
+              component: workCenterEdit
+            },
+            {
               path: '/equipMent',
               name: 'equipMent',
               component: equipMent
+            },
+            {
+              path: '/equipMentAdd',
+              name: 'equipMentAdd',
+              component: equipMentAdd
+            },
+            {
+              path: '/equipMentEdit',
+              name: 'equipMentEdit',
+              component: equipMentEdit
             },
             {
               path: '/wareHouse',
@@ -274,9 +405,29 @@ export default new Router({
               component: wareHouse
             },
             {
+              path: '/wareHouseAdd',
+              name: 'wareHouseAdd',
+              component: wareHouseAdd
+            },
+            {
+              path: '/wareHouseEdit',
+              name: 'wareHouseEdit',
+              component: wareHouseEdit
+            },
+            {
               path: '/location',
               name: 'location',
               component: location
+            },
+            {
+              path: '/locationAdd',
+              name: 'locationAdd',
+              component: locationAdd
+            },
+            {
+              path: '/locationEdit',
+              name: 'locationEdit',
+              component: locationEdit
             },
             {
               path: '/materialInfo',
@@ -284,9 +435,29 @@ export default new Router({
               component: materialInfo
             },
             {
+              path: '/materialInfoAdd',
+              name: 'materialInfoAdd',
+              component: materialInfoAdd
+            },
+            {
+              path: '/materialInfoEdit',
+              name: 'materialInfoEdit',
+              component: materialInfoEdit
+            },
+            {
               path: '/productModel',
               name: 'productModel',
               component: productModel
+            },
+            {
+              path: '/productModelAdd',
+              name: 'productModelAdd',
+              component: productModelAdd
+            },
+            {
+              path: '/productModelEdit',
+              name: 'productModelEdit',
+              component: productModelEdit
             },
             {
               path: '/productStructure',
@@ -294,14 +465,44 @@ export default new Router({
               component: productStructure
             },
             {
+              path: '/productStructureAdd',
+              name: 'productStructureAdd',
+              component: productStructureAdd
+            },
+            {
+              path: '/productStructureEdit',
+              name: 'productStructureEdit',
+              component: productStructureEdit
+            },
+            {
               path: '/processData',
               name: 'processData',
               component: processData
             },
             {
+              path: '/processDataAdd',
+              name: 'processDataAdd',
+              component: processDataAdd
+            },
+            {
+              path: '/processDataEdit',
+              name: 'processDataEdit',
+              component: processDataEdit
+            },
+            {
               path: '/processRoute',
               name: 'processRoute',
               component: processRoute
+            },
+            {
+              path: '/processRouteAdd',
+              name: 'processRouteAdd',
+              component: processRouteAdd
+            },
+            {
+              path: '/processRouteEdit',
+              name: 'processRouteEdit',
+              component: processRouteEdit
             }
           ]
         },
@@ -337,9 +538,29 @@ export default new Router({
               component: productOrder
             },
             {
+              path: '/productOrderAdd',
+              name: 'productOrderAdd',
+              component: productOrderAdd
+            },
+            {
+              path: '/productOrderEdit',
+              name: 'productOrderEdit',
+              component: productOrderEdit
+            },
+            {
               path: '/unproductOrder',
               name: 'unproductOrder',
               component: unproductOrder
+            },
+            {
+              path: '/unproductOrderAdd',
+              name: 'unproductOrderAdd',
+              component: unproductOrderAdd
+            },
+            {
+              path: '/unproductOrderEdit',
+              name: 'unproductOrderEdit',
+              component: unproductOrderEdit
             }
           ]
         },
@@ -353,6 +574,16 @@ export default new Router({
               path: '/operatelPlanManage',
               name: 'operatelPlanManage',
               component: operatelPlanManage
+            },
+            {
+              path: '/operatelPlanManageAdd',
+              name: 'operatelPlanManageAdd',
+              component: operatelPlanManageAdd
+            },
+            {
+              path: '/operatelPlanManageEdit',
+              name: 'operatelPlanManageEdit',
+              component: operatelPlanManageEdit
             },
             {
               path: '/operatePlanTrack',
@@ -371,6 +602,16 @@ export default new Router({
               path: '/selfCheckTemplate',
               name: 'selfCheckTemplate',
               component: selfCheckTemplate
+            },
+            {
+              path: '/selfCheckTemplateAdd',
+              name: 'selfCheckTemplateAdd',
+              component: selfCheckTemplateAdd
+            },
+            {
+              path: '/selfCheckTemplateEdit',
+              name: 'selfCheckTemplateEdit',
+              component: selfCheckTemplateEdit
             },
             {
               path: '/takeSample',

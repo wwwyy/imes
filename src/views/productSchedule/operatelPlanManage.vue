@@ -7,7 +7,7 @@
         </el-breadcrumb>
         <hr>
         <div style="text-align:left">
-            <el-button size="small" icon="el-icon-plus" style="width:100px"> 新 增 </el-button>
+            <el-button size="small" icon="el-icon-plus" style="width:100px" @click="add"> 新 增 </el-button>
             <el-button size="small" icon="el-icon-success" style="width:100px"> 提 交 </el-button>
             <el-button size="small" icon="el-icon-error" style="width:100px"> 冻 结 </el-button>
             <el-button size="small" icon="el-icon-edit-outline" style="width:100px"> 审 核 </el-button>
@@ -484,8 +484,12 @@ export default {
         }
     },
     methods: {
+		add(){
+		  this.$router.push('operatelPlanManageAdd')
+	  },
       handleClick(row) {
-        console.log(row);
+		console.log(row);
+		this.$router.push('operatelPlanManageEdit')
       },
        handleSizeChange(val) {
         console.log(`每页 ${val} 条`);

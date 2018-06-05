@@ -7,7 +7,7 @@
         </el-breadcrumb>
         <hr>
         <div style="text-align:left">
-            <el-button size="small" icon="el-icon-plus" style="width:100px"> 新 增 </el-button>
+            <el-button size="small" icon="el-icon-plus" style="width:100px" @click="add"> 新 增 </el-button>
             <el-button size="small" icon="el-icon-download" style="width:100px"> 导 出 </el-button>
               <el-button size="small" style="width:100px"> 数据字段维护 </el-button>
             <el-button size="small" type="primary" style="width:100px"> 查 询 </el-button>
@@ -455,8 +455,12 @@ export default {
         }
     },
     methods: {
+		add(){
+		  this.$router.push('codeRuleAdd')
+	  },
       handleClick(row) {
-        console.log(row);
+		console.log(row);
+		this.$router.push('codeRuleEdit')
       },
        handleSizeChange(val) {
         console.log(`每页 ${val} 条`);
