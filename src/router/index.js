@@ -110,6 +110,21 @@ import materialTrack from '@/views/qualityManage/materialTrack'
 import selfCheckQuery from '@/views/qualityManage/selfCheckQuery'
 import selfCheckTemplateAdd from '@/views/qualityManage/selfCheckTemplateAdd'
 import selfCheckTemplateEdit from '@/views/qualityManage/selfCheckTemplateEdit'
+import takeSampleAdd from '@/views/qualityManage/takeSampleAdd'
+import takeSampleEdit from '@/views/qualityManage/takeSampleEdit'
+import productCheckProjectAdd from '@/views/qualityManage/productCheckProjectAdd'
+import productCheckProjectEdit from '@/views/qualityManage/productCheckProjectEdit'
+import bugCodeAdd from '@/views/qualityManage/bugCodeAdd'
+import bugCodeEdit from '@/views/qualityManage/bugCodeEdit'
+import qualityInspectionPlanAdd from '@/views/qualityManage/qualityInspectionPlanAdd'
+import qualityInspectionPlanEdit from '@/views/qualityManage/qualityInspectionPlanEdit'
+import materialAssemblySheetDetail from '@/views/qualityManage/materialAssemblySheetDetail'
+import materialAssemblySheetEdit from '@/views/qualityManage/materialAssemblySheetEdit'
+import materialScrapSheetAdd from '@/views/qualityManage/materialScrapSheetAdd'
+import materialScrapSheetEdit from '@/views/qualityManage/materialScrapSheetEdit'
+import selfCheckQueryAdd from '@/views/qualityManage/selfCheckQueryAdd'
+import selfCheckQueryEdit from '@/views/qualityManage/selfCheckQueryEdit'
+
 
 //deviceManage
 import deviceManage from '@/views/deviceManage/deviceManage'
@@ -124,16 +139,33 @@ import deviceRunRecord from '@/views/deviceManage/deviceRunRecord'
 import faultCode from '@/views/deviceManage/faultCode'
 import faultRepository from '@/views/deviceManage/faultRepository'
 import deviceFaultRepair from '@/views/deviceManage/deviceFaultRepair'
+import maintenanceProjectAdd from '@/views/deviceManage/maintenanceProjectAdd'
+import maintenanceProjectEdit from '@/views/deviceManage/maintenanceProjectEdit'
+import maintenancePlanAdd from '@/views/deviceManage/maintenancePlanAdd'
+import maintenancePlanEdit from '@/views/deviceManage/maintenancePlanEdit'
+import planGradeEdit from '@/views/deviceManage/planGradeEdit'
+import replacepartRecordAdd from '@/views/deviceManage/replacepartRecordAdd'
+import replacepartRecordEdit from '@/views/deviceManage/replacepartRecordEdit'
+import replacePartOutInWareAdd from '@/views/deviceManage/replacePartOutInWareAdd'
+import replacePartOutInWareEdit from '@/views/deviceManage/replacePartOutInWareEdit'
+import replacePartCountAdd from '@/views/deviceManage/replacePartCountAdd'
+import replacePartCountEdit from '@/views/deviceManage/replacePartCountEdit'
 
 //personalManage
 import personalManage from '@/views/personalManage/personalManage'
 import personalTechnical from '@/views/personalManage/personalTechnical'
 import attendanceManage from '@/views/personalManage/attendanceManage'
 import attendanceInformation from '@/views/personalManage/attendanceInformation'
+import personalTechnicalAdd from '@/views/personalManage/personalTechnicalAdd'
+import personalTechnicalEdit from '@/views/personalManage/personalTechnicalEdit'
+import attendanceManageAdd from '@/views/personalManage/attendanceManageAdd'
+
 
 //personalManage
 import documentManage from '@/views/documentManage/documentManage'
 import document from '@/views/documentManage/document'
+import documentAdd from '@/views/documentManage/documentAdd'
+import documentEdit from '@/views/documentManage/documentEdit'
 
 //materialLineManage
 import materialLineManage from '@/views/materialLineManage/materialLineManage'
@@ -143,6 +175,18 @@ import materialOutWare from '@/views/materialLineManage/materialOutWare'
 import materialRepertory from '@/views/materialLineManage/materialRepertory'
 import supplementaryApply from '@/views/materialLineManage/supplementaryApply'
 import materialReturn from '@/views/materialLineManage/materialReturn'
+import materialMoveAdd from '@/views/materialLineManage/materialMoveAdd'
+import materialMoveEdit from '@/views/materialLineManage/materialMoveEdit'
+import materialInWareAdd from '@/views/materialLineManage/materialInWareAdd'
+import materialInWareEdit from '@/views/materialLineManage/materialInWareEdit'
+import materialOutWareAdd from '@/views/materialLineManage/materialOutWareAdd'
+import materialOutWareEdit from '@/views/materialLineManage/materialOutWareEdit'
+import supplementaryApplyAdd from '@/views/materialLineManage/supplementaryApplyAdd'
+import supplementaryApplyEdit from '@/views/materialLineManage/supplementaryApplyEdit'
+import materialReturnAdd from '@/views/materialLineManage/materialReturnAdd'
+import materialReturnEdit from '@/views/materialLineManage/materialReturnEdit'
+
+
 
 //comprehensiveReport
 import comprehensiveReport from '@/views/comprehensiveReport/comprehensiveReport'
@@ -159,7 +203,11 @@ import productionCapacityTwo from '@/views/comprehensiveReport/productionCapacit
 //systemManage
 import systemManage from '@/views/systemManage/systemManage'
 import roleSetting from '@/views/systemManage/roleSetting'
+import roleSettingAdd from '@/views/systemManage/roleSettingAdd'
+import roleSettingEdit from '@/views/systemManage/roleSettingEdit'
 import userAuthorSetting from '@/views/systemManage/userAuthorSetting'
+import userAuthorSettingAdd from '@/views/systemManage/userAuthorSettingAdd'
+import userAuthorSettingEdit from '@/views/systemManage/userAuthorSettingEdit'
 import userLoginLog from '@/views/systemManage/userLoginLog'
 import userOperateLog from '@/views/systemManage/userOperateLog'
 import sysetmVersionLog from '@/views/systemManage/sysetmVersionLog'
@@ -619,14 +667,44 @@ export default new Router({
               component: takeSample
             },
             {
+              path: '/takeSampleAdd',
+              name: 'takeSampleAdd',
+              component: takeSampleAdd
+            },
+            {
+              path: '/takeSampleEdit',
+              name: 'takeSampleEdit',
+              component: takeSampleEdit
+            },
+            {
               path: '/productCheckProject',
               name: 'productCheckProject',
               component: productCheckProject
             },
             {
+              path: '/productCheckProjectAdd',
+              name: 'productCheckProjectAdd',
+              component: productCheckProjectAdd
+            },
+            {
+              path: '/productCheckProjectEdit',
+              name: 'productCheckProjectEdit',
+              component: productCheckProjectEdit
+            },
+            {
               path: '/bugCode',
               name: 'bugCode',
               component: bugCode
+            },
+            {
+              path: '/bugCodeAdd',
+              name: 'bugCodeAdd',
+              component: bugCodeAdd
+            },
+            {
+              path: '/bugCodeEdit',
+              name: 'bugCodeEdit',
+              component: bugCodeEdit
             },
             {
               path: '/failureRepository',
@@ -637,6 +715,16 @@ export default new Router({
               path: '/qualityInspectionPlan',
               name: 'qualityInspectionPlan',
               component: qualityInspectionPlan
+            },
+            {
+              path: '/qualityInspectionPlanAdd',
+              name: 'qualityInspectionPlanAdd',
+              component: qualityInspectionPlanAdd
+            },
+            {
+              path: '/qualityInspectionPlanEdit',
+              name: 'qualityInspectionPlanEdit',
+              component: qualityInspectionPlanEdit
             },
             {
               path: '/qualityInspectionGrade',
@@ -654,9 +742,29 @@ export default new Router({
               component: materialAssemblySheet
             },
             {
+              path: '/materialAssemblySheetDetail',
+              name: 'materialAssemblySheetDetail',
+              component: materialAssemblySheetDetail
+            },
+            {
+              path: '/materialAssemblySheetEdit',
+              name: 'materialAssemblySheetEdit',
+              component: materialAssemblySheetEdit
+            },
+            {
               path: '/materialScrapSheet',
               name: 'materialScrapSheet',
               component: materialScrapSheet
+            },
+            {
+              path: '/materialScrapSheetAdd',
+              name: 'materialScrapSheetAdd',
+              component: materialScrapSheetAdd
+            },
+            {
+              path: '/materialScrapSheetEdit',
+              name: 'materialScrapSheetEdit',
+              component: materialScrapSheetEdit
             },
             {
               path: '/materialTrack',
@@ -667,6 +775,16 @@ export default new Router({
               path: '/selfCheckQuery',
               name: 'selfCheckQuery',
               component: selfCheckQuery
+            },
+            {
+              path: '/selfCheckQueryAdd',
+              name: 'selfCheckQueryAdd',
+              component: selfCheckQueryAdd
+            },
+            {
+              path: '/selfCheckQueryEdit',
+              name: 'selfCheckQueryEdit',
+              component: selfCheckQueryEdit
             }
           ]
         },
@@ -682,9 +800,29 @@ export default new Router({
               component: maintenanceProject
             },
             {
+              path: '/maintenanceProjectAdd',
+              name: 'maintenanceProjectAdd',
+              component: maintenanceProjectAdd
+            },
+            {
+              path: '/maintenanceProjectEdit',
+              name: 'maintenanceProjectEdit',
+              component: maintenanceProjectEdit
+            },
+            {
               path: '/maintenancePlan',
               name: 'maintenancePlan',
               component: maintenancePlan
+            },
+            {
+              path: '/maintenancePlanAdd',
+              name: 'maintenancePlanAdd',
+              component: maintenancePlanAdd
+            },
+            {
+              path: '/maintenancePlanEdit',
+              name: 'maintenancePlanEdit',
+              component: maintenancePlanEdit
             },
             {
               path: '/planGrade',
@@ -692,14 +830,39 @@ export default new Router({
               component: planGrade
             },
             {
+              path: '/planGradeEdit',
+              name: 'planGradeEdit',
+              component: planGradeEdit
+            },
+            {
               path: '/replacepartRecord',
               name: 'replacepartRecord',
               component: replacepartRecord
             },
             {
+              path: '/replacepartRecordAdd',
+              name: 'replacepartRecordAdd',
+              component: replacepartRecordAdd
+            },
+            {
+              path: '/replacepartRecordEdit',
+              name: 'replacepartRecordEdit',
+              component: replacepartRecordEdit
+            },
+            {
               path: '/replacePartOutInWare',
               name: 'replacePartOutInWare',
               component: replacePartOutInWare
+            },
+            {
+              path: '/replacePartOutInWareAdd',
+              name: 'replacePartOutInWareAdd',
+              component: replacePartOutInWareAdd
+            },
+            {
+              path: '/replacePartOutInWareEdit',
+              name: 'replacePartOutInWareEdit',
+              component: replacePartOutInWareEdit
             },
             {
               path: '/replacePartRepertory',
@@ -710,6 +873,16 @@ export default new Router({
               path: '/replacePartCount',
               name: 'replacePartCount',
               component: replacePartCount
+            },
+            {
+              path: '/replacePartCountAdd',
+              name: 'replacePartCountAdd',
+              component: replacePartCountAdd
+            },
+            {
+              path: '/replacePartCountEdit',
+              name: 'replacePartCountEdit',
+              component: replacePartCountEdit
             },
             {
               path: '/deviceRunRecord',
@@ -745,9 +918,24 @@ export default new Router({
               component: personalTechnical
             },
             {
+              path: '/personalTechnicalAdd',
+              name: 'personalTechnicalAdd',
+              component: personalTechnicalAdd
+            },
+            {
+              path: '/personalTechnicalEdit',
+              name: 'personalTechnicalEdit',
+              component: personalTechnicalEdit
+            },
+            {
               path: '/attendanceManage',
               name: 'attendanceManage',
               component: attendanceManage
+            },
+            {
+              path: '/attendanceManageAdd',
+              name: 'attendanceManageAdd',
+              component: attendanceManageAdd
             },
             {
               path: '/attendanceInformation',
@@ -766,6 +954,16 @@ export default new Router({
               path: '/document',
               name: 'document',
               component: document
+            },
+            {
+              path: '/documentAdd',
+              name: 'documentAdd',
+              component: documentAdd
+            },
+            {
+              path: '/documentEdit',
+              name: 'documentEdit',
+              component: documentEdit
             }
           ]
         },
@@ -781,14 +979,44 @@ export default new Router({
               component: materialMove
             },
             {
+              path: '/materialMoveAdd',
+              name: 'materialMoveAdd',
+              component: materialMoveAdd
+            },
+            {
+              path: '/materialMoveEdit',
+              name: 'materialMoveEdit',
+              component: materialMoveEdit
+            },
+            {
               path: '/materialInWare',
               name: 'materialInWare',
               component: materialInWare
             },
             {
+              path: '/materialInWareAdd',
+              name: 'materialInWareAdd',
+              component: materialInWareAdd
+            },
+            {
+              path: '/materialInWareEdit',
+              name: 'materialInWareEdit',
+              component: materialInWareEdit
+            },
+            {
               path: '/materialOutWare',
               name: 'materialOutWare',
               component: materialOutWare
+            },
+            {
+              path: '/materialOutWareAdd',
+              name: 'materialOutWareAdd',
+              component: materialOutWareAdd
+            },
+            {
+              path: '/materialOutWareEdit',
+              name: 'materialOutWareEdit',
+              component: materialOutWareEdit
             },
             {
               path: '/materialRepertory',
@@ -801,9 +1029,29 @@ export default new Router({
               component: supplementaryApply
             },
             {
+              path: '/supplementaryApplyAdd',
+              name: 'supplementaryApplyAdd',
+              component: supplementaryApplyAdd
+            },
+            {
+              path: '/supplementaryApplyEdit',
+              name: 'supplementaryApplyEdit',
+              component: supplementaryApplyEdit
+            },
+            {
               path: '/materialReturn',
               name: 'materialReturn',
               component: materialReturn
+            },
+            {
+              path: '/materialReturnAdd',
+              name: 'materialReturnAdd',
+              component: materialReturnAdd
+            },
+            {
+              path: '/materialReturnEdit',
+              name: 'materialReturnEdit',
+              component: materialReturnEdit
             }
           ]
         },
@@ -867,9 +1115,29 @@ export default new Router({
               component: roleSetting
             },
             {
+              path: '/roleSettingAdd',
+              name: 'roleSettingAdd',
+              component: roleSettingAdd
+            },
+            {
+              path: '/roleSettingEdit',
+              name: 'roleSettingEdit',
+              component: roleSettingEdit
+            },
+            {
               path: '/userAuthorSetting',
               name: 'userAuthorSetting',
               component: userAuthorSetting
+            },
+            {
+              path: '/userAuthorSettingAdd',
+              name: 'userAuthorSettingAdd',
+              component: userAuthorSettingAdd
+            },
+            {
+              path: '/userAuthorSettingEdit',
+              name: 'userAuthorSettingEdit',
+              component: userAuthorSettingEdit
             },
             {
               path: '/userLoginLog',

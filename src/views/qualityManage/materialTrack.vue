@@ -9,7 +9,6 @@
         <el-tabs v-model="activeName" @tab-click="tabHandleClick" style="border:1px solid #409EFF;padding:0 20px 20px;">
           <el-tab-pane label="物料装配追溯" name="first">
             <div style="text-align:left">
-              <el-button size="small" icon="el-icon-plus" style="width:100px"> 新 增 </el-button>
               <el-button size="small" icon="el-icon-download" style="width:100px"> 导 出 </el-button>
               <el-button size="small" type="primary" style="width:100px"> 查 询 </el-button>
               <el-button size="small" type="primary" style="width:100px"> 清 空 </el-button>

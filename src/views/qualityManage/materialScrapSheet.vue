@@ -77,8 +77,8 @@
       label="操作"
       >
       <template slot-scope="scope">
-           <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
-        <el-button type="text" size="small" @click="handleClick(scope.row)">确认</el-button>
+           <el-button type="text" size="small" @click="handleClick1(scope.row)">编辑</el-button>
+        <el-button type="text" size="small" @click="handleClick2(scope.row)">确认</el-button>
       </template>
     </el-table-column>
   </el-table>
@@ -797,9 +797,18 @@ export default {
         }
     },
     methods: {
-      handleClick(row) {
-        console.log(row);
-      },
+		handleClick1(row) {
+		console.log(row);
+		this.$router.push('materialScrapSheetEdit')
+	  },
+      handleClick2(row) {
+		console.log(row);
+		this.$message({
+          message: '当前状态无法进行提交',
+          type: 'warning'
+        });
+	  },
+	  
        handleSizeChange(val) {
         console.log(`每页 ${val} 条`);
       },

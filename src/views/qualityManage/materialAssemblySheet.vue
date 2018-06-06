@@ -78,8 +78,8 @@
       label="操作"
       >
       <template slot-scope="scope">
-           <el-button type="text" size="small" @click="handleClick(scope.row)">查看</el-button>
-        <el-button type="text" size="small" @click="handleClick(scope.row)">编辑</el-button>
+           <el-button type="text" size="small" @click="detail(scope.row)">查看</el-button>
+        <el-button type="text" size="small" @click="edit(scope.row)">编辑</el-button>
       </template>
     </el-table-column>
   </el-table>
@@ -798,8 +798,13 @@ export default {
         }
     },
     methods: {
-      handleClick(row) {
-        console.log(row);
+      detail(row) {
+		console.log(row);
+		this.$router.push('materialAssemblySheetDetail')
+	  },
+	  edit(row) {
+		console.log(row);
+		this.$router.push('materialAssemblySheetEdit')
       },
        handleSizeChange(val) {
         console.log(`每页 ${val} 条`);

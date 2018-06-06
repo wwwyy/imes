@@ -7,7 +7,7 @@
         </el-breadcrumb>
         <hr>
         <div style="text-align:left">
-              <el-button size="small" icon="el-icon-plus" style="width:100px"> 新 增 </el-button>
+              <el-button size="small" icon="el-icon-plus" style="width:100px" @click="add"> 新 增 </el-button>
           <el-button size="small" icon="el-icon-delete" style="width:100px"> 删 除 </el-button>
           <el-button size="small" icon="el-icon-circle-check" style="width:100px"> 确 认 </el-button>
           <el-button size="small" icon="el-icon-error" style="width:100px"> 撤 回 </el-button>
@@ -334,8 +334,12 @@ export default {
         }
     },
     methods: {
+      add(){
+		  this.$router.push('replacePartOutInWareAdd')
+	  },
       handleClick(row) {
         console.log(row);
+        this.$router.push('replacePartOutInWareEdit')
       },
        handleSizeChange(val) {
         console.log(`每页 ${val} 条`);

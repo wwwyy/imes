@@ -400,7 +400,8 @@ export default {
     },
     methods: {
       handleClick(row) {
-        console.log(row);
+		console.log(row);
+		this.$router.push('planGradeEdit')
       },
        handleSizeChange(val) {
         console.log(`每页 ${val} 条`);

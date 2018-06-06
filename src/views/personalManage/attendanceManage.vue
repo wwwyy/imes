@@ -6,7 +6,7 @@
         </el-breadcrumb>
         <hr>
         <div style="text-align:left">
-            <el-button size="small" icon="el-icon-plus" style="width:100px"> 新 增 </el-button>
+            <el-button size="small" icon="el-icon-plus" style="width:100px" @click="add"> 新 增 </el-button>
             <el-button size="small" icon="el-icon-delete" style="width:100px"> 删 除 </el-button>
             <el-button size="small" icon="el-icon-edit-outline" style="width:100px"> 审 核 </el-button>
             <el-button size="small"  style="width:100px"> 看 假 期 </el-button>
@@ -372,6 +372,9 @@ export default {
         }
     },
     methods: {
+		add(){
+		  this.$router.push('attendanceManageAdd')
+	  },
       handleClick(row) {
         console.log(row);
       },

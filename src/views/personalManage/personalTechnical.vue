@@ -1,7 +1,7 @@
 <template>
     <div id="personalTechnical">
         <el-container>
-            <el-aside width="200px">
+            <el-aside width="240px">
                 <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
             </el-aside>
             <el-main>
@@ -11,7 +11,7 @@
                 </el-breadcrumb>
                 <hr>
                 <div style="text-align:left">
-                    <el-button size="small" icon="el-icon-plus" style="width:100px"> 新 增 </el-button>
+                    <el-button size="small" icon="el-icon-plus" style="width:100px" @click="add"> 新 增 </el-button>
                     <el-button size="small" icon="el-icon-delete" style="width:100px"> 删 除 </el-button>
                     <el-button size="small" type="primary" style="width:100px"> 查 询 </el-button>
                     <el-button size="small" type="primary" style="width:100px"> 清 空 </el-button>
@@ -412,8 +412,12 @@ export default {
         handleNodeClick(data) {
         console.log(data);
       },
+        add(){
+		  this.$router.push('personalTechnicalAdd')
+	  },
       handleClick(row) {
         console.log(row);
+        this.$router.push('personalTechnicalEdit')
       },
        handleSizeChange(val) {
         console.log(`每页 ${val} 条`);
