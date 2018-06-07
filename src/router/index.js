@@ -37,6 +37,8 @@ import businessParameterAdd from '@/views/baseData/businessParameterAdd'
 import businessParameterEdit from '@/views/baseData/businessParameterEdit'
 import businessRuleAdd from '@/views/baseData/businessRuleAdd'
 import businessRuleEdit from '@/views/baseData/businessRuleEdit'
+import workCalendar from '@/views/baseData/workCalendar'
+
 
 
 import organizationalTree from '@/views/baseData/organizationalTree'
@@ -222,7 +224,7 @@ import qsz from '@/views/qsz/qsz'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   linkActiveClass: 'is-active',
   routes: [
     {
@@ -356,6 +358,11 @@ export default new Router({
               path: '/codeRuleEdit',
               name: 'codeRuleEdit',
               component: codeRuleEdit
+            },
+            {
+              path: '/workCalendar',
+              name: 'workCalendar',
+              component: workCalendar
             },
             {
               path: '/businessParameter',

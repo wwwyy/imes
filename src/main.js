@@ -6,6 +6,9 @@ import router from './router'
 import ElementUI from 'element-ui';
 import './assets/css/app.css'
 import 'element-ui/lib/theme-chalk/index.css';
+import fullCalendar from 'vue-fullcalendar'
+
+Vue.component('full-calendar', fullCalendar)
 
 import echarts from 'echarts'
 Vue.prototype.$echarts = echarts 

@@ -103,7 +103,7 @@
                 name: '节假日维护'
               },
               {
-                index: '1-2',
+                index: 'workCalendar',
                 name: '工作日历生成'
               },
               {
@@ -207,7 +207,7 @@
       asidNavChange(key) {
         switch (key) {
           case 1:
-            this.navData = [{title:'公共数据管理',index:'1',children:[{index:'exRate',name:'汇率维护'},{index:'measureData',name:'计量维护'},{index:'unitTrans',name:'单位转换'},{index:'holidayManage',name:'节假日维护'},{index:'1-2',name:'工作日历生成'},{index:'codeType',name:'代码类别'},{index:'codeDef',name:'代码定义'},{index:'supplyInfo',name:'供应商信息维护'},{index:'codeRule',name:'编码规则维护'},{index:'businessParameter',name:'业务参数维护'},{index:'businessRule',name:'业务规则维护'}]},{title:'制造资源管理',index:'2',children:[{index:'organizationalTree',name:'组织结构维护'},{index:'personnelMaintenanceTree',name:'人员维护'},{index:'workCenter',name:'工作中心维护'},{index:'equipMent',name:'设备维护'},{index:'wareHouse',name:'仓库维护'},{index:'location',name:'库位维护'}]},{title:'物料数据管理',index:'3',children:[{index:'materialInfo',name:'物料数据维护'}]},{title:'产品数据管理',index:'4',children:[{index:'productModel',name:'产品型号维护'},{index:'productStructure',name:'产品结构数据维护'}]},{title:'工艺数据管理',index:'5',children:[{index:'processData',name:'工序数据维护'},{index:'processRoute',name:'工艺路线维护'}]}]
+            this.navData = [{title:'公共数据管理',index:'1',children:[{index:'exRate',name:'汇率维护'},{index:'measureData',name:'计量维护'},{index:'unitTrans',name:'单位转换'},{index:'holidayManage',name:'节假日维护'},{index:'workCalendar',name:'工作日历生成'},{index:'codeType',name:'代码类别'},{index:'codeDef',name:'代码定义'},{index:'supplyInfo',name:'供应商信息维护'},{index:'codeRule',name:'编码规则维护'},{index:'businessParameter',name:'业务参数维护'},{index:'businessRule',name:'业务规则维护'}]},{title:'制造资源管理',index:'2',children:[{index:'organizationalTree',name:'组织结构维护'},{index:'personnelMaintenanceTree',name:'人员维护'},{index:'workCenter',name:'工作中心维护'},{index:'equipMent',name:'设备维护'},{index:'wareHouse',name:'仓库维护'},{index:'location',name:'库位维护'}]},{title:'物料数据管理',index:'3',children:[{index:'materialInfo',name:'物料数据维护'}]},{title:'产品数据管理',index:'4',children:[{index:'productModel',name:'产品型号维护'},{index:'productStructure',name:'产品结构数据维护'}]},{title:'工艺数据管理',index:'5',children:[{index:'processData',name:'工序数据维护'},{index:'processRoute',name:'工艺路线维护'}]}]
             break;
           case 2:
             this.navData = [{title:'生产订单设计',index:'1',children:[{index:'productOrder',name:'成品订单维护'},{index:'unproductOrder',name:'半成品订单维护'},{index:'plannedOrderDesign',name:'计划订单设计'}]},{title:'生产订单编制',index:'2',children:[{index:'orderCodeQuery',name:'产品编码查询'},{index:'orderWorkcenter',name:'订单工作中心维护'}]},{title:'生产订单跟踪',index:'3',children:[{index:'orderList',name:'订单清单查询'}]}]

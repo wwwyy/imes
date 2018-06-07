@@ -8,12 +8,14 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "analyze": "NODE_ENV=production npm_config_report=true npm run build"
   },
   "dependencies": {
     "echarts": "^4.1.0",
     "element-ui": "^2.3.9",
     "vue": "^2.5.2",
+    "vue-fullcalendar": "^1.0.9",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
